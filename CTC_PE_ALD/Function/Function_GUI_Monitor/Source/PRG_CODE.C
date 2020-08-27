@@ -46,7 +46,7 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "CTC.PM3_PREVENTIVE_NEXT"			, _K_D_IO	,	PM3_PREVENTIVE_NEXT			,	0	} ,
 	{ "CTC.PM4_PREVENTIVE_NEXT"			, _K_D_IO	,	PM4_PREVENTIVE_NEXT			,	0	} ,
 	{ "CTC.PM5_PREVENTIVE_NEXT"			, _K_D_IO	,	PM5_PREVENTIVE_NEXT			,	0	} ,
-	
+
 	{ "CTC.PM1_PREVENTIVE_PREV"			, _K_D_IO	,	PM1_PREVENTIVE_PREV			,	0	} ,
 	{ "CTC.PM2_PREVENTIVE_PREV"			, _K_D_IO	,	PM2_PREVENTIVE_PREV			,	0	} ,
 	{ "CTC.PM3_PREVENTIVE_PREV"			, _K_D_IO	,	PM3_PREVENTIVE_PREV			,	0	} ,
@@ -84,27 +84,27 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PM4.Heater_Prev"					, _K_D_IO	,	PM4_Heater_Prev				,	0	} ,
 	{ "PM5.Heater_Prev"					, _K_D_IO	,	PM5_Heater_Prev				,	0	} ,
 
-	{ "Right_Config_PM1_Cfg1_Nav"    , _K_D_IO	,	PM1_GasFlow_Config_Nav		,	0	} ,
+	{ "PM1.Right_Config_Cfg1_Nav"    , _K_D_IO	,	PM1_GasFlow_Config_Nav		,	0	} ,
 	{ "PM1.Param_Next"					, _K_D_IO	,	PM1_GasFlow_Config_Next		,	0	} ,
 	{ "PM1.Param_Prev"					, _K_D_IO	,	PM1_GasFlow_Config_Prev		,	0	} ,
 
-    { "Right_Config_PM1_Cfg2_Nav"    , _K_D_IO	,	PM1_Moving_Config_Nav		,	0	} ,
+    { "PM1.Right_Config_Cfg2_Nav"    , _K_D_IO	,	PM1_Moving_Config_Nav		,	0	} ,
 	{ "PM1.Config2_Next"				, _K_D_IO	,	PM1_Moving_Config_Next		,	0	} ,
 	{ "PM1.Config2_Prev"				, _K_D_IO	,	PM1_Moving_Config_Prev		,	0	} ,
 
-	{ "Right_Config_PM2_Cfg1_Nav"    , _K_D_IO	,	PM2_GasFlow_Config_Nav		,	0	} ,
+	{ "PM2.Right_Config_Cfg1_Nav"    , _K_D_IO	,	PM2_GasFlow_Config_Nav		,	0	} ,
 	{ "PM2.Param_Next"					, _K_D_IO	,	PM2_GasFlow_Config_Next		,	0	} ,
 	{ "PM2.Param_Prev"					, _K_D_IO	,	PM2_GasFlow_Config_Prev		,	0	} ,
 
-    { "Right_Config_PM2_Cfg2_Nav"    , _K_D_IO	,	PM2_Moving_Config_Nav		,	0	} ,
+    { "PM2.Right_Config_Cfg2_Nav"    , _K_D_IO	,	PM2_Moving_Config_Nav		,	0	} ,
 	{ "PM2.Config2_Next"				, _K_D_IO	,	PM2_Moving_Config_Next		,	0	} ,
 	{ "PM2.Config2_Prev"				, _K_D_IO	,	PM2_Moving_Config_Prev		,	0	} ,
-	
-    { "Right_Config_PM3_Cfg1_Nav"    , _K_D_IO	,	PM3_GasFlow_Config_Nav		,	0	} ,
+
+    { "PM3.Right_Config_Cfg1_Nav"    , _K_D_IO	,	PM3_GasFlow_Config_Nav		,	0	} ,
 	{ "PM3.Param_Next"					, _K_D_IO	,	PM3_GasFlow_Config_Next		,	0	} ,
 	{ "PM3.Param_Prev"					, _K_D_IO	,	PM3_GasFlow_Config_Prev		,	0	} ,
 
-    { "Right_Config_PM3_Cfg2_Nav"    , _K_D_IO	,	PM3_Moving_Config_Nav		,	0	} ,
+    { "PM3.Right_Config_Cfg2_Nav"    , _K_D_IO	,	PM3_Moving_Config_Nav		,	0	} ,
 	{ "PM3.Config2_Next"				, _K_D_IO	,	PM3_Moving_Config_Next		,	0	} ,
 	{ "PM3.Config2_Prev"				, _K_D_IO	,	PM3_Moving_Config_Prev		,	0	} ,
 
@@ -153,7 +153,7 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "Right_Service1_TMC_FEM"			, _K_D_IO	,	Right_Service1_TMC_FEM		,	0	} ,	//CM/FM Module
 	{ "Right_Service2_PM_Main"			, _K_D_IO	,	Right_Service2_PM_Main		,	0	} ,	//PM Module
 	{ "Right_Service2_PM_M_Nav"			, _K_D_IO	,	Right_Service2_PM_Main_Nav		,	0	} ,	//PM Nav
-	
+
 
     { "Navi_TM"							, _K_D_IO	,	Navi_TM						,	0	} ,
     { "Navi_PM1"						, _K_D_IO	,	Navi_PM1					,	0	} ,
@@ -165,10 +165,10 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
     { "Navi_CM2"						, _K_D_IO	,	Navi_CM2					,	0	} ,
     { "Navi_CM3"						, _K_D_IO	,	Navi_CM3					,	0	} ,
     { "Navi_FEM"						, _K_D_IO	,	Navi_FEM					,	0	} ,
-	{ "Right_Direct_Navigation"			, _K_D_IO	,	Right_Direct_Navigation		,	0	} ,	
+	{ "Right_Direct_Navigation"			, _K_D_IO	,	Right_Direct_Navigation		,	0	} ,
 
     { "Service_Old"						, _K_D_IO	,	Service_Old					,	0	} ,	//0:Service1, 1:Service2
-	
+
 	""
 };
 
@@ -274,9 +274,9 @@ void PM_Heater_Control() {
 				if( READ_DIGITAL( PM1_Heater_Prev+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Service2_PM_Heater1 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Service2_PM_Heater1_Nav , i+1 , &CommStatus );	//kcr
-					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );			
+					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );
 				}
-				
+
 				if( READ_DIGITAL( PM1_Heater_Next+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Service2_PM_Heater3 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Service2_PM_Heater3_Nav , i+1 , &CommStatus );  //kcr
@@ -287,7 +287,7 @@ void PM_Heater_Control() {
 				if( READ_DIGITAL( PM1_Heater_Prev+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Service2_PM_Heater2 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Service2_PM_Heater2_Nav , i+1 , &CommStatus );	//kcr
-					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );			
+					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );
 				}
 
 				if( READ_DIGITAL( PM1_Heater_Next+i , &CommStatus ) == 1 ) {
@@ -300,7 +300,7 @@ void PM_Heater_Control() {
 				if( READ_DIGITAL( PM1_Heater_Prev+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Service2_PM_Heater3 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Service2_PM_Heater3_Nav , i+1 , &CommStatus );	//kcr
-					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );			
+					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );
 				}
 
 				if( READ_DIGITAL( PM1_Heater_Next+i , &CommStatus ) == 1 ) {
@@ -314,10 +314,10 @@ void PM_Heater_Control() {
 				if( READ_DIGITAL( PM1_Heater_Prev+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Service2_PM_Heater4 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Service2_PM_Heater4_Nav , i+1 , &CommStatus );	//kcr
-					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );			
+					WRITE_DIGITAL( PM1_Heater_Prev+i , 0 , &CommStatus );
 				}
 			}
-			
+
 		}
 	}
 	_endthread();
@@ -337,7 +337,7 @@ void Preventive_Maintenance_Control() {
 					WRITE_DIGITAL( Right_Utility_Prev2_Nav , i+1 , &CommStatus );  //kcr
 					WRITE_DIGITAL( PM1_PREVENTIVE_NEXT+i , 0 , &CommStatus );
 				}
-				
+
 				if( READ_DIGITAL( PM1_PREVENTIVE_PREV+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Utility_Prev3 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Utility_Prev3_Nav , i+1 , &CommStatus );  //kcr
@@ -351,21 +351,21 @@ void Preventive_Maintenance_Control() {
 					WRITE_DIGITAL( Right_Utility_Prev_Nav , i+1 , &CommStatus );	//kcr
 					WRITE_DIGITAL( PM1_PREVENTIVE_PREV+i , 0 , &CommStatus );
 				}
-				
+
 				if( READ_DIGITAL( PM1_PREVENTIVE_NEXT+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Utility_Prev3 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Utility_Prev3_Nav , i+1 , &CommStatus );  //kcr
 					WRITE_DIGITAL( PM1_PREVENTIVE_NEXT+i , 0 , &CommStatus );
 				}
 			}
-			
+
 			if ( READ_DIGITAL( Right_Utility_Prev3_Nav , &CommStatus ) == i+1 ) {
 				if( READ_DIGITAL( PM1_PREVENTIVE_PREV+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Utility_Prev2 , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Utility_Prev2_Nav , i+1 , &CommStatus );	//kcr
 					WRITE_DIGITAL( PM1_PREVENTIVE_PREV+i , 0 , &CommStatus );
 				}
-				
+
 				if( READ_DIGITAL( PM1_PREVENTIVE_NEXT+i , &CommStatus ) == 1 ) {
 					WRITE_DIGITAL( Right_Utility_Prev , 1 , &CommStatus );
 					WRITE_DIGITAL( Right_Utility_Prev_Nav , i+1 , &CommStatus );  //kcr
