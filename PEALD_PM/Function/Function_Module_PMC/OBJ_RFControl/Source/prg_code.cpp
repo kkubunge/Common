@@ -58,44 +58,59 @@ enum {
 //------------------------------------------------------------------------------------------
 
 IO_Name_String_Map IO_STR_Map_Table[] = {
-	{ "RFPlasmaDetectDI",	_K_D_IO	,	RFPlasmaDetectDI, 0},
-	{ "RFPwOnDO",			_K_D_IO	,	RFPwOnDO, 0},
-	{ "RFSetPointAO",		_K_A_IO	,	RFSetPointAO, 0},
-	{ "RFLoadPowAI",		_K_A_IO	,	RFLoadPowAI, 0},
-	{ "RFRefPowAI",			_K_A_IO	,	RFRefPowAI, 0},
+	{"RFPlasmaDetectDI", _K_D_IO, RFPlasmaDetectDI, 0},
+	{"RFPwOnDO", _K_D_IO, RFPwOnDO, 0},
+	{"RFSetPointAO", _K_A_IO, RFSetPointAO, 0},
+	{"RFLoadPowAI", _K_A_IO, RFLoadPowAI, 0},
+	{"RFRefPowAI", _K_A_IO, RFRefPowAI, 0},
 
-	{ "HF_LOAD_PRESET_A",	_K_A_IO	,	MNLoadPresetAO, 0},
-	{ "HF_TUNE_PRESET_A",	_K_A_IO	,	MNTunePresetAO, 0},
-	{ "HF_Ctrl_Mode_A",		_K_D_IO	,	MNModeSelDO, 0},
-	{ "HF_Preset_Mode_A",	_K_D_IO	,	MNPresetModeDO, 0},
+	{"HF_LOAD_PRESET_A", _K_A_IO, MNLoadPresetAO, 0},
+	{"HF_TUNE_PRESET_A", _K_A_IO, MNTunePresetAO, 0},
+	{"HF_Ctrl_Mode_A", _K_D_IO, MNModeSelDO, 0},
+	{"HF_Preset_Mode_A", _K_D_IO, MNPresetModeDO, 0},
 
-	{ "PRMA_EC_RFPlsmDtc",	_K_A_IO	,	PRMA_EC_RFPlsmDtc, 0},
-	{ "PRMA_EC_RFFwPw",		_K_A_IO	,	PRMA_EC_RFFwPw, 0},
-	{ "PRMA_TL_RFRefl",		_K_A_IO	,	PRMA_TL_RFRefl, 0},
-	{ "PRMA_TL_RFFwPw",		_K_A_IO	,	PRMA_TL_RFFwPw, 0},
-	{ "PRMA_Type1L",		_K_A_IO	,	PRMA_Type1L, 0},
-	{ "PRMA_Type2L",		_K_A_IO	,	PRMA_Type2L, 0},
-	{ "PRMA_Type3L",		_K_A_IO	,	PRMA_Type3L, 0},
-	{ "PRMA_Type4L",		_K_A_IO	,	PRMA_Type4L, 0},
-	{ "PRMA_Type5L",		_K_A_IO	,	PRMA_Type5L, 0},
-	{ "PRMA_Type6L",		_K_A_IO	,	PRMA_Type6L, 0},
-	{ "PRMA_Type7L",		_K_A_IO	,	PRMA_Type7L, 0},
-	{ "PRMA_Type8L",		_K_A_IO	,	PRMA_Type8L, 0},
-	{ "PRMA_Type1T",		_K_A_IO	,	PRMA_Type1T, 0},
-	{ "PRMA_Type2T",		_K_A_IO	,	PRMA_Type2T, 0},
-	{ "PRMA_Type3T",		_K_A_IO	,	PRMA_Type3T, 0},
-	{ "PRMA_Type4T",		_K_A_IO	,	PRMA_Type4T, 0},
-	{ "PRMA_Type5T",		_K_A_IO	,	PRMA_Type5T, 0},
-	{ "PRMA_Type6T",		_K_A_IO	,	PRMA_Type6T, 0},
-	{ "PRMA_Type7T",		_K_A_IO	,	PRMA_Type7T, 0},
-	{ "PRMA_Type8T",		_K_A_IO	,	PRMA_Type8T, 0},
+	{"PRMA_EC_RFPlsmDtc", _K_A_IO, PRMA_EC_RFPlsmDtc, 0},
+	{"PRMA_EC_RFFwPw", _K_A_IO, PRMA_EC_RFFwPw, 0},
+	{"PRMA_TL_RFRefl", _K_A_IO, PRMA_TL_RFRefl, 0},
+	{"PRMA_TL_RFFwPw", _K_A_IO, PRMA_TL_RFFwPw, 0},
+	{"PRMA_Type1L", _K_A_IO, PRMA_Type1L, 0},
+	{"PRMA_Type2L", _K_A_IO, PRMA_Type2L, 0},
+	{"PRMA_Type3L", _K_A_IO, PRMA_Type3L, 0},
+	{"PRMA_Type4L", _K_A_IO, PRMA_Type4L, 0},
+	{"PRMA_Type5L", _K_A_IO, PRMA_Type5L, 0},
+	{"PRMA_Type6L", _K_A_IO, PRMA_Type6L, 0},
+	{"PRMA_Type7L", _K_A_IO, PRMA_Type7L, 0},
+	{"PRMA_Type8L", _K_A_IO, PRMA_Type8L, 0},
+	{"PRMA_Type9L", _K_A_IO, PRMA_Type9L, 0},
+	{"PRMA_Type10L", _K_A_IO, PRMA_Type10L, 0},
+	{"PRMA_Type11L", _K_A_IO, PRMA_Type11L, 0},
+	{"PRMA_Type12L", _K_A_IO, PRMA_Type12L, 0},
+	{"PRMA_Type13L", _K_A_IO, PRMA_Type13L, 0},
+	{"PRMA_Type14L", _K_A_IO, PRMA_Type14L, 0},
+	{"PRMA_Type15L", _K_A_IO, PRMA_Type15L, 0},
+	{"PRMA_Type16L", _K_A_IO, PRMA_Type16L, 0},
+	{"PRMA_Type1T", _K_A_IO, PRMA_Type1T, 0},
+	{"PRMA_Type2T", _K_A_IO, PRMA_Type2T, 0},
+	{"PRMA_Type3T", _K_A_IO, PRMA_Type3T, 0},
+	{"PRMA_Type4T", _K_A_IO, PRMA_Type4T, 0},
+	{"PRMA_Type5T", _K_A_IO, PRMA_Type5T, 0},
+	{"PRMA_Type6T", _K_A_IO, PRMA_Type6T, 0},
+	{"PRMA_Type7T", _K_A_IO, PRMA_Type7T, 0},
+	{"PRMA_Type8T", _K_A_IO, PRMA_Type8T, 0},
+	{"PRMA_Type9T", _K_A_IO, PRMA_Type9T, 0},
+	{"PRMA_Type10T", _K_A_IO, PRMA_Type10T, 0},
+	{"PRMA_Type11T", _K_A_IO, PRMA_Type11T, 0},
+	{"PRMA_Type12T", _K_A_IO, PRMA_Type12T, 0},
+	{"PRMA_Type13T", _K_A_IO, PRMA_Type13T, 0},
+	{"PRMA_Type14T", _K_A_IO, PRMA_Type14T, 0},
+	{"PRMA_Type15T", _K_A_IO, PRMA_Type15T, 0},
+	{"PRMA_Type16T", _K_A_IO, PRMA_Type16T, 0},
 	//...2016.10.26
-	{ "PRO_RcpTypeDM",		 _K_D_IO,	PRO_RcpTypeDM,		 0},
-	{ "PRMD_AL_PresetOffOp", _K_D_IO,	PRMD_AL_PresetOffOp, 0},
-	{ "PRMD_RC_SkipRcpType1",_K_D_IO,	PRMD_RC_SkipRcpType1,0},
-	{ "PRMD_RC_SkipRcpType2",_K_D_IO,	PRMD_RC_SkipRcpType2,0},
-	""
-};
+	{"PRO_RcpTypeDM", _K_D_IO, PRO_RcpTypeDM, 0},
+	{"PRMD_AL_PresetOffOp", _K_D_IO, PRMD_AL_PresetOffOp, 0},
+	{"PRMD_RC_SkipRcpType1", _K_D_IO, PRMD_RC_SkipRcpType1, 0},
+	{"PRMD_RC_SkipRcpType2", _K_D_IO, PRMD_RC_SkipRcpType2, 0},
+	""};
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -191,12 +206,12 @@ BOOL IsPrsetOffOk()
 	int nPramRcpeType1;
 	int nPramRcpeType2;
 
-	nCtrlOp			= READ_DIGITAL(PRMD_AL_PresetOffOp,&nIOStatus); 
+	nCtrlOp			= READ_DIGITAL(PRMD_AL_PresetOffOp,&nIOStatus);
 	nRunRcpType		= READ_DIGITAL(PRO_RcpTypeDM,&nIOStatus);
 	nPramRcpeType1	= READ_DIGITAL(PRMD_RC_SkipRcpType1,&nIOStatus);
 	nPramRcpeType2	= READ_DIGITAL(PRMD_RC_SkipRcpType2,&nIOStatus);
-	
-	do 
+
+	do
 	{
 		if(nCtrlOp == eOFF_0) break;
 
@@ -240,7 +255,7 @@ Module_Status PresetPos(char *pParam)
 		{
 			WRITE_DIGITAL(MNModeSelDO, 2, &nIOStatus);		// 2:Manual 1:Auto
 		}
-		
+
 		if(nSel == 1)
 		{
 			//... 2016.10.26
@@ -249,13 +264,13 @@ Module_Status PresetPos(char *pParam)
 		{
 			WRITE_DIGITAL(MNPresetModeDO, 1, &nIOStatus);	// 0:None	1:Preset
 		}
-		
+
 		if(nPresetType > 0)
 		{
-			if(strcmp(szItem, "LT") == 0) 
+			if(strcmp(szItem, "LT") == 0)
 			{
-				WRITE_ANALOG(MNLoadPresetAO, dbData1, &nIOStatus); 
-				WRITE_ANALOG(MNTunePresetAO, dbData2, &nIOStatus); 
+				WRITE_ANALOG(MNLoadPresetAO, dbData1, &nIOStatus);
+				WRITE_ANALOG(MNTunePresetAO, dbData2, &nIOStatus);
 			}
 		}
 
@@ -307,7 +322,7 @@ Module_Status StartMon(char *pParam)
 
 		nPRMA_EC_RFFwPw = (int) READ_ANALOG(PRMA_EC_RFFwPw, &nIOStatus);
 		nPRMA_EC_RFPlsmDtc = (int) READ_ANALOG(PRMA_EC_RFPlsmDtc, &nIOStatus);
- 
+
 		// Start Monitoring
 		while(1)
 		{
@@ -415,7 +430,7 @@ Module_Status Program_Main() {
 		}
 		else if(STRCMP_L(szCmd, "SET_PW_VALUE"))	msRet = SetPwValue(szSubParam);
 		else if(STRCMP_L(szCmd, "PRESET_POS"))		msRet = PresetPos(szSubParam);
-		else 
+		else
 		{
 			printf("---> Invalid Command in %s !\n", APP_NAME);
 			msRet = SYS_ERROR;

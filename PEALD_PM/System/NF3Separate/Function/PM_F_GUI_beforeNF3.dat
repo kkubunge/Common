@@ -24,7 +24,7 @@ SCREEN_PLOTTING_PMC	99	Engine/Exec/GUI_Plotter			RUN	"FUNCTION/Function_GUI/Gui_
 SCREEN_PLOTTING_PMC1	99	Parameter/GUI_Plotter/GUI_Plotter	RUN	"FUNCTION/Function_GUI/Gui_Plotting/Background/Background"	"PARAMETER/PLOTTING/Service_Plotting_PMC1.IO"
 SCREEN_PLOTTING_PMC2	99	Parameter/GUI_Plotter/GUI_Plotter	RUN	"FUNCTION/Function_GUI/Gui_Plotting/Background/Background"	"PARAMETER/PLOTTING/Service_Plotting_PMC2.IO"
 
-SCREEN_PMC		99	Engine/Exec/GUI_Standard2			RUN	""	"GUI/PMC/Menu_Service_beforeNF3.cfg"
-SCREEN_PMC_2		99	Engine/Exec/GUI_Standard2			RUN	""	"GUI/PMC/PM_Menu_Service2.cfg"
-SCREEN_PARM_SAVE	99	Engine/Exec/GUI_Standard2			RUN	""	"GUI/PMC/Menu_PM_Parm_Save.cfg"
-SCREEN_HEATER_SET	99	Engine/Exec/GUI_Standard2			RUN	""	"GUI/PMC/Menu_Heater_Set.cfg"
+SCREEN_PMC		99	Engine/Exec/GUI_Standard2		RUN	""	"GUI/PMC/Menu_Service_beforeNF3.cfg"
+SCREEN_PMC_2		99	Engine/Exec/GUI_Standard2		RUN	""	"GUI/PMC/PM_Menu_Service2.cfg"
+SCREEN_PARM_SAVE	99	Engine/Exec/GUI_Standard2		RUN	""	"GUI/PMC/Menu_PM_Parm_Save.cfg"
+SCREEN_PMC_3		99	Engine/Exec/GUI_Standard2		RUN	""	"GUI/PMC/Menu_Heater_Set.cfg"

@@ -179,22 +179,6 @@ $DRV	PM3
 		PRMA_EC_RPGFwPw			-	$DRV	1	$DRV
 		PRMA_EC_RPGPlsmDtc		-	$DRV	1	$DRV
 
-		PRMA_Type1L			-	$DRV	1	$DRV
-		PRMA_Type1T			-	$DRV	1	$DRV
-		PRMA_Type2L			-	$DRV	1	$DRV
-		PRMA_Type2T			-	$DRV	1	$DRV
-		PRMA_Type3L			-	$DRV	1	$DRV
-		PRMA_Type3T			-	$DRV	1	$DRV
-		PRMA_Type4L			-	$DRV	1	$DRV
-		PRMA_Type4T			-	$DRV	1	$DRV
-		PRMA_Type5L			-	$DRV	1	$DRV
-		PRMA_Type5T			-	$DRV	1	$DRV
-		PRMA_Type6L			-	$DRV	1	$DRV
-		PRMA_Type6T			-	$DRV	1	$DRV
-		PRMA_Type7L			-	$DRV	1	$DRV
-		PRMA_Type7T			-	$DRV	1	$DRV
-		PRMA_Type8L			-	$DRV	1	$DRV
-		PRMA_Type8T			-	$DRV	1	$DRV
 #---------------------------------------------------------------------------------------------
 # PM Parameter 4
 	$$$ Analog
@@ -1203,5 +1187,41 @@ $$$ Analog
 	PRMA_HT30_PowChkAbt	-	$DRV	1	$DRV
 	PRMA_HT31_PowChkAbt	-	$DRV	1	$DRV
 	PRMA_HT32_PowChkAbt	-	$DRV	1	$DRV
+
+#---------------------------------------------------------------------------------------------
+# PM Parameter 9
+
+	PRMA_Type1L		-	$DRV	1	$DRV
+	PRMA_Type1T		-	$DRV	1	$DRV
+	PRMA_Type2L		-	$DRV	1	$DRV
+	PRMA_Type2T		-	$DRV	1	$DRV
+	PRMA_Type3L		-	$DRV	1	$DRV
+	PRMA_Type3T		-	$DRV	1	$DRV
+	PRMA_Type4L		-	$DRV	1	$DRV
+	PRMA_Type4T		-	$DRV	1	$DRV
+	PRMA_Type5L		-	$DRV	1	$DRV
+	PRMA_Type5T		-	$DRV	1	$DRV
+	PRMA_Type6L		-	$DRV	1	$DRV
+	PRMA_Type6T		-	$DRV	1	$DRV
+	PRMA_Type7L		-	$DRV	1	$DRV
+	PRMA_Type7T		-	$DRV	1	$DRV
+	PRMA_Type8L		-	$DRV	1	$DRV
+	PRMA_Type8T		-	$DRV	1	$DRV
+	PRMA_Type9L		-	$DRV	1	$DRV
+	PRMA_Type9T		-	$DRV	1	$DRV
+	PRMA_Type10L		-	$DRV	1	$DRV
+	PRMA_Type10T		-	$DRV	1	$DRV
+	PRMA_Type11L		-	$DRV	1	$DRV
+	PRMA_Type11T		-	$DRV	1	$DRV
+	PRMA_Type12L		-	$DRV	1	$DRV
+	PRMA_Type12T		-	$DRV	1	$DRV
+	PRMA_Type13L		-	$DRV	1	$DRV
+	PRMA_Type13T		-	$DRV	1	$DRV
+	PRMA_Type14L		-	$DRV	1	$DRV
+	PRMA_Type14T		-	$DRV	1	$DRV
+	PRMA_Type15L		-	$DRV	1	$DRV
+	PRMA_Type15T		-	$DRV	1	$DRV
+	PRMA_Type16L		-	$DRV	1	$DRV
+	PRMA_Type16T		-	$DRV	1	$DRV
 
 $$$ END

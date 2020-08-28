@@ -180,13 +180,13 @@ ITEM_STRUCT g_RFLdPrst =
 {
 	"RF Position Preset Type",
 	0, 100,
-	"NotSet|Type1|Type2|Type3|Type4|Type5|Type6|Type7|Type8"
+	"NotSet|Type1|Type2|Type3|Type4|Type5|Type6|Type7|Type8|Type9|Type10|Type11|Type12|Type13|Type14|Type15|Type16"
 };
 ITEM_STRUCT g_RF2LdPrst =
 {
 	"RF2 Position Preset Type",
 	0, 100,
-	"NotSet|Type1|Type2|Type3|Type4|Type5|Type6|Type7|Type8"
+	"NotSet|Type1|Type2|Type3|Type4|Type5|Type6|Type7|Type8|Type9|Type10|Type11|Type12|Type13|Type14|Type15|Type16"
 };
 char *g_RFLdPrstOptEnum[]=
 {
@@ -198,7 +198,15 @@ char *g_RFLdPrstOptEnum[]=
 	"Type5",
 	"Type6",
 	"Type7",
-	"Type8"
+	"Type8",
+	"Type9",
+	"Type10",
+	"Type11",
+	"Type12",
+	"Type13",
+	"Type14",
+	"Type15",
+	"Type16"
 };
 ITEM_STRUCT g_PrstMode =
 {
@@ -598,10 +606,10 @@ BOOL Item_Set_Option( HWND hdlg, int dControl, int *pnValue, ITEM_STRUCT *pItemS
 			{
 				sprintf(buffer, "\t[Heater Item] %s - From [%s] to [%s]\n", szTitle, g_SetNoSetOptEnum[*pnValue], g_SetNoSetOptEnum[dRes]);
 			}
-			
+
 			SampleLogSave(buffer, "Item");
 		}
-		
+
 		RECIPE_CONTROL_Set_FILE_CHANGE( TRUE );
 		Save_Button_Enable_On_Main_Dlg( hdlg );
 		*pnValue = dRes;
@@ -631,7 +639,7 @@ BOOL Item_Set_Point( HWND hdlg, int dControl, double *pdbValue, ITEM_STRUCT *pIt
 			sprintf(buffer, "\t[Sub Item] %s - From [%f] to [%f]\n", szTitle, *pdbValue, dbRes);
 			SampleLogSave(buffer, "Item");
 		}
-		
+
 		RECIPE_CONTROL_Set_FILE_CHANGE( TRUE );
 		Save_Button_Enable_On_Main_Dlg( hdlg );
 		*pdbValue = dbRes;
@@ -660,8 +668,8 @@ BOOL Item_HeaterSet_Point( HWND hdlg, int dControl, double *pdbValue, ITEM_STRUC
 		{
 			sprintf(buffer, "\t[Heater Item] %s - From [%f] to [%f]\n", szTitle, *pdbValue, dbRes);
 			SampleLogSave(buffer, "Item");
-		}	
-		
+		}
+
 		RECIPE_CONTROL_Set_FILE_CHANGE( TRUE );
 		Save_Button_Enable_On_Main_Dlg( hdlg );
 		*pdbValue = dbRes;
@@ -692,8 +700,8 @@ BOOL Item_Set_Point2( HWND hdlg, int dControl, double *pdbValue, ITEM_STRUCT *pI
 		{
 			sprintf(buffer, "\t[Sub Item] %s - From [%f] to [%f]\n", szTitle, *pdbValue, dbRes);
 			SampleLogSave(buffer, "Item");
-		}	
-		
+		}
+
 		RECIPE_CONTROL_Set_FILE_CHANGE( TRUE );
 		Save_Button_Enable_On_Main_Dlg( hdlg );
 		*pdbValue = dbRes;
