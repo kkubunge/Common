@@ -34,8 +34,6 @@ $$$ String
 $$$ Analog
 	PRMA_FFU_RPM1	rpm	 -         -  -  -  1       0   1500    1  -   -  -  -  1       0   1500  --- --- --- ---
 	PRMA_FFU_RPM2	rpm	 -         -  -  -  1       0   1500    1  -   -  -  -  1       0   1500  --- --- --- ---
-$$$ Digital
-	PRMD_FFU_MAKER		FFU_MAKER   SINSUNG
 
 $$$ Analog
 PRMA_FFU_DIFFPRS_LIMIT	Pa	 -         -  -  -  1       0   10    1  -   -  -  -  1       0   10  --- --- --- ---      0
