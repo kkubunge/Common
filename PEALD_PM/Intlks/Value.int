@@ -1026,47 +1026,47 @@ aif (PRO_ProcStsDM == Running && PRMA_TO_V98Close < V98VlvCloseTmAI && PRMD_HO_A
   $Alarm = 8643;
 }
 
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V100Open < V100VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8644;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V100Close < V100VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8645;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V101Open < V101VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8646;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V101Close < V101VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8647;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V102Open < V102VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8648;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V102Close < V102VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8649;
-#NotUse#}
+aif (PRO_ProcStsDM == Running && PRMA_TO_V100Open < V100VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8644;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V100Close < V100VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8645;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V101Open < V101VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8646;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V101Close < V101VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8647;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V102Open < V102VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8648;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V102Close < V102VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8649;
+}
 
 aif (PRO_ProcStsDM == Running && PRMA_TO_V105Open < V105VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
 {
@@ -1096,47 +1096,47 @@ aif (PRO_ProcStsDM == Running && PRMA_TO_V106Close < V106VlvCloseTmAI && PRMD_HO
   $Alarm = 8653;
 }
 
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V108Open < V108VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8654;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V108Close < V108VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8655;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V109Open < V109VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8656;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V109Close < V109VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8657;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V110Open < V110VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_OP_TMO;
-#NotUse#  $Alarm = 8658;
-#NotUse#}
-#NotUse#
-#NotUse#aif (PRO_ProcStsDM == Running && PRMA_TO_V110Close < V110VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore)
-#NotUse#{
-#NotUse#  $Time = ValueIntlkTime;
-#NotUse#  $Action = ALD_VLV_CL_TMO;
-#NotUse#  $Alarm = 8659;
-#NotUse#}
+aif (PRO_ProcStsDM == Running && PRMA_TO_V108Open < V108VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8654;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V108Close < V108VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8655;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V109Open < V109VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8656;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V109Close < V109VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8657;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V110Open < V110VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_OP_TMO;
+  $Alarm = 8658;
+}
+
+aif (PRO_ProcStsDM == Running && PRMA_TO_V110Close < V110VlvCloseTmAI && PRMD_HO_ALDCloseSts != Ignore && ALD_VLV_QTY_DM == 13EA)
+{
+  $Time = ValueIntlkTime;
+  $Action = ALD_VLV_CL_TMO;
+  $Alarm = 8659;
+}
 
 # 2015.04.28 Add ALD Valve V11, V12, V17
 aif (PRO_ProcStsDM == Running && PRMA_TO_V11Open < V11VlvOpenTmAI && PRMD_HO_ALDOpenSts != Ignore)

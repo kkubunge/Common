@@ -51,6 +51,8 @@ enum { LLVAC_ATM, LLVAC_Vac, LLVAC_GoATM, LLVAC_GoVac, LLVAC_Abort };
 
 enum { RCP_STOP, RCP_RUNNING};
 
+enum { QTY13, QTY07};
+
 #define ALARM_ALDVALVE_USECOUNTOVER 1060
 
 #define CONFIG_FILE ".\\Function\\Function_Module_PMC\\OBJ_ALDValveCnt\\ALDMonConfig.ini"
@@ -137,16 +139,18 @@ BOOL CALDVlvMon::Initialize()
 		m_nCloseCnt_old[i]	= 0;
 		m_nCloseDif[i]		= 0;
 
-		//////////////////////////////////////////////////////////////////////////
-		// 2020.05.08 ALD Valve Change
-		// V100, V101, V102, V108, V109, V110 Not Use
-		/*   V100      V101      V102      V108      V109      V110  */
-		if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9)
-			continue;
+		if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+		{
+			//////////////////////////////////////////////////////////////////////////
+			// 2020.06.08 ALD Valve Change
+			// V100, V101, V102, V108, V109, V110 Not Use
+			/*   V100      V101      V102      V108      V109      V110  */
+			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9) continue;
+		}
 
 		//... Read Last Count
-		m_nALDValveOpenCnt[i] = (int)READ_ANALOG(ALD97OpenCnAM + i, &nIOStatus);   //2014.11.28
-		m_nALDValveCloseCnt[i] = (int)READ_ANALOG(ALD97CloseCnAM + i, &nIOStatus); //2014.11.28
+		m_nALDValveOpenCnt[i]	= (int) READ_ANALOG(ALD97OpenCnAM  + i, &nIOStatus);    //2014.11.28
+		m_nALDValveCloseCnt[i]	= (int) READ_ANALOG(ALD97CloseCnAM + i, &nIOStatus);   //2014.11.28
 
 		nVlvNum = Change_IndexToVlvNum(i);
 		sprintf(szBuf, "ALD Valve[%d]\tOpen = %d\tClose = %d", nVlvNum, m_nALDValveOpenCnt[i], m_nALDValveCloseCnt[i]);
@@ -335,12 +339,15 @@ void CALDVlvMon::SUMVlvCount()
 
 	for(i = 0; i < MAX_VALVE; i++)
 	{
-		//////////////////////////////////////////////////////////////////////////
-		// 2020.05.08 ALD Valve Change
-		// V100, V101, V102, V108, V109, V110 Not Use
-		/*   V100      V101      V102      V108      V109      V110  */
-		if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9)
-			continue;
+		if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+		{
+			//////////////////////////////////////////////////////////////////////////
+			// 2020.06.08 ALD Valve Change
+			// V100, V101, V102, V108, V109, V110 Not Use
+			/*   V100      V101      V102      V108      V109      V110  */
+			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9)
+				continue;
+		}
 
 		m_nOpenCnt[i]	= (int) READ_ANALOG(ALD97OpenCnAI  + i, &nIOStatus);
 		m_nCloseCnt[i]	= (int) READ_ANALOG(ALD97CloseCnAI + i, &nIOStatus);
