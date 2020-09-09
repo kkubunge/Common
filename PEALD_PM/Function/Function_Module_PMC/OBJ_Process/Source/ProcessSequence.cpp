@@ -94,6 +94,9 @@ enum { OFFON_OFF  , OFFON_ON};
 enum {eNotUse, eNorLeakchk, eGasLeakchk, eALDLeakchk};
 // 2019.04.16
 enum { Unuse, Local, DisConn, Standby, Maint, Uninit, EnablePM, CTCinUSE, CTCDis, CTCDis2, CTCEnaPM, CTCDisHW, CTCDIsHW2 } ;
+
+// ALD Valve Option
+enum { QTY13, QTY07};
 //... 2016.04.03
 #define MAX_LK_MACRO	2
 #define MAX_MACRO_IO	2
@@ -5967,7 +5970,18 @@ BOOL CProcessSequence::ReadRcpMapData()
 	FILE *fp;
 	char szRead[256];
 	char szItem[256];
+	char szVlvRcp[20];
 	int nTitle = 0;
+	int nIOStatus;
+
+	if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+	{
+		strcpy(szVlvRcp, "ValveRecipe 7EA");
+	}
+	else
+	{
+		strcpy(szVlvRcp, "ValveRecipe");
+	}
 
 	do {
 		InitRcpMapData();
@@ -5983,7 +5997,7 @@ BOOL CProcessSequence::ReadRcpMapData()
 
 				if(strcmp("MFC", szItem) == 0)				nTitle = 1;
 				else if(strcmp("RF", szItem) == 0)			nTitle = 2;
-				else if(strcmp("ValveRecipe", szItem) == 0) nTitle = 3;
+				else if (strcmp(szVlvRcp, szItem) == 0)		nTitle = 3;
 				else if(strcmp("HeatExchanger", szItem) == 0) nTitle = 4;
 				else nTitle = 0;
 

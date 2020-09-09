@@ -8,7 +8,8 @@
 // IO List
 //
 
-typedef enum {
+typedef enum
+{
 	IO_Driver_Loding,
 	SW_GbIntlckDM,
 	SW_ModuleFailDM,
@@ -60,7 +61,7 @@ typedef enum {
 
 	DN_SMCmd_DO,
 	DN_SetSMData_DO,
-	DN_ClearSMData_DO,  // 2014.08.25
+	DN_ClearSMData_DO, // 2014.08.25
 
 	ACVPrcPosDI,
 	ACVClnPosDI,
@@ -87,11 +88,11 @@ typedef enum {
 	VRCP_ResumeDO,
 	VRCP_GoNextDO,
 
-	VRCP_RunningDI		,
-	VRCP_CycCntAI		,
-	VRCP_TgCycAI		,
-	VRCP_StpCntAI		,
-	VRCP_TgStpAI		,
+	VRCP_RunningDI,
+	VRCP_CycCntAI,
+	VRCP_TgCycAI,
+	VRCP_StpCntAI,
+	VRCP_TgStpAI,
 
 	PLC_RstIntLckDO,
 	PLC_GbIntlckDI,
@@ -109,15 +110,14 @@ typedef enum {
 	PRMA_TL_SHtrTmp,
 	PRMA_TO_SHtrStb,
 
-
-	PROCESS_LOG_EVENT,		// 2005.02.18 by cskim, Multi DCOP Log
-	PROCESS_LOG_STS,		// 2005.07.14, Data Log Timming
+	PROCESS_LOG_EVENT, // 2005.02.18 by cskim, Multi DCOP Log
+	PROCESS_LOG_STS,   // 2005.07.14, Data Log Timming
 
 	PROCBGRUN_CONTROL,
 	ABORT_GAS,
-	MFC_CONTROL	,
+	MFC_CONTROL,
 	PRESS_CONTROL,
-	VACUUM_CONTROL	,
+	VACUUM_CONTROL,
 
 	CHUCK_CONTROL,
 	RF_CONTROL,
@@ -131,7 +131,7 @@ typedef enum {
 	PRS_MONITOR,
 	REFILL_CONTROL,
 	VALVE_CONTROL,
-	HTE_UseDM,    //2014.04.01
+	HTE_UseDM, //2014.04.01
 	HT_ExchgControl,
 	//2014.04.24
 	Wafer_Source,
@@ -140,36 +140,38 @@ typedef enum {
 	Wafer_Status2,
 	DummyRecipeUse,
 
-	RF_COUNT_MONITOR,		//... 2014.09.29
-	PMC_EVENT_LOG_CLI,		//... 2014.10.13 MARS
-	LOTPRE_SKIP_TIMER,		//... 2015.01.02
-	EasyCluster_Connect,	//... 2015.01.02
+	RF_COUNT_MONITOR,	 //... 2014.09.29
+	PMC_EVENT_LOG_CLI,	 //... 2014.10.13 MARS
+	LOTPRE_SKIP_TIMER,	 //... 2015.01.02
+	EasyCluster_Connect, //... 2015.01.02
 
-	ALECHK_GASLnDM,		// 2016.01.19
+	ALECHK_GASLnDM, // 2016.01.19
 
 	ALDIOMon, //2015.01.06
 
 	//... 2015.02.26 RPG Alarm Auto Retry
-	RPGAlmPrcRetryDM,		//... Retry Flag
-	PRMD_RPGPrcRetryOpt,	//... Retry Option by User Config
+	RPGAlmPrcRetryDM,	 //... Retry Flag
+	PRMD_RPGPrcRetryOpt, //... Retry Option by User Config
 
-	RPGAlmPrcRetryAM,		//... Current Retry Count
-	PRMA_RPGPrcRetryCnt,	//... Retry Count Limit by User Config
+	RPGAlmPrcRetryAM,	 //... Current Retry Count
+	PRMA_RPGPrcRetryCnt, //... Retry Count Limit by User Config
 
-	PLC_RCPRunTMAI,			//... 2015.03.07 Add RPG ON Step Skip
-	RPGPlasmaDetectDI,		//... 2015.03.07 Add RPG ON Step Skip
+	PLC_RCPRunTMAI,	   //... 2015.03.07 Add RPG ON Step Skip
+	RPGPlasmaDetectDI, //... 2015.03.07 Add RPG ON Step Skip
 
-	ALECHK_NormDM,			//... 2015.09.17
-	PRMD_SwpPug_RcpEnd,		//... 2015.09.28
-	ALECHK_RCPDM,			//... 2016.01.19
-	PRO_PurgeRcpStsDM,		//... 2016.01.19
-	SysLeakChkDM,			//... 2016.01.19
+	ALECHK_NormDM,		//... 2015.09.17
+	PRMD_SwpPug_RcpEnd, //... 2015.09.28
+	ALECHK_RCPDM,		//... 2016.01.19
+	PRO_PurgeRcpStsDM,	//... 2016.01.19
+	SysLeakChkDM,		//... 2016.01.19
 	LKMacroType1DM,
 	LKMacroType2DM,
 	LKMacroType3DM,
 	PRMD_ZCtrl_RCP_SKIP,
 	PRMD_ZCtrl_DLY_TIME,
 	PRMD_ZCtrl_RCP_TYPE,
+
+	ALD_VLV_QTY_DM,
 } IOPointIndex;
 
 //------------------------------------------------------------------------------------------
