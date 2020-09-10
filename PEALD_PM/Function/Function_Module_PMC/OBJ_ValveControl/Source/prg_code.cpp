@@ -43,16 +43,17 @@ extern int g_nIOCount;
 //------------------------------------------------------------------------------------------
 // Enumeration  Definition
 
-enum {VALVE_CLOSE, VALVE_OPEN}; 
+enum {VALVE_CLOSE, VALVE_OPEN};
+enum {QTY13, QTY07};
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 
 IO_Name_String_Map IO_STR_Map_Table[] = {
-	{ "SW_GbIntlckDM",			_K_D_IO	,	SW_GbIntlckDM,		0	} ,
-	""
-};
+	{"SW_GbIntlckDM", _K_D_IO, SW_GbIntlckDM, 0},
+	{"ALD_VLV_QTY_DM", _K_D_IO, ALD_VLV_QTY_DM, 0},
+	""};
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -86,10 +87,22 @@ void ParseValveRecipe(char *szData)
 BOOL ReadPmcConfig()
 {
 	BOOL bRet = FALSE;
+	BOOL bIOStatus;
 	FILE *fp;
 	char szRead[256];
 	char szItem[256];
+	char szVlvRcp[256];
 	int nTitle = 0;
+
+	if (READ_DIGITAL(ALD_VLV_QTY_DM, &bIOStatus) == QTY07)
+	{
+		strcpy(szVlvRcp, "ValveRecipe 7EA");
+	}
+	else
+	{
+		strcpy(szVlvRcp, "ValveRecipe");
+	}
+
 
 	do {
 		fp = fopen(PMC_CONFIG_FILE, "rt");
@@ -102,7 +115,7 @@ BOOL ReadPmcConfig()
 				tp.GetChar();
 				tp.GetString(szItem, ']');
 
-				if(strcmp("ValveRecipe", szItem) == 0)			nTitle = 1;
+				if(strcmp(szVlvRcp, szItem) == 0)	nTitle = 1;
 				else nTitle = 0;
 
 				if(nTitle > 0) do
@@ -178,7 +191,7 @@ Module_Status CloseValve(char *szParam)
 	int nValve;
 	int nIO;
 	char szValve[40];
-	
+
 	nValve = atoi(szParam);
 	if(nValve == 0) return SYS_ABORTED;
 	sprintf(szValve, "V%dValveDO", nValve);
@@ -229,7 +242,7 @@ Module_Status Program_Main() {
 		 if(STRCMP_L(szCmd, "OPEN_VALVE"))		msRet = OpenValve(szSubParam);
 	else if(STRCMP_L(szCmd, "CLOSE_VALVE"))		msRet = CloseValve(szSubParam);
 	else if(STRCMP_L(szCmd, "SET_VALVE_ARRAY"))	msRet = SetValveArray(szSubParam);
-	else 
+	else
 	{
 		printf("---> Invalid Command in %s !\n", APP_NAME);
 		msRet = SYS_ABORTED;

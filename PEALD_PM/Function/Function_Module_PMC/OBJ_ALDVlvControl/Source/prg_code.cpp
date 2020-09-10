@@ -29,164 +29,164 @@ extern "C"
 //------------------------------------------------------------------------------------------
 IO_Name_String_Map IO_STR_Map_Table[] = {
 
-	{ "PRO_RunStsDM"		,	_K_D_IO	,	PRO_RunStsDM,			0 } ,
-	{ "SW_GbIntlckDM"		,	_K_D_IO	,	SW_GbIntlckDM,			0 } ,
-	{ "PLC_GbIntlckDI"		,	_K_D_IO	,	PLC_GbIntlckDI,			0 } ,
+	{"PRO_RunStsDM", _K_D_IO, PRO_RunStsDM, 0},
+	{"SW_GbIntlckDM", _K_D_IO, SW_GbIntlckDM, 0},
+	{"PLC_GbIntlckDI", _K_D_IO, PLC_GbIntlckDI, 0},
 
 	//... 2015.02.28 ALD Valve Verification
-	{ "M_AVlv_ParmSaveDM"	,	_K_D_IO	,	M_AVlv_ParmSaveDM,		0 } ,
-	{ "M_AVlv_ResultDM"		,	_K_D_IO	,	M_AVlv_ResultDM,		0 } ,
+	{"M_AVlv_ParmSaveDM", _K_D_IO, M_AVlv_ParmSaveDM, 0},
+	{"M_AVlv_ResultDM", _K_D_IO, M_AVlv_ResultDM, 0},
 
-	{ "M_AVlv_CycTgtCntAM"	,	_K_A_IO	,	M_AVlv_CycTgtCntAM,		0 } ,
-	{ "M_AVlv_CycCurCntAM"	,	_K_A_IO	,	M_AVlv_CycCurCntAM,		0 } ,
+	{"M_AVlv_CycTgtCntAM", _K_A_IO, M_AVlv_CycTgtCntAM, 0},
+	{"M_AVlv_CycCurCntAM", _K_A_IO, M_AVlv_CycCurCntAM, 0},
 
 	//////////////////////////////////////////////////////////////////////////
 	//... 2015.04.28 Fixed ALD Valve 13 EA (Top 10 EA, Canister 3 EA)
-	{ "M_AVlv01_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv01_OP_MinTmAM,	0 } ,
-	{ "M_AVlv02_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv02_OP_MinTmAM,	0 } ,
-	{ "M_AVlv03_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv03_OP_MinTmAM,	0 } ,
-	{ "M_AVlv04_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv04_OP_MinTmAM,	0 } ,
-	{ "M_AVlv05_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv05_OP_MinTmAM,	0 } ,
-	{ "M_AVlv06_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv06_OP_MinTmAM,	0 } ,
-	{ "M_AVlv07_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv07_OP_MinTmAM,	0 } ,
-	{ "M_AVlv08_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv08_OP_MinTmAM,	0 } ,
-	{ "M_AVlv09_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv09_OP_MinTmAM,	0 } ,
-	{ "M_AVlv10_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv10_OP_MinTmAM,	0 } ,
-	{ "M_AVlv11_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv11_OP_MinTmAM,	0 } ,
-	{ "M_AVlv12_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv12_OP_MinTmAM,	0 } ,
-	{ "M_AVlv13_OP_MinTmAM"	,	_K_A_IO	,	M_AVlv13_OP_MinTmAM,	0 } ,
+	{"M_AVlv01_OP_MinTmAM", _K_A_IO, M_AVlv01_OP_MinTmAM, 0},
+	{"M_AVlv02_OP_MinTmAM", _K_A_IO, M_AVlv02_OP_MinTmAM, 0},
+	{"M_AVlv03_OP_MinTmAM", _K_A_IO, M_AVlv03_OP_MinTmAM, 0},
+	{"M_AVlv04_OP_MinTmAM", _K_A_IO, M_AVlv04_OP_MinTmAM, 0},
+	{"M_AVlv05_OP_MinTmAM", _K_A_IO, M_AVlv05_OP_MinTmAM, 0},
+	{"M_AVlv06_OP_MinTmAM", _K_A_IO, M_AVlv06_OP_MinTmAM, 0},
+	{"M_AVlv07_OP_MinTmAM", _K_A_IO, M_AVlv07_OP_MinTmAM, 0},
+	{"M_AVlv08_OP_MinTmAM", _K_A_IO, M_AVlv08_OP_MinTmAM, 0},
+	{"M_AVlv09_OP_MinTmAM", _K_A_IO, M_AVlv09_OP_MinTmAM, 0},
+	{"M_AVlv10_OP_MinTmAM", _K_A_IO, M_AVlv10_OP_MinTmAM, 0},
+	{"M_AVlv11_OP_MinTmAM", _K_A_IO, M_AVlv11_OP_MinTmAM, 0},
+	{"M_AVlv12_OP_MinTmAM", _K_A_IO, M_AVlv12_OP_MinTmAM, 0},
+	{"M_AVlv13_OP_MinTmAM", _K_A_IO, M_AVlv13_OP_MinTmAM, 0},
 	//
-	{ "M_AVlv01_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv01_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv02_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv02_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv03_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv03_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv04_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv04_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv05_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv05_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv06_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv06_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv07_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv07_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv08_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv08_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv09_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv09_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv10_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv10_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv11_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv11_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv12_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv12_OP_MaxTmAM,	0 } ,
-	{ "M_AVlv13_OP_MaxTmAM"	,	_K_A_IO	,	M_AVlv13_OP_MaxTmAM,	0 } ,
+	{"M_AVlv01_OP_MaxTmAM", _K_A_IO, M_AVlv01_OP_MaxTmAM, 0},
+	{"M_AVlv02_OP_MaxTmAM", _K_A_IO, M_AVlv02_OP_MaxTmAM, 0},
+	{"M_AVlv03_OP_MaxTmAM", _K_A_IO, M_AVlv03_OP_MaxTmAM, 0},
+	{"M_AVlv04_OP_MaxTmAM", _K_A_IO, M_AVlv04_OP_MaxTmAM, 0},
+	{"M_AVlv05_OP_MaxTmAM", _K_A_IO, M_AVlv05_OP_MaxTmAM, 0},
+	{"M_AVlv06_OP_MaxTmAM", _K_A_IO, M_AVlv06_OP_MaxTmAM, 0},
+	{"M_AVlv07_OP_MaxTmAM", _K_A_IO, M_AVlv07_OP_MaxTmAM, 0},
+	{"M_AVlv08_OP_MaxTmAM", _K_A_IO, M_AVlv08_OP_MaxTmAM, 0},
+	{"M_AVlv09_OP_MaxTmAM", _K_A_IO, M_AVlv09_OP_MaxTmAM, 0},
+	{"M_AVlv10_OP_MaxTmAM", _K_A_IO, M_AVlv10_OP_MaxTmAM, 0},
+	{"M_AVlv11_OP_MaxTmAM", _K_A_IO, M_AVlv11_OP_MaxTmAM, 0},
+	{"M_AVlv12_OP_MaxTmAM", _K_A_IO, M_AVlv12_OP_MaxTmAM, 0},
+	{"M_AVlv13_OP_MaxTmAM", _K_A_IO, M_AVlv13_OP_MaxTmAM, 0},
 	//
-	{ "M_AVlv01_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv01_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv02_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv02_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv03_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv03_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv04_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv04_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv05_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv05_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv06_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv06_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv07_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv07_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv08_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv08_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv09_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv09_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv10_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv10_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv11_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv11_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv12_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv12_OP_AvgTmAM,	0 } ,
-	{ "M_AVlv13_OP_AvgTmAM"	,	_K_A_IO	,	M_AVlv13_OP_AvgTmAM,	0 } ,
+	{"M_AVlv01_OP_AvgTmAM", _K_A_IO, M_AVlv01_OP_AvgTmAM, 0},
+	{"M_AVlv02_OP_AvgTmAM", _K_A_IO, M_AVlv02_OP_AvgTmAM, 0},
+	{"M_AVlv03_OP_AvgTmAM", _K_A_IO, M_AVlv03_OP_AvgTmAM, 0},
+	{"M_AVlv04_OP_AvgTmAM", _K_A_IO, M_AVlv04_OP_AvgTmAM, 0},
+	{"M_AVlv05_OP_AvgTmAM", _K_A_IO, M_AVlv05_OP_AvgTmAM, 0},
+	{"M_AVlv06_OP_AvgTmAM", _K_A_IO, M_AVlv06_OP_AvgTmAM, 0},
+	{"M_AVlv07_OP_AvgTmAM", _K_A_IO, M_AVlv07_OP_AvgTmAM, 0},
+	{"M_AVlv08_OP_AvgTmAM", _K_A_IO, M_AVlv08_OP_AvgTmAM, 0},
+	{"M_AVlv09_OP_AvgTmAM", _K_A_IO, M_AVlv09_OP_AvgTmAM, 0},
+	{"M_AVlv10_OP_AvgTmAM", _K_A_IO, M_AVlv10_OP_AvgTmAM, 0},
+	{"M_AVlv11_OP_AvgTmAM", _K_A_IO, M_AVlv11_OP_AvgTmAM, 0},
+	{"M_AVlv12_OP_AvgTmAM", _K_A_IO, M_AVlv12_OP_AvgTmAM, 0},
+	{"M_AVlv13_OP_AvgTmAM", _K_A_IO, M_AVlv13_OP_AvgTmAM, 0},
 	//
-	{ "M_AVlv01_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv01_CL_MinTmAM,	0 } ,
-	{ "M_AVlv02_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv02_CL_MinTmAM,	0 } ,
-	{ "M_AVlv03_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv03_CL_MinTmAM,	0 } ,
-	{ "M_AVlv04_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv04_CL_MinTmAM,	0 } ,
-	{ "M_AVlv05_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv05_CL_MinTmAM,	0 } ,
-	{ "M_AVlv06_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv06_CL_MinTmAM,	0 } ,
-	{ "M_AVlv07_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv07_CL_MinTmAM,	0 } ,
-	{ "M_AVlv08_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv08_CL_MinTmAM,	0 } ,
-	{ "M_AVlv09_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv09_CL_MinTmAM,	0 } ,
-	{ "M_AVlv10_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv10_CL_MinTmAM,	0 } ,
-	{ "M_AVlv11_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv11_CL_MinTmAM,	0 } ,
-	{ "M_AVlv12_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv12_CL_MinTmAM,	0 } ,
-	{ "M_AVlv13_CL_MinTmAM"	,	_K_A_IO	,	M_AVlv13_CL_MinTmAM,	0 } ,
+	{"M_AVlv01_CL_MinTmAM", _K_A_IO, M_AVlv01_CL_MinTmAM, 0},
+	{"M_AVlv02_CL_MinTmAM", _K_A_IO, M_AVlv02_CL_MinTmAM, 0},
+	{"M_AVlv03_CL_MinTmAM", _K_A_IO, M_AVlv03_CL_MinTmAM, 0},
+	{"M_AVlv04_CL_MinTmAM", _K_A_IO, M_AVlv04_CL_MinTmAM, 0},
+	{"M_AVlv05_CL_MinTmAM", _K_A_IO, M_AVlv05_CL_MinTmAM, 0},
+	{"M_AVlv06_CL_MinTmAM", _K_A_IO, M_AVlv06_CL_MinTmAM, 0},
+	{"M_AVlv07_CL_MinTmAM", _K_A_IO, M_AVlv07_CL_MinTmAM, 0},
+	{"M_AVlv08_CL_MinTmAM", _K_A_IO, M_AVlv08_CL_MinTmAM, 0},
+	{"M_AVlv09_CL_MinTmAM", _K_A_IO, M_AVlv09_CL_MinTmAM, 0},
+	{"M_AVlv10_CL_MinTmAM", _K_A_IO, M_AVlv10_CL_MinTmAM, 0},
+	{"M_AVlv11_CL_MinTmAM", _K_A_IO, M_AVlv11_CL_MinTmAM, 0},
+	{"M_AVlv12_CL_MinTmAM", _K_A_IO, M_AVlv12_CL_MinTmAM, 0},
+	{"M_AVlv13_CL_MinTmAM", _K_A_IO, M_AVlv13_CL_MinTmAM, 0},
 	//
-	{ "M_AVlv01_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv01_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv02_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv02_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv03_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv03_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv04_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv04_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv05_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv05_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv06_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv06_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv07_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv07_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv08_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv08_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv09_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv09_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv10_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv10_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv11_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv11_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv12_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv12_CL_MaxTmAM,	0 } ,
-	{ "M_AVlv13_CL_MaxTmAM"	,	_K_A_IO	,	M_AVlv13_CL_MaxTmAM,	0 } ,
+	{"M_AVlv01_CL_MaxTmAM", _K_A_IO, M_AVlv01_CL_MaxTmAM, 0},
+	{"M_AVlv02_CL_MaxTmAM", _K_A_IO, M_AVlv02_CL_MaxTmAM, 0},
+	{"M_AVlv03_CL_MaxTmAM", _K_A_IO, M_AVlv03_CL_MaxTmAM, 0},
+	{"M_AVlv04_CL_MaxTmAM", _K_A_IO, M_AVlv04_CL_MaxTmAM, 0},
+	{"M_AVlv05_CL_MaxTmAM", _K_A_IO, M_AVlv05_CL_MaxTmAM, 0},
+	{"M_AVlv06_CL_MaxTmAM", _K_A_IO, M_AVlv06_CL_MaxTmAM, 0},
+	{"M_AVlv07_CL_MaxTmAM", _K_A_IO, M_AVlv07_CL_MaxTmAM, 0},
+	{"M_AVlv08_CL_MaxTmAM", _K_A_IO, M_AVlv08_CL_MaxTmAM, 0},
+	{"M_AVlv09_CL_MaxTmAM", _K_A_IO, M_AVlv09_CL_MaxTmAM, 0},
+	{"M_AVlv10_CL_MaxTmAM", _K_A_IO, M_AVlv10_CL_MaxTmAM, 0},
+	{"M_AVlv11_CL_MaxTmAM", _K_A_IO, M_AVlv11_CL_MaxTmAM, 0},
+	{"M_AVlv12_CL_MaxTmAM", _K_A_IO, M_AVlv12_CL_MaxTmAM, 0},
+	{"M_AVlv13_CL_MaxTmAM", _K_A_IO, M_AVlv13_CL_MaxTmAM, 0},
 	//
-	{ "M_AVlv01_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv01_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv02_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv02_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv03_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv03_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv04_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv04_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv05_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv05_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv06_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv06_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv07_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv07_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv08_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv08_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv09_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv09_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv10_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv10_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv11_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv11_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv12_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv12_CL_AvgTmAM,	0 } ,
-	{ "M_AVlv13_CL_AvgTmAM"	,	_K_A_IO	,	M_AVlv13_CL_AvgTmAM,	0 } ,
+	{"M_AVlv01_CL_AvgTmAM", _K_A_IO, M_AVlv01_CL_AvgTmAM, 0},
+	{"M_AVlv02_CL_AvgTmAM", _K_A_IO, M_AVlv02_CL_AvgTmAM, 0},
+	{"M_AVlv03_CL_AvgTmAM", _K_A_IO, M_AVlv03_CL_AvgTmAM, 0},
+	{"M_AVlv04_CL_AvgTmAM", _K_A_IO, M_AVlv04_CL_AvgTmAM, 0},
+	{"M_AVlv05_CL_AvgTmAM", _K_A_IO, M_AVlv05_CL_AvgTmAM, 0},
+	{"M_AVlv06_CL_AvgTmAM", _K_A_IO, M_AVlv06_CL_AvgTmAM, 0},
+	{"M_AVlv07_CL_AvgTmAM", _K_A_IO, M_AVlv07_CL_AvgTmAM, 0},
+	{"M_AVlv08_CL_AvgTmAM", _K_A_IO, M_AVlv08_CL_AvgTmAM, 0},
+	{"M_AVlv09_CL_AvgTmAM", _K_A_IO, M_AVlv09_CL_AvgTmAM, 0},
+	{"M_AVlv10_CL_AvgTmAM", _K_A_IO, M_AVlv10_CL_AvgTmAM, 0},
+	{"M_AVlv11_CL_AvgTmAM", _K_A_IO, M_AVlv11_CL_AvgTmAM, 0},
+	{"M_AVlv12_CL_AvgTmAM", _K_A_IO, M_AVlv12_CL_AvgTmAM, 0},
+	{"M_AVlv13_CL_AvgTmAM", _K_A_IO, M_AVlv13_CL_AvgTmAM, 0},
 
 	//... Real ALD Valve
-	{ "V97ValveDO"			,	_K_D_IO	,	V97ValveDO,				0 } ,
-	{ "V98ValveDO"			,	_K_D_IO	,	V98ValveDO,				0 } ,
-	{ "V100ValveDO"			,	_K_D_IO	,	V100ValveDO,			0 } ,
-	{ "V101ValveDO"			,	_K_D_IO	,	V101ValveDO,			0 } ,
-	{ "V102ValveDO"			,	_K_D_IO	,	V102ValveDO,			0 } ,
-	{ "V105ValveDO"			,	_K_D_IO	,	V105ValveDO,			0 } ,
-	{ "V106ValveDO"			,	_K_D_IO	,	V106ValveDO,			0 } ,
-	{ "V108ValveDO"			,	_K_D_IO	,	V108ValveDO,			0 } ,
-	{ "V109ValveDO"			,	_K_D_IO	,	V109ValveDO,			0 } ,
-	{ "V110ValveDO"			,	_K_D_IO	,	V110ValveDO,			0 } ,
-	{ "V11ValveDO"			,	_K_D_IO	,	V11ValveDO,				0 } ,
-	{ "V12ValveDO"			,	_K_D_IO	,	V12ValveDO,				0 } ,
-	{ "V17ValveDO"			,	_K_D_IO	,	V17ValveDO,				0 } ,
+	{"V97ValveDO", _K_D_IO, V97ValveDO, 0},
+	{"V98ValveDO", _K_D_IO, V98ValveDO, 0},
+	{"V100ValveDO", _K_D_IO, V100ValveDO, 0},
+	{"V101ValveDO", _K_D_IO, V101ValveDO, 0},
+	{"V102ValveDO", _K_D_IO, V102ValveDO, 0},
+	{"V105ValveDO", _K_D_IO, V105ValveDO, 0},
+	{"V106ValveDO", _K_D_IO, V106ValveDO, 0},
+	{"V108ValveDO", _K_D_IO, V108ValveDO, 0},
+	{"V109ValveDO", _K_D_IO, V109ValveDO, 0},
+	{"V110ValveDO", _K_D_IO, V110ValveDO, 0},
+	{"V11ValveDO", _K_D_IO, V11ValveDO, 0},
+	{"V12ValveDO", _K_D_IO, V12ValveDO, 0},
+	{"V17ValveDO", _K_D_IO, V17ValveDO, 0},
 	//
-	{ "V97ValveDI"			,	_K_D_IO	,	V97ValveDI,				0 } ,
-	{ "V98ValveDI"			,	_K_D_IO	,	V98ValveDI,				0 } ,
-	{ "V100ValveDI"			,	_K_D_IO	,	V100ValveDI,			0 } ,
-	{ "V101ValveDI"			,	_K_D_IO	,	V101ValveDI,			0 } ,
-	{ "V102ValveDI"			,	_K_D_IO	,	V102ValveDI,			0 } ,
-	{ "V105ValveDI"			,	_K_D_IO	,	V105ValveDI,			0 } ,
-	{ "V106ValveDI"			,	_K_D_IO	,	V106ValveDI,			0 } ,
-	{ "V108ValveDI"			,	_K_D_IO	,	V108ValveDI,			0 } ,
-	{ "V109ValveDI"			,	_K_D_IO	,	V109ValveDI,			0 } ,
-	{ "V110ValveDI"			,	_K_D_IO	,	V110ValveDI,			0 } ,
-	{ "V11ValveDI"			,	_K_D_IO	,	V11ValveDI,				0 } ,
-	{ "V12ValveDI"			,	_K_D_IO	,	V12ValveDI,				0 } ,
-	{ "V17ValveDI"			,	_K_D_IO	,	V17ValveDI,				0 } ,
+	{"V97ValveDI", _K_D_IO, V97ValveDI, 0},
+	{"V98ValveDI", _K_D_IO, V98ValveDI, 0},
+	{"V100ValveDI", _K_D_IO, V100ValveDI, 0},
+	{"V101ValveDI", _K_D_IO, V101ValveDI, 0},
+	{"V102ValveDI", _K_D_IO, V102ValveDI, 0},
+	{"V105ValveDI", _K_D_IO, V105ValveDI, 0},
+	{"V106ValveDI", _K_D_IO, V106ValveDI, 0},
+	{"V108ValveDI", _K_D_IO, V108ValveDI, 0},
+	{"V109ValveDI", _K_D_IO, V109ValveDI, 0},
+	{"V110ValveDI", _K_D_IO, V110ValveDI, 0},
+	{"V11ValveDI", _K_D_IO, V11ValveDI, 0},
+	{"V12ValveDI", _K_D_IO, V12ValveDI, 0},
+	{"V17ValveDI", _K_D_IO, V17ValveDI, 0},
 	//
-	{ "V97VlvOpenTmAI"		,	_K_A_IO	,	V97VlvOpenTmAI,			0 } ,
-	{ "V98VlvOpenTmAI"		,	_K_A_IO	,	V98VlvOpenTmAI,			0 } ,
-	{ "V100VlvOpenTmAI"		,	_K_A_IO	,	V100VlvOpenTmAI,		0 } ,
-	{ "V101VlvOpenTmAI"		,	_K_A_IO	,	V101VlvOpenTmAI,		0 } ,
-	{ "V102VlvOpenTmAI"		,	_K_A_IO	,	V102VlvOpenTmAI,		0 } ,
-	{ "V105VlvOpenTmAI"		,	_K_A_IO	,	V105VlvOpenTmAI,		0 } ,
-	{ "V106VlvOpenTmAI"		,	_K_A_IO	,	V106VlvOpenTmAI,		0 } ,
-	{ "V108VlvOpenTmAI"		,	_K_A_IO	,	V108VlvOpenTmAI,		0 } ,
-	{ "V109VlvOpenTmAI"		,	_K_A_IO	,	V109VlvOpenTmAI,		0 } ,
-	{ "V110VlvOpenTmAI"		,	_K_A_IO	,	V110VlvOpenTmAI,		0 } ,
-	{ "V11VlvOpenTmAI"		,	_K_A_IO	,	V11VlvOpenTmAI,			0 } ,
-	{ "V12VlvOpenTmAI"		,	_K_A_IO	,	V12VlvOpenTmAI,			0 } ,
-	{ "V17VlvOpenTmAI"		,	_K_A_IO	,	V17VlvOpenTmAI,			0 } ,
+	{"V97VlvOpenTmAI", _K_A_IO, V97VlvOpenTmAI, 0},
+	{"V98VlvOpenTmAI", _K_A_IO, V98VlvOpenTmAI, 0},
+	{"V100VlvOpenTmAI", _K_A_IO, V100VlvOpenTmAI, 0},
+	{"V101VlvOpenTmAI", _K_A_IO, V101VlvOpenTmAI, 0},
+	{"V102VlvOpenTmAI", _K_A_IO, V102VlvOpenTmAI, 0},
+	{"V105VlvOpenTmAI", _K_A_IO, V105VlvOpenTmAI, 0},
+	{"V106VlvOpenTmAI", _K_A_IO, V106VlvOpenTmAI, 0},
+	{"V108VlvOpenTmAI", _K_A_IO, V108VlvOpenTmAI, 0},
+	{"V109VlvOpenTmAI", _K_A_IO, V109VlvOpenTmAI, 0},
+	{"V110VlvOpenTmAI", _K_A_IO, V110VlvOpenTmAI, 0},
+	{"V11VlvOpenTmAI", _K_A_IO, V11VlvOpenTmAI, 0},
+	{"V12VlvOpenTmAI", _K_A_IO, V12VlvOpenTmAI, 0},
+	{"V17VlvOpenTmAI", _K_A_IO, V17VlvOpenTmAI, 0},
 	//
-	{ "V97VlvCloseTmAI"		,	_K_A_IO	,	V97VlvCloseTmAI,		0 } ,
-	{ "V98VlvCloseTmAI"		,	_K_A_IO	,	V98VlvCloseTmAI,		0 } ,
-	{ "V100VlvCloseTmAI"	,	_K_A_IO	,	V100VlvCloseTmAI,		0 } ,
-	{ "V101VlvCloseTmAI"	,	_K_A_IO	,	V101VlvCloseTmAI,		0 } ,
-	{ "V102VlvCloseTmAI"	,	_K_A_IO	,	V102VlvCloseTmAI,		0 } ,
-	{ "V105VlvCloseTmAI"	,	_K_A_IO	,	V105VlvCloseTmAI,		0 } ,
-	{ "V106VlvCloseTmAI"	,	_K_A_IO	,	V106VlvCloseTmAI,		0 } ,
-	{ "V108VlvCloseTmAI"	,	_K_A_IO	,	V108VlvCloseTmAI,		0 } ,
-	{ "V109VlvCloseTmAI"	,	_K_A_IO	,	V109VlvCloseTmAI,		0 } ,
-	{ "V110VlvCloseTmAI"	,	_K_A_IO	,	V110VlvCloseTmAI,		0 } ,
-	{ "V11VlvCloseTmAI"		,	_K_A_IO	,	V11VlvCloseTmAI,		0 } ,
-	{ "V12VlvCloseTmAI"		,	_K_A_IO	,	V12VlvCloseTmAI,		0 } ,
-	{ "V17VlvCloseTmAI"		,	_K_A_IO	,	V17VlvCloseTmAI,		0 },
+	{"V97VlvCloseTmAI", _K_A_IO, V97VlvCloseTmAI, 0},
+	{"V98VlvCloseTmAI", _K_A_IO, V98VlvCloseTmAI, 0},
+	{"V100VlvCloseTmAI", _K_A_IO, V100VlvCloseTmAI, 0},
+	{"V101VlvCloseTmAI", _K_A_IO, V101VlvCloseTmAI, 0},
+	{"V102VlvCloseTmAI", _K_A_IO, V102VlvCloseTmAI, 0},
+	{"V105VlvCloseTmAI", _K_A_IO, V105VlvCloseTmAI, 0},
+	{"V106VlvCloseTmAI", _K_A_IO, V106VlvCloseTmAI, 0},
+	{"V108VlvCloseTmAI", _K_A_IO, V108VlvCloseTmAI, 0},
+	{"V109VlvCloseTmAI", _K_A_IO, V109VlvCloseTmAI, 0},
+	{"V110VlvCloseTmAI", _K_A_IO, V110VlvCloseTmAI, 0},
+	{"V11VlvCloseTmAI", _K_A_IO, V11VlvCloseTmAI, 0},
+	{"V12VlvCloseTmAI", _K_A_IO, V12VlvCloseTmAI, 0},
+	{"V17VlvCloseTmAI", _K_A_IO, V17VlvCloseTmAI, 0},
 	//... 2016.04.04
-	{ "LeakChkStsDM"		,	_K_D_IO,	LeakChkStsDM,			0 },
-	{ "M_AVlv_IntCheckDM"	,	_K_D_IO,	M_AVlv_IntCheckDM,		0 },
-	""
-};
+	{"LeakChkStsDM", _K_D_IO, LeakChkStsDM, 0},
+	{"M_AVlv_IntCheckDM", _K_D_IO, M_AVlv_IntCheckDM, 0},
+	{"ALD_VLV_QTY_DM", _K_D_IO, ALD_VLV_QTY_DM, 0},
+	""};
 
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -248,6 +248,7 @@ Module_Status DynamicLK()
 	enum { eOFFON_OFF, eOFFON_ON };
 	enum { eRESULT_NONE, eRESULT_ERROR, eRESULT_OK };
 	enum { eALMSTS_NORMAL, eALMSTS_ALARM };
+	enum { QTY13, QTY07};
 
 	//////////////////////////////////////////////////////////////////////////
 	//... Check Target Cycle Count
@@ -303,17 +304,19 @@ Module_Status DynamicLK()
 			//... To Protect Valve Interlock
 			/* V97       V100        V102     V105      V108       V110     V11 */
 			// if(i == 0 || i == 2 || i == 4 || i == 5 || i == 7 || i == 9 || i == 10) continue;
-			//////////////////////////////////////////////////////////////////////////
-			// 2020.05.08 ALD Valve Change
-			// V100, V101, V102, V108, V109, V110 Not Use
-			/* V97       V100        V101      V102      V105      V108      V109      V110      V11 */
-			if (i == 0 || i == 2 || i == 3 || i == 4 || i == 5 || i == 7 || i == 7 || i == 9 || i == 10)
-				continue;
 
-			 //////////////////////////////////////////////////////////////////////////
-				//... Check Interlock
-				//... Check SW Interlock
-				if (eALMSTS_NORMAL != READ_DIGITAL(SW_GbIntlckDM, &nIOStatus)) break;
+			if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+			{
+				// V100, V101, V102, V108, V109, V110 Not Use
+				/* V97       V100        V101      V102      V105      V108      V109      V110      V11 */
+				if (i == 0 || i == 2 || i == 3 || i == 4 || i == 5 || i == 7 || i == 8 || i == 9 || i == 10)
+					continue;
+			}
+
+			//////////////////////////////////////////////////////////////////////////
+			//... Check Interlock
+			//... Check SW Interlock
+			if(eALMSTS_NORMAL != READ_DIGITAL(SW_GbIntlckDM, &nIOStatus))	break;
 
 			//... Check PLC Interlock
 			if(eALMSTS_NORMAL != READ_DIGITAL(PLC_GbIntlckDI, &nIOStatus))	break;
@@ -437,6 +440,8 @@ Module_Status CycleTest()
 	enum { eOFFON_OFF, eOFFON_ON };
 	enum { eRESULT_NONE, eRESULT_ERROR, eRESULT_OK };
 
+	enum { QTY13, QTY07};
+
 	//////////////////////////////////////////////////////////////////////////
 	//... Check Target Cycle Count
 	nTargetCnt = (int) READ_ANALOG(M_AVlv_CycTgtCntAM, &nIOStatus);
@@ -486,12 +491,15 @@ Module_Status CycleTest()
 		for(i = 0; i < MAX_ALD_VALVE; i++)
 		{
 
-			//////////////////////////////////////////////////////////////////////////
-			// 2020.05.08 ALD Valve Change
-			// V100, V101, V102, V108, V109, V110 Not Use
-			/*   V100      V101      V102      V108      V109      V110  */
-			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9)
-				continue;
+			if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+			{
+				//////////////////////////////////////////////////////////////////////////
+				// 2020.06.08 ALD Valve Change
+				// V100, V101, V102, V108, V109, V110 Not Use
+				/*   V100      V101      V102      V108      V109      V110  */
+				if (i == 2 || i == 3 || i == 4 || i == 7 || i == 8 || i == 9)
+					continue;
+			}
 
 			//////////////////////////////////////////////////////////////////////////
 			//... Check Interlock

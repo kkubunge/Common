@@ -4,6 +4,7 @@ $$$ Digital
 M_AVlv_ParmSaveDM	OffOnEnum
 M_AVlv_ResultDM		ResultEnum
 M_AVlv_IntCheckDM	OffOnEnum
+ALD_VLV_QTY_DM	ALDQuantity		13EA
 
 $$$ Analog
 M_AVlv_CycTgtCntAM	-	- - - - 0 1 10000    1 - - - - 0 1 10000    - - - -

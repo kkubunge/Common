@@ -40,25 +40,26 @@ enum { TV_None, TV_Usys, TV_MKS };
 
 BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lParam ) {
 
-	static int NF3Seprate=0, MKS_Sel=0, PMSelect=0, result=0;
-	int Radio_Bt_Chk = 0 ;
-	
-	FILE *fpt = NULL;	
-	FILE *fpt2 = NULL; 	
+	static int NF3Seprate = 0, MKS_Sel = 0, PMSelect = 0, result = 0, ALD_Sel = 0;
+	int Radio_Bt_Chk = 0;
+
+	FILE *fpt = NULL;
+	FILE *fpt2 = NULL;
 
 	char Path[MAX_PATH] ;
-	char Buffer[256] ;  
+	char Buffer[256] ;
 	char chr_return1[ 256 ];
 	char chr_return2[ 256 ];
 	int Line , ReadCnt ;
 	BOOL FileEnd = TRUE;
 	char Radio_Bt_Chk_Msg[ 256 ] ;
 	char chr_latter = 37;	// '%'
+	int m_fileFlag = 0;
 
 	if (g_bExcuteCheck == TRUE)
 	{
 		ShowWindow(GetDlgItem(hdlg , IDOK), SW_HIDE);
-		
+
 		//for ( i = IDC_RADIO_RCPDOWN_NO; i <= IDC_RADIO_NF3_YES; i++ )	EnableWindow(GetDlgItem(hdlg, i), FALSE);
 	}
 
@@ -73,6 +74,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 			NF3Seprate = 0;
 			MKS_Sel=0;
 			PMSelect=0;
+			ALD_Sel = 0;
 			MoveCenterWindow( hdlg );
 			return TRUE;
 		}
@@ -82,8 +84,8 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				if ( ReadCnt > 0 ) {
 					if ( !Get_Data_From_String( Buffer , chr_return1 , 0 ) ) {
 						printf( "Unknown Error 1 - [%s]-[%d]\n" , Buffer , Line );
-					}else {	
-						
+					}else {
+
 						if( STRCMP_L( chr_return1 , "NF3SEPA_USE:" )){
 							if ( !Get_Data_From_String( Buffer , chr_return2 , 1 ) ) {
 								printf( "Unknown Error 2 - [%s]-[%d]\n" , Buffer , Line );
@@ -91,7 +93,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 								if( atoi(chr_return2) == 1 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_NF3_NO , IDC_RADIO_NF3_YES , IDC_RADIO_NF3_NO ) ;
 									NF3Seprate = 1 ;
-								}else if( atoi(chr_return2) == 2 ) {    
+								}else if( atoi(chr_return2) == 2 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_NF3_NO , IDC_RADIO_NF3_YES , IDC_RADIO_NF3_YES ) ;
 									NF3Seprate = 2 ;
 								}else {
@@ -108,10 +110,10 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 								if( atoi(chr_return2) == 1 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_SELECT_PMA , IDC_RADIO_SELECT_PMC , IDC_RADIO_SELECT_PMA ) ;
 									PMSelect = 1 ;
-								}else if( atoi(chr_return2) == 2 ) {    
+								}else if( atoi(chr_return2) == 2 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_SELECT_PMA , IDC_RADIO_SELECT_PMC , IDC_RADIO_SELECT_PMB ) ;
 									PMSelect = 2 ;
-								}else if( atoi(chr_return2) == 3 ) {    
+								}else if( atoi(chr_return2) == 3 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_SELECT_PMA , IDC_RADIO_SELECT_PMC , IDC_RADIO_SELECT_PMC ) ;
 									PMSelect = 3 ;
 								}else {
@@ -120,15 +122,15 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 							}
 						}
 
-						// MKS651 Fan Interlock 
+						// MKS651 Fan Interlock
 						else if( STRCMP_L( chr_return1 , "MKSFAN_USE:" )){
 							if ( !Get_Data_From_String( Buffer , chr_return2 , 1 ) ) {
 								printf( "Unknown Error 2 - [%s]-[%d]\n" , Buffer , Line );
-							}else {	
-								if( atoi(chr_return2) == 1 ) {								
+							}else {
+								if( atoi(chr_return2) == 1 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_NF3_NO2 , IDC_RADIO_NF3_YES2  , IDC_RADIO_NF3_NO2 ) ;
 									MKS_Sel = 1 ;
-								}else if( atoi(chr_return2) == 2 ) { 								
+								}else if( atoi(chr_return2) == 2 ) {
 									CheckRadioButton(hdlg, IDC_RADIO_NF3_NO2 , IDC_RADIO_NF3_YES2 , IDC_RADIO_NF3_YES2 ) ;
 									MKS_Sel = 2 ;
 								}else {
@@ -137,12 +139,38 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 							}
 						}
 						//]
+
+						// ALD Valve Quantity
+						else if (STRCMP_L(chr_return1, "ALD_QTY:"))
+						{
+							if (!Get_Data_From_String(Buffer, chr_return2, 1))
+							{
+								printf("Unknown Error 2 - [%s]-[%d]\n", Buffer, Line);
+							}
+							else
+							{
+								if (atoi(chr_return2) == 1)
+								{
+									CheckRadioButton(hdlg, IDC_RADIO_ALD_13QTY, IDC_RADIO_ALD_7QTY, IDC_RADIO_ALD_13QTY);
+									ALD_Sel = 1;
+								}
+								else if (atoi(chr_return2) == 2)
+								{
+									CheckRadioButton(hdlg, IDC_RADIO_ALD_13QTY, IDC_RADIO_ALD_7QTY, IDC_RADIO_ALD_7QTY);
+									ALD_Sel = 2;
+								}
+								else
+								{
+									ALD_Sel = 0;
+								}
+							}
+						}
 					}
 				}
 			}
 			fclose ( fpt ) ;
 		}
-		
+
 		//
 		MoveCenterWindow( hdlg );
 		//
@@ -154,36 +182,43 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 		{
 			switch(LOWORD(wParam))
 			{
-			case IDC_RADIO_NF3_NO:
-				NF3Seprate = 1 ;
-				break ;
-			case IDC_RADIO_NF3_YES:
-				NF3Seprate = 2 ;
-				break ;
-			case IDC_RADIO_NF3_NO2:
-				MKS_Sel = 1 ;
-				break ;
-			case IDC_RADIO_NF3_YES2:
-				MKS_Sel = 2 ;
-				break ;
-			case IDC_RADIO_SELECT_PMA:
-				PMSelect = 1 ;
-				break ;
-			case IDC_RADIO_SELECT_PMB:
-				PMSelect = 2 ;
-				break ;
-			case IDC_RADIO_SELECT_PMC:
-				PMSelect = 3 ;
-				break ;
-			}		
+				case IDC_RADIO_NF3_NO:
+					NF3Seprate = 1;
+					break;
+				case IDC_RADIO_NF3_YES:
+					NF3Seprate = 2;
+					break;
+				case IDC_RADIO_NF3_NO2:
+					MKS_Sel = 1;
+					break;
+				case IDC_RADIO_NF3_YES2:
+					MKS_Sel = 2;
+					break;
+				case IDC_RADIO_SELECT_PMA:
+					PMSelect = 1;
+					break;
+				case IDC_RADIO_SELECT_PMB:
+					PMSelect = 2;
+					break;
+				case IDC_RADIO_SELECT_PMC:
+					PMSelect = 3;
+					break;
+				case IDC_RADIO_ALD_13QTY:
+					ALD_Sel = 1;
+					break;
+				case IDC_RADIO_ALD_7QTY:
+					ALD_Sel = 2;
+					break;
+			}
 		}
 		else
 		{
 			NF3Seprate = 0 ;
 			MKS_Sel = 0 ;
 			PMSelect = 0 ;
+			ALD_Sel = 0;
 		}
-		
+
 		switch( wParam ) {
 		case IDOK :
 			result = TRUE;
@@ -195,8 +230,12 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 			//if ( !SIM_Sel ) { strcat ( Radio_Bt_Chk_Msg , ". SIMMULATION MODE\n" ); }
 			if ( !PMSelect ) { strcat ( Radio_Bt_Chk_Msg , ". PMC NOT SELECTED\n" ); }
 			if ( !MKS_Sel ) { strcat ( Radio_Bt_Chk_Msg , ". MKS FAN NOT SELECTED\n" ); }
+			if (!ALD_Sel)
+			{
+				strcat(Radio_Bt_Chk_Msg, ". ALD Valve Quantity NOT SELECTED\n");
+			}
 
-			if ( !NF3Seprate || !MKS_Sel || !PMSelect ) 
+			if (!NF3Seprate || !MKS_Sel || !PMSelect || !ALD_Sel)
 			{
 				MessageBox ( hdlg , Radio_Bt_Chk_Msg , "ERROR" , MB_ICONHAND ) ;
 				return TRUE ;
@@ -208,13 +247,13 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				// Launcher
 				if ( result ) result = CopyFile( "System\\PMA\\EasyCluster.cfg" , "EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMA\\Startup.cfg" , "Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
 				if ( result ) result = CopyFile( "System\\PMA\\SIM-EasyCluster.cfg" , "SIM-EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\SIM-EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMA\\TEST-Startup.cfg" , "TEST-Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\TEST-Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
@@ -222,9 +261,9 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				// IO
 				if ( result ) result = CopyFile( "System\\PMA\\System\\IO\\PMABC_Difference.con" , "System\\IO\\PMABC_Difference.con", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\System\\PMABC_Difference.con)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-			
 
-				// NF3 Separate 
+
+				// NF3 Separate
 				if (NF3Seprate == 1)	// NO
 				{
 					// Function
@@ -232,7 +271,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 					else { MessageBox( hdlg , "Cannot Copy File(Startup\\NF3Separate\\Function\\F_GUI.dat)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 				}
 				else if (NF3Seprate == 2)	// YES
-				{					
+				{
 					// Function
 					if ( result ) result = CopyFile( "System\\NF3Separate\\Function\\F_GUI.dat" , "Function\\F_GUI.dat", FALSE );
 					else { MessageBox( hdlg , "Cannot Copy File(Startup\\NF3Separate\\Function\\F_GUI.dat)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
@@ -244,13 +283,13 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				// Launcher
 				if ( result ) result = CopyFile( "System\\PMB\\EasyCluster.cfg" , "EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMB\\EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMB\\Startup.cfg" , "Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMB\\Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMB\\SIM-EasyCluster.cfg" , "SIM-EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\SIM-EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMB\\TEST-Startup.cfg" , "TEST-Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\TEST-Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
@@ -259,7 +298,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				if ( result ) result = CopyFile( "System\\PMB\\System\\IO\\PMABC_Difference.con" , "System\\IO\\PMABC_Difference.con", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMB\\System\\PMABC_Difference.con)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
-				// NF3 Separate 
+				// NF3 Separate
 				if (NF3Seprate == 1)	// NO
 				{
 					// Function
@@ -279,13 +318,13 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				// Launcher
 				if ( result ) result = CopyFile( "System\\PMC\\EasyCluster.cfg" , "EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMC\\EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMC\\Startup.cfg" , "Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMC\\Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMC\\SIM-EasyCluster.cfg" , "SIM-EasyCluster.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\SIM-EasyCluster.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
-				
+
 				if ( result ) result = CopyFile( "System\\PMC\\TEST-Startup.cfg" , "TEST-Startup.cfg", FALSE );
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMA\\TEST-Startup.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
@@ -295,7 +334,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				else { MessageBox( hdlg , "Cannot Copy File(System\\PMC\\System\\PMABC_Difference.con)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 
 
-				// NF3 Separate 
+				// NF3 Separate
 				if (NF3Seprate == 1)	// NO
 				{
 					// Function
@@ -303,7 +342,7 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 					else { MessageBox( hdlg , "Cannot Copy File(System\\NF3Separate\\Function\\F_GUI_beforeNF3.dat)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 				}
 				else if (NF3Seprate == 2)	// YES
-				{					
+				{
 					// Function
 					if ( result ) result = CopyFile( "System\\NF3Separate\\Function\\F_GUI.dat" , "Function\\F_GUI.dat", FALSE );
 					else { MessageBox( hdlg , "Cannot Copy File(System\\NF3Separate\\Function\\F_GUI.dat)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
@@ -322,29 +361,176 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 				else { MessageBox( hdlg , "Cannot Copy File(System\\IO\\Cfgs\\Mks651.cfg)!!" , "ERROR" , MB_ICONHAND );	return FALSE; }
 			}
 
+			// ALD VALVE Quantity
+			if (ALD_Sel == 1)		// 13EA
+			{
+				fpt  = fopen( "IO\\iodefine.io" , "r+t" );
+				fpt2 = fopen( "IO\\iodefine_Backup.io", "w+t" );
+
+				if ( fpt == NULL || fpt2 == NULL )
+				{
+					sprintf( Buffer, "0" );
+					MessageBox( hdlg , "Can't Open File : (IO\\iodefine.io)!!" , "ERROR" , MB_ICONHAND );
+
+					return FALSE;
+				}
+				else
+				{
+					fgets ( Buffer, sizeof(Buffer), fpt );
+
+					while ( !feof( fpt) )
+					{
+						if ( strstr( Buffer, "IO/CFGS/EthernetIP_PEALD.cfg" ) )
+						{
+							fprintf( fpt2, "$$$  F    IO/CFGS/EthernetIP_PEALD.cfg\n");
+						}
+						else if( strstr( Buffer, "IO/CFGS/EthernetIP_PEALD_ALD.cfg" ) )
+						{
+							fprintf( fpt2, "#$$$  F    IO/CFGS/EthernetIP_PEALD_ALD.cfg\n");
+						}
+						else if ( strstr( Buffer, "IO/CFGS/EthernetIP_MFC.cfg" ) )
+						{
+							fprintf( fpt2, "$$$  F    IO/CFGS/EthernetIP_MFC.cfg\n");
+						}
+						else if( strstr( Buffer, "IO/CFGS/EthernetIP_MFC_ALD.cfg" ) )
+						{
+							fprintf( fpt2, "#$$$  F    IO/CFGS/EthernetIP_MFC_ALD.cfg\n");
+						}
+						else
+						{
+							fprintf( fpt2, "%s", Buffer );
+						}
+						fgets ( Buffer, sizeof(Buffer), fpt );
+					}
+				}
+
+				fclose ( fpt2 );
+				fclose ( fpt );
+
+				remove( "IO\\iodefine.io" );
+				rename( "IO\\iodefine_Backup.io", "IO\\iodefine.io" );
+
+			}
+			else if (ALD_Sel == 2) // 7EA
+			{
+
+				fpt  = fopen( "IO\\iodefine.io" , "r+t" );
+				fpt2 = fopen( "IO\\iodefine_Backup.io", "w+t" );
+
+				if ( fpt == NULL || fpt2 == NULL )
+				{
+					sprintf( Buffer, "0" );
+					MessageBox( hdlg , "Can't Open File : (IO\\iodefine.io)!!" , "ERROR" , MB_ICONHAND );
+
+					return FALSE;
+				}
+				else
+				{
+					fgets ( Buffer, sizeof(Buffer), fpt );
+
+					while ( !feof( fpt) )
+					{
+						if ( strstr( Buffer, "IO/CFGS/EthernetIP_PEALD.cfg" ) )
+						{
+							fprintf( fpt2, "#$$$  F    IO/CFGS/EthernetIP_PEALD.cfg\n");
+						}
+						else if( strstr( Buffer, "IO/CFGS/EthernetIP_PEALD_ALD.cfg" ) )
+						{
+							fprintf( fpt2, "$$$  F    IO/CFGS/EthernetIP_PEALD_ALD.cfg\n");
+						}
+						else if ( strstr( Buffer, "IO/CFGS/EthernetIP_MFC.cfg" ) )
+						{
+							fprintf( fpt2, "#$$$  F    IO/CFGS/EthernetIP_MFC.cfg\n");
+						}
+						else if( strstr( Buffer, "IO/CFGS/EthernetIP_MFC_ALD.cfg" ) )
+						{
+							fprintf( fpt2, "$$$  F    IO/CFGS/EthernetIP_MFC_ALD.cfg\n");
+						}
+						else
+						{
+							fprintf( fpt2, "%s", Buffer );
+						}
+						fgets ( Buffer, sizeof(Buffer), fpt );
+					}
+				}
+
+				fclose ( fpt2 );
+				fclose ( fpt );
+
+				remove( "IO\\iodefine.io" );
+				rename( "IO\\iodefine_Backup.io", "IO\\iodefine.io" );
+			}
+
+			if (ALD_Sel > 0)
+			{
+				fpt = fopen("Parameter\\PersistIOList.cfg", "r+t");
+				fpt2 = fopen("Parameter\\PersistIOList_Backup.cfg", "w+t");
+				m_fileFlag = 0;
+
+				if ( fpt == NULL || fpt2 == NULL )
+				{
+					sprintf( Buffer, "0" );
+					MessageBox(hdlg, "Can't Open File : (Parameter\\PersistIOList.cfg)!!", "ERROR", MB_ICONHAND);
+
+					return FALSE;
+				}
+				else
+				{
+					fgets ( Buffer, sizeof(Buffer), fpt );
+
+					while ( !feof( fpt) )
+					{
+						if ( strstr( Buffer, "ALD_VLV_QTY_DM" ) )
+						{
+							fprintf(fpt2, "ALD_VLV_QTY_DM	D	%d\n", ALD_Sel - 1);
+							m_fileFlag = 1;
+						}
+						else
+						{
+							fprintf( fpt2, "%s", Buffer );
+						}
+						fgets ( Buffer, sizeof(Buffer), fpt );
+					}
+					if (m_fileFlag == 0)
+					{
+						fprintf(fpt2, "ALD_VLV_QTY_DM	D	%d\n", ALD_Sel - 1);
+					}
+
+				}
+
+				fclose ( fpt2 );
+				fclose ( fpt );
+
+				remove( "Parameter\\PersistIOList.cfg" );
+				rename("Parameter\\PersistIOList_Backup.cfg", "Parameter\\PersistIOList.cfg");
+			}
+
 			sprintf( Path , "System\\Equipment_Set.cfg");
 			fpt = fopen( Path , "w" );
-			if( fpt )
+			if(fpt)
 			{
-				fprintf( fpt , "#-- NF3 SEPARATE USE   ==> NO       : 1 , USE : 2 , Not Select : 0 --\n");
-				fprintf( fpt , "#-- PMC SELECT  TYPE   ==> PMA : 1 , PMB : 2 , PMC : 3 , Not Select : 0 --\n");
-				fprintf( fpt , "#-- MKS FAN INTK USE   ==> OFF : 1 , ON : 2 , Not Select : 0 --\n");
-								
-				fprintf( fpt , "NF3SEPA_USE: %d\n" , NF3Seprate );
-				fprintf( fpt , "PMC_TYPE: %d\n"	   , PMSelect );
-				fprintf( fpt , "MKSFAN_USE: %d\n"	   , MKS_Sel );
-				
+				fprintf(fpt, "#-- PMC SELECT  TYPE   ==> PMA  : 1, PMB : 2, PMC : 3, Not Select : 0 --\n");
+				fprintf(fpt, "#-- NF3 SEPARATE USE   ==> NO   : 1, USE : 2,          Not Select : 0 --\n");
+				fprintf(fpt, "#-- MKS FAN INTK USE   ==> OFF  : 1, ON  : 2,          Not Select : 0 --\n");
+				fprintf(fpt, "#-- ALD VALVE Quantity ==> 13EA : 1, 7EA : 2,          Not Select : 0 --\n");
+				fprintf(fpt, "\n");
+
+				fprintf(fpt, "PMC_TYPE: %d\n", PMSelect );
+				fprintf(fpt, "NF3SEPA_USE: %d\n", NF3Seprate );
+				fprintf(fpt, "MKSFAN_USE: %d\n", MKS_Sel );
+				fprintf(fpt, "ALD_QTY: %d\n", ALD_Sel);
+
 				fclose( fpt );
 			}
-	
+
 			if ( !result )
 			{
-				MessageBox( hdlg , "Definition File Copy Fail! Last Success Information will be loaded." , "ERROR" , MB_ICONHAND );				
-			}			 
-			
+				MessageBox( hdlg , "Definition File Copy Fail! Last Success Information will be loaded." , "ERROR" , MB_ICONHAND );
+			}
+
 			EndDialog( hdlg , 0 );
 			return TRUE;
-			
+
 		case IDC_CANCEL :
 			EndDialog( hdlg , 0 );
 			return TRUE;
@@ -358,37 +544,37 @@ BOOL APIENTRY InfoDisplay_Proc( HWND hdlg , UINT msg , WPARAM wParam , LPARAM lP
 int APIENTRY WinMain( HINSTANCE hInstance , HINSTANCE hPrevInstance , LPSTR lpCmdLine , int nCmdShow ) {
 
 	// 2018.01.11 added by MJ [엔진 실행중이면 Equipment Setting 설정 안되게끔]
-	HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); 
+	HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     PROCESSENTRY32 processEntry32;
 	char Process[24] = "Cims97_h.exe";
-	
+
     if(hProcessSnap == INVALID_HANDLE_VALUE)
-    {	
-        exit(EXIT_FAILURE);	
-    }
-	
-    processEntry32.dwSize = sizeof(PROCESSENTRY32);
-	
-    if( !Process32First(hProcessSnap, &processEntry32) )	
     {
-        CloseHandle(hProcessSnap);	
-        exit(EXIT_FAILURE);  
+        exit(EXIT_FAILURE);
     }
-	
-    while(Process32Next(hProcessSnap, &processEntry32))	
-    {	
+
+    processEntry32.dwSize = sizeof(PROCESSENTRY32);
+
+    if( !Process32First(hProcessSnap, &processEntry32) )
+    {
+        CloseHandle(hProcessSnap);
+        exit(EXIT_FAILURE);
+    }
+
+    while(Process32Next(hProcessSnap, &processEntry32))
+    {
         // 실행중인 프로세스 비교
-        if(strcmp(Process, processEntry32.szExeFile) == 0)	
-        {		
-            // 실행중인 프로세스가 있다면	
+        if(strcmp(Process, processEntry32.szExeFile) == 0)
+        {
+            // 실행중인 프로세스가 있다면
 			g_bExcuteCheck = TRUE;
 			break;
-            //exit(EXIT_FAILURE);	
-        }	
+            //exit(EXIT_FAILURE);
+        }
     }
-	
+
 	CloseHandle(hProcessSnap);
-    // 실행중인 프로세스 중에 찾는 프로세스가 없다면	
+    // 실행중인 프로세스 중에 찾는 프로세스가 없다면
     //return FALSE;
 
 	GoModalDialogBoxParam( GetModuleHandle(NULL) , MAKEINTRESOURCE( IDD_DIALOG ) , NULL , InfoDisplay_Proc , (LPARAM) NULL );

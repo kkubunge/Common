@@ -208,6 +208,9 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PRMD_ZCtrl_RCP_SKIP"		,	_K_D_IO	,	PRMD_ZCtrl_RCP_SKIP	,	0	} ,
 	{ "PRMD_ZCtrl_DLY_TIME"		,	_K_D_IO	,	PRMD_ZCtrl_DLY_TIME	,	0	} ,
 	{ "PRMD_ZCtrl_RCP_TYPE"		,	_K_D_IO	,	PRMD_ZCtrl_RCP_TYPE	,	0	} ,
+
+	// ALD Valve Option
+	{ "ALD_VLV_QTY_DM"		,	_K_D_IO	,	ALD_VLV_QTY_DM	,	0	} ,
 	""
 };
 

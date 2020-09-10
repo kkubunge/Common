@@ -55,8 +55,10 @@ $$$	F	IO/LOOKUP/lookup.io
 $$$	F	IO/Enum/PMEnum.cfg
 
 $$$	F	IO/CFGS/Mks651.cfg
-$$$	F	IO/CFGS/EthernetIP_PEALD.cfg
-$$$	F	IO/CFGS/EthernetIP_MFC.cfg
+#$$$  F    IO/CFGS/EthernetIP_PEALD.cfg
+#$$$  F    IO/CFGS/EthernetIP_MFC.cfg
+$$$  F    IO/CFGS/EthernetIP_PEALD_ALD.cfg
+$$$  F    IO/CFGS/EthernetIP_MFC_ALD.cfg
 $$$	F	IO/CFGS/WT332_Heater.cfg
 $$$	F	IO/CFGS/EthernetIP_EU3508.cfg
 $$$	F	IO/CFGS/RorzeMtr.cfg

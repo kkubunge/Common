@@ -380,3 +380,5 @@ SIGNALTOWER     Default Red Yellow  Green   AllOff
 
 	PINUPACT	NONE		LOADUP		ERROR		UNLOADUP
 	HEATERACT	ERROR		HON		HOFF		NONE
+
+ALDQuantity       13EA        7EA

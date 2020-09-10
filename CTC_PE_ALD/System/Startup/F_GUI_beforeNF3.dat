@@ -49,17 +49,17 @@ SCREEN_SYSTEM		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/CTC/Screen_CTC.cfg"
 SCREEN_SYSTEM_PARM	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/CTC/AutoPC_Chk_Param.cfg"
 SCREEN_TMC		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/TMC/Screen_TMC.cfg"
 
-SCREEN_PM1	        98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Service_BeforeNF3.cfg"
-SCREEN_PM1_2	    	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Service2.cfg"
-SCREEN_PM1_HEATER_SET	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Heater_Set.cfg"
+SCREEN_PM1		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Service_BeforeNF3.cfg"
+SCREEN_PM1_2		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Service2.cfg"
+SCREEN_PM1_3		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM1/Menu_Service3.cfg"
 
 SCREEN_PM2		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM2/Menu_Service_BeforeNF3.cfg"
 SCREEN_PM2_2		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM2/Menu_Service2.cfg"
-SCREEN_PM2_HEATER_SET	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM2/Menu_Heater_Set.cfg"
+SCREEN_PM2_3		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM2/Menu_Service3.cfg"
 
 SCREEN_PM3		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM3/Menu_Service_BeforeNF3.cfg"
 SCREEN_PM3_2		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM3/Menu_Service2.cfg"
-SCREEN_PM3_HEATER_SET	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM3/Menu_Heater_Set.cfg"
+SCREEN_PM3_3		98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/PM3/Menu_Service3.cfg"
 
 SCREEN_PLOTTING_PM1	99	Engine/Exec/GUI_Plotter		RUN		"Function/Function_Scheduler/Gui_Plotter/Background/Background"	"PARAMETER/PLOTTING/Service_Plotting_PM1.IO"
 SCREEN_PLOTTING_PM2	99	Engine/Exec/GUI_Plotter		RUN		"Function/Function_Scheduler/Gui_Plotter/Background/Background"	"PARAMETER/PLOTTING/Service_Plotting_PM2.IO"
