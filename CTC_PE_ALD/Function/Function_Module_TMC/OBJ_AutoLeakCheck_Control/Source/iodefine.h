@@ -386,6 +386,8 @@ typedef enum {
 	PM1_SysLeakChkDM,
 	PM2_SysLeakChkDM,
 	PM3_SysLeakChkDM,
+
+	TM_INFO_SAVE,
 	//...
 } IOPointIndex;
 //------------------------------------------------------------------------------------------

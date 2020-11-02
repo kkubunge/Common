@@ -12,11 +12,11 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "SCHEDULER"				, _K_F_IO	,	F_SCHEDULER			,	0	} ,
 	{ "CTC.AutoLeakCheckSts"    , _K_D_IO	,	LeakCheckSts		,	0	} ,
 	{ "CTC.AutoLeakAbortCtrl"   , _K_D_IO	,	LeakCheckAbortSts	,	0	} ,
-	
+
 	{ "CTC.MAIN_CONTROL"		, _K_D_IO	,	MAIN_CONTROL		,	0	} ,
 	{ "CTC.MAIN_CONTROL2"		, _K_D_IO	,	MAIN_CONTROL2		,	0	} ,
 	{ "CTC.MAIN_CONTROL3"		, _K_D_IO	,	MAIN_CONTROL3		,	0	} ,
-	
+
 	//Idle Run Time : Idle Wait Time Change & Restore
 	{ "PRMD_PM1_Comp_TimeH_03"	, _K_D_IO	,	PM1IdleHour			,	0	} ,
 	{ "PRMD_PM1_Comp_TimeM_03"	, _K_D_IO	,	PM1IdleMin			,	0	} ,
@@ -60,7 +60,7 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "ALeakCheck.AccWfrCnt"	, _K_D_IO	,	ACC_ALC_WAFER		,	0	} ,
 	{ "ALeakCheck.AccLotCnt"	, _K_D_IO	,	ACC_ALC_LOT			,	0	} ,
 	{ "ALeakCheck.AccIdleTime"	, _K_D_IO	,	ACC_ALC_IDLETIME	,	0	} ,
-		
+
 
 	//TM Leak Check IO which is need to setting before start leak check
 	{ "TM.Leak_PumpingTime_H"	, _K_D_IO	,	TM_PUMP_TIME_HOUR	,	0	} ,
@@ -88,7 +88,7 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 
 	//2011.12.19 mgsong : Over Pressure Valve Status Restore
 	{ "TM.OverPresVvDO"			, _K_D_IO	,	TM_OverPresVlv		,	0	} ,
-	
+
 	//Function
 	{ "TMC_BM1_VAC_CONTROL"		, _K_F_IO	,	BM1_VAC_CONTROL		,	0	} ,
 	{ "TMC_BM2_VAC_CONTROL"		, _K_F_IO	,	BM2_VAC_CONTROL		,	0	} ,
@@ -126,13 +126,13 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PM2.PRO_ChamberStatus"	, _K_D_IO	,	PM2_PRO_ChamberStatus,	0	} ,
 	{ "PM3.PRO_ChamberStatus"	, _K_D_IO	,	PM3_PRO_ChamberStatus,	0	} ,
 
-	{ "CTC.PM1_RECIPE_FILE"		, _K_S_IO   ,	PM1_RECIPE_FILE		 ,	0	} ,	
-	{ "CTC.PM2_RECIPE_FILE"		, _K_S_IO   ,	PM2_RECIPE_FILE		 ,	0	} ,	
-	{ "CTC.PM3_RECIPE_FILE"		, _K_S_IO   ,	PM3_RECIPE_FILE		 ,	0	} ,	
+	{ "CTC.PM1_RECIPE_FILE"		, _K_S_IO   ,	PM1_RECIPE_FILE		 ,	0	} ,
+	{ "CTC.PM2_RECIPE_FILE"		, _K_S_IO   ,	PM2_RECIPE_FILE		 ,	0	} ,
+	{ "CTC.PM3_RECIPE_FILE"		, _K_S_IO   ,	PM3_RECIPE_FILE		 ,	0	} ,
 
-	{ "CTC.PM1_LC_RECIPE_FILE"	, _K_S_IO   ,	PM1_LC_RECIPE_FILE	 ,	0	} ,	
-	{ "CTC.PM2_LC_RECIPE_FILE"	, _K_S_IO   ,	PM2_LC_RECIPE_FILE	 ,	0	} ,	
-	{ "CTC.PM3_LC_RECIPE_FILE"	, _K_S_IO   ,	PM3_LC_RECIPE_FILE	 ,	0	} ,	
+	{ "CTC.PM1_LC_RECIPE_FILE"	, _K_S_IO   ,	PM1_LC_RECIPE_FILE	 ,	0	} ,
+	{ "CTC.PM2_LC_RECIPE_FILE"	, _K_S_IO   ,	PM2_LC_RECIPE_FILE	 ,	0	} ,
+	{ "CTC.PM3_LC_RECIPE_FILE"	, _K_S_IO   ,	PM3_LC_RECIPE_FILE	 ,	0	} ,
 
 	{ "SCHEDULER_MAINT_PM1"		, _K_F_IO  ,	SCHEDULER_MAINT_PM1  ,	0	} ,
 	{ "SCHEDULER_MAINT_PM2"		, _K_F_IO  ,	SCHEDULER_MAINT_PM2  ,	0	} ,
@@ -145,115 +145,115 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "e:SCHEDULER"				, _K_S_IO	,	SCHEDULER			,	0	} ,
 
 	{ "PM1.WaferDI"				, _K_D_IO	,	PM1_WaferDI			,	0	} ,
-	{ "PM2.WaferDI"				, _K_D_IO	,	PM2_WaferDI			,	0	} ,	
+	{ "PM2.WaferDI"				, _K_D_IO	,	PM2_WaferDI			,	0	} ,
 	{ "PM3.WaferDI"				, _K_D_IO	,	PM3_WaferDI			,	0	} ,
 
 	{ "GEM.Control_State"		, _K_D_IO	,	GEM_Control_State	,	0	} ,
 	{ "CTC_EVENT_LOG_SVR"		, _K_F_IO	,	CTC_EVENT_LOG_SVR	,	0	} ,	// 2014.07.20
 
 	//2014.11.20 Wafer Status Check
-	{ "CTC.FM_AL_Wafer_Status"	, _K_D_IO	,	CTC_FM_AL_Wafer_Status,	0	} ,	
-	{ "CTC.FA_Wafer_Status"		, _K_D_IO	,	CTC_FA_Wafer_Status,	0	} ,	
-	{ "CTC.FB_Wafer_Status"		, _K_D_IO	,	CTC_FB_Wafer_Status,	0	} ,	
-	{ "CTC.TA_Wafer_Status"		, _K_D_IO	,	CTC_TA_Wafer_Status,	0	} ,	
-	{ "CTC.TA_Wafer_Status2"	, _K_D_IO	,	CTC_TA_Wafer_Status2,	0	} ,	
-	{ "CTC.TB_Wafer_Status"		, _K_D_IO	,	CTC_TB_Wafer_Status,	0	} ,	
-	{ "CTC.TB_Wafer_Status2"	, _K_D_IO	,	CTC_TB_Wafer_Status2,	0	} ,	
-	{ "CTC.BM1_Wafer_Status"	, _K_D_IO	,	CTC_BM1_Wafer_Status,	0	} ,	
-	{ "CTC.BM1_Wafer_Status2"	, _K_D_IO	,	CTC_BM1_Wafer_Status2,	0	} ,	
-	{ "CTC.BM1_Wafer_Status3"	, _K_D_IO	,	CTC_BM1_Wafer_Status3,	0	} ,	
-	{ "CTC.BM1_Wafer_Status4"	, _K_D_IO	,	CTC_BM1_Wafer_Status4,	0	} ,	
-	{ "CTC.BM2_Wafer_Status"	, _K_D_IO	,	CTC_BM2_Wafer_Status,	0	} ,	
-	{ "CTC.BM2_Wafer_Status2"	, _K_D_IO	,	CTC_BM2_Wafer_Status2,	0	} ,	
-	{ "CTC.BM2_Wafer_Status3"	, _K_D_IO	,	CTC_BM2_Wafer_Status3,	0	} ,	
+	{ "CTC.FM_AL_Wafer_Status"	, _K_D_IO	,	CTC_FM_AL_Wafer_Status,	0	} ,
+	{ "CTC.FA_Wafer_Status"		, _K_D_IO	,	CTC_FA_Wafer_Status,	0	} ,
+	{ "CTC.FB_Wafer_Status"		, _K_D_IO	,	CTC_FB_Wafer_Status,	0	} ,
+	{ "CTC.TA_Wafer_Status"		, _K_D_IO	,	CTC_TA_Wafer_Status,	0	} ,
+	{ "CTC.TA_Wafer_Status2"	, _K_D_IO	,	CTC_TA_Wafer_Status2,	0	} ,
+	{ "CTC.TB_Wafer_Status"		, _K_D_IO	,	CTC_TB_Wafer_Status,	0	} ,
+	{ "CTC.TB_Wafer_Status2"	, _K_D_IO	,	CTC_TB_Wafer_Status2,	0	} ,
+	{ "CTC.BM1_Wafer_Status"	, _K_D_IO	,	CTC_BM1_Wafer_Status,	0	} ,
+	{ "CTC.BM1_Wafer_Status2"	, _K_D_IO	,	CTC_BM1_Wafer_Status2,	0	} ,
+	{ "CTC.BM1_Wafer_Status3"	, _K_D_IO	,	CTC_BM1_Wafer_Status3,	0	} ,
+	{ "CTC.BM1_Wafer_Status4"	, _K_D_IO	,	CTC_BM1_Wafer_Status4,	0	} ,
+	{ "CTC.BM2_Wafer_Status"	, _K_D_IO	,	CTC_BM2_Wafer_Status,	0	} ,
+	{ "CTC.BM2_Wafer_Status2"	, _K_D_IO	,	CTC_BM2_Wafer_Status2,	0	} ,
+	{ "CTC.BM2_Wafer_Status3"	, _K_D_IO	,	CTC_BM2_Wafer_Status3,	0	} ,
 	{ "CTC.BM2_Wafer_Status4"	, _K_D_IO	,	CTC_BM2_Wafer_Status4,	0	} ,
-	{ "CTC.PM1_Wafer_Status"	, _K_D_IO	,	CTC_PM1_Wafer_Status,	0	} ,	
-	{ "CTC.PM1_Wafer_Status2"	, _K_D_IO	,	CTC_PM1_Wafer_Status2,	0	} ,	
-	{ "CTC.PM2_Wafer_Status"	, _K_D_IO	,	CTC_PM2_Wafer_Status,	0	} ,	
-	{ "CTC.PM2_Wafer_Status2"	, _K_D_IO	,	CTC_PM2_Wafer_Status2,	0	} ,	
-	{ "CTC.PM3_Wafer_Status"	, _K_D_IO	,	CTC_PM3_Wafer_Status,	0	} ,	
-	{ "CTC.PM3_Wafer_Status2"	, _K_D_IO	,	CTC_PM3_Wafer_Status2,	0	} ,	
+	{ "CTC.PM1_Wafer_Status"	, _K_D_IO	,	CTC_PM1_Wafer_Status,	0	} ,
+	{ "CTC.PM1_Wafer_Status2"	, _K_D_IO	,	CTC_PM1_Wafer_Status2,	0	} ,
+	{ "CTC.PM2_Wafer_Status"	, _K_D_IO	,	CTC_PM2_Wafer_Status,	0	} ,
+	{ "CTC.PM2_Wafer_Status2"	, _K_D_IO	,	CTC_PM2_Wafer_Status2,	0	} ,
+	{ "CTC.PM3_Wafer_Status"	, _K_D_IO	,	CTC_PM3_Wafer_Status,	0	} ,
+	{ "CTC.PM3_Wafer_Status2"	, _K_D_IO	,	CTC_PM3_Wafer_Status2,	0	} ,
 
 	//... 2015.01.06 Add Recipe Type Check
-	{ "PM1.PRO_RcpTypeDM"		, _K_D_IO	,	PM1_PRO_RcpTypeDM,		0	} ,	
-	{ "PM2.PRO_RcpTypeDM"		, _K_D_IO	,	PM2_PRO_RcpTypeDM,		0	} ,	
+	{ "PM1.PRO_RcpTypeDM"		, _K_D_IO	,	PM1_PRO_RcpTypeDM,		0	} ,
+	{ "PM2.PRO_RcpTypeDM"		, _K_D_IO	,	PM2_PRO_RcpTypeDM,		0	} ,
 	{ "PM3.PRO_RcpTypeDM"		, _K_D_IO	,	PM3_PRO_RcpTypeDM,		0	} ,
-	
+
 	//... 2016.01.19
 	//... CTC Parameter
-	{ "PRMD_PMLK_MACRO1"		, _K_D_IO	,	PRMD_PMLK_MACRO1,		0	} ,	
-	{ "PRMD_PMLK_MACRO2"		, _K_D_IO	,	PRMD_PMLK_MACRO2,		0	} ,	
+	{ "PRMD_PMLK_MACRO1"		, _K_D_IO	,	PRMD_PMLK_MACRO1,		0	} ,
+	{ "PRMD_PMLK_MACRO2"		, _K_D_IO	,	PRMD_PMLK_MACRO2,		0	} ,
 
-	{ "PRMD_PM_ALECHK_RCP"		, _K_D_IO	,	PRMD_PM_ALECHK_RCP,		0	} ,	
+	{ "PRMD_PM_ALECHK_RCP"		, _K_D_IO	,	PRMD_PM_ALECHK_RCP,		0	} ,
 	{ "PRMD_CHUCK_CYCNT"		, _K_D_IO	,	PRMD_CHUCK_CYCNT,		0	} ,
 	{ "PRMA_CHUCK_UPPOS"		, _K_A_IO	,	PRMA_CHUCK_UPPOS,		0	} ,
-	{ "PRMA_CHUCK_DNPOS"		, _K_A_IO	,	PRMA_CHUCK_DNPOS,		0	} ,	
-	{ "PRMD_ALDVLV_CYCNT"		, _K_D_IO	,	PRMD_ALDVLV_CYCNT,		0	} ,		
-	
-	{ "PRMD_PM1_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM1_ALECHK_NORM,	0	} ,	
-	{ "PRMD_PM2_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM2_ALECHK_NORM,	0	} ,	
-	{ "PRMD_PM3_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM3_ALECHK_NORM,	0	} ,	
-	
-	{ "PRMD_PM1_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM1_ALECHK_GASLN,	0	} ,	
-	{ "PRMD_PM2_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM2_ALECHK_GASLN,	0	} ,	
-	{ "PRMD_PM3_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM3_ALECHK_GASLN,	0	} ,	
-	
-	{ "PRMD_PM1_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM1_ALECHK_MTR,	0	} ,		
-	{ "PRMD_PM2_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM2_ALECHK_MTR,	0	} ,	
-	{ "PRMD_PM3_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM3_ALECHK_MTR,	0	} ,	
-	
-	{ "PRMD_PM1_ALECHK_VLV"		, _K_D_IO	,	PRMD_PM1_ALECHK_VLV,	0	} ,		
-	{ "PRMD_PM2_ALECHK_VLV"		, _K_D_IO	,	PRMD_PM2_ALECHK_VLV,	0	} ,	
+	{ "PRMA_CHUCK_DNPOS"		, _K_A_IO	,	PRMA_CHUCK_DNPOS,		0	} ,
+	{ "PRMD_ALDVLV_CYCNT"		, _K_D_IO	,	PRMD_ALDVLV_CYCNT,		0	} ,
+
+	{ "PRMD_PM1_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM1_ALECHK_NORM,	0	} ,
+	{ "PRMD_PM2_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM2_ALECHK_NORM,	0	} ,
+	{ "PRMD_PM3_ALECHK_NORM"	, _K_D_IO	,	PRMD_PM3_ALECHK_NORM,	0	} ,
+
+	{ "PRMD_PM1_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM1_ALECHK_GASLN,	0	} ,
+	{ "PRMD_PM2_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM2_ALECHK_GASLN,	0	} ,
+	{ "PRMD_PM3_ALECHK_GASLN"	, _K_D_IO	,	PRMD_PM3_ALECHK_GASLN,	0	} ,
+
+	{ "PRMD_PM1_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM1_ALECHK_MTR,	0	} ,
+	{ "PRMD_PM2_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM2_ALECHK_MTR,	0	} ,
+	{ "PRMD_PM3_ALECHK_MTR"		, _K_D_IO	,	PRMD_PM3_ALECHK_MTR,	0	} ,
+
+	{ "PRMD_PM1_ALECHK_VLV"		, _K_D_IO	,	PRMD_PM1_ALECHK_VLV,	0	} ,
+	{ "PRMD_PM2_ALECHK_VLV"		, _K_D_IO	,	PRMD_PM2_ALECHK_VLV,	0	} ,
 	{ "PRMD_PM3_ALECHK_VLV"		, _K_D_IO	,	PRMD_PM3_ALECHK_VLV,	0	} ,
-	//... 2016.04.11	
-	{ "PRMA_PM1_BASEPRES"		, _K_A_IO	,	PRMA_PM1_BASEPRES		,	0	},		
+	//... 2016.04.11
+	{ "PRMA_PM1_BASEPRES"		, _K_A_IO	,	PRMA_PM1_BASEPRES		,	0	},
 	{ "PRMA_PM2_BASEPRES"		, _K_A_IO	,	PRMA_PM2_BASEPRES		,	0	},
 	{ "PRMA_PM3_BASEPRES"		, _K_A_IO	,	PRMA_PM3_BASEPRES		,	0	},
-	
+
 	{ "PRMA_PM1_PumpTimeOT"		, _K_A_IO	,	PRMA_PM1_PumpTimeOT		,	0	},
 	{ "PRMA_PM2_PumpTimeOT"		, _K_A_IO	,	PRMA_PM2_PumpTimeOT		,	0	},
 	{ "PRMA_PM3_PumpTimeOT"		, _K_A_IO	,	PRMA_PM3_PumpTimeOT		,	0	},
-	
+
 	{ "PRMA_PM1_WaitTimeOP"		, _K_A_IO	,	PRMA_PM1_WaitTimeOP		,	0	},
 	{ "PRMA_PM2_WaitTimeOP"		, _K_A_IO	,	PRMA_PM2_WaitTimeOP		,	0	},
 	{ "PRMA_PM3_WaitTimeOP"		, _K_A_IO	,	PRMA_PM3_WaitTimeOP		,	0	},
-	
+
 	{ "PRMA_PM1_WaitTimeCL"		, _K_A_IO	,	PRMA_PM1_WaitTimeCL		,	0	},
 	{ "PRMA_PM2_WaitTimeCL"		, _K_A_IO	,	PRMA_PM2_WaitTimeCL		,	0	},
 	{ "PRMA_PM3_WaitTimeCL"		, _K_A_IO	,	PRMA_PM3_WaitTimeCL		,	0	},
-	
+
 	{ "PRMA_PM1_LKCount"		, _K_A_IO	,	PRMA_PM1_LKCount		,	0	},
 	{ "PRMA_PM2_LKCount"		, _K_A_IO	,	PRMA_PM2_LKCount		,	0	},
 	{ "PRMA_PM3_LKCount"		, _K_A_IO	,	PRMA_PM3_LKCount		,	0	},
-	
-	{ "PRMA_PM1_LKRateLimit"	, _K_A_IO	,	PRMA_PM1_LKRateLimit	,	0	},	
-	{ "PRMA_PM2_LKRateLimit"	, _K_A_IO	,	PRMA_PM2_LKRateLimit	,	0	},	
-	{ "PRMA_PM3_LKRateLimit"	, _K_A_IO	,	PRMA_PM3_LKRateLimit	,	0	},	
-	
+
+	{ "PRMA_PM1_LKRateLimit"	, _K_A_IO	,	PRMA_PM1_LKRateLimit	,	0	},
+	{ "PRMA_PM2_LKRateLimit"	, _K_A_IO	,	PRMA_PM2_LKRateLimit	,	0	},
+	{ "PRMA_PM3_LKRateLimit"	, _K_A_IO	,	PRMA_PM3_LKRateLimit	,	0	},
+
 	{ "PRMA_PM1_LnBASEPRES"		, _K_A_IO	,	PRMA_PM1_LnBASEPRES		,	0	},
 	{ "PRMA_PM2_LnBASEPRES"		, _K_A_IO	,	PRMA_PM2_LnBASEPRES		,	0	},
 	{ "PRMA_PM3_LnBASEPRES"		, _K_A_IO	,	PRMA_PM3_LnBASEPRES		,	0	},
-	
-	{ "PRMA_PM1_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM1_LnPumpTimeOT	,	0	},	
-	{ "PRMA_PM2_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM2_LnPumpTimeOT	,	0	},	
-	{ "PRMA_PM3_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM3_LnPumpTimeOT	,	0	},	
-	
-	{ "PRMA_PM1_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM1_LnWaitTimeOP	,	0	},	
-	{ "PRMA_PM2_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM2_LnWaitTimeOP	,	0	},	
-	{ "PRMA_PM3_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM3_LnWaitTimeOP	,	0	},	
-	
-	{ "PRMA_PM1_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM1_LnWaitTimeCL	,	0	},	
-	{ "PRMA_PM2_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM2_LnWaitTimeCL	,	0	},	
-	{ "PRMA_PM3_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM3_LnWaitTimeCL	,	0	},	
-	
+
+	{ "PRMA_PM1_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM1_LnPumpTimeOT	,	0	},
+	{ "PRMA_PM2_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM2_LnPumpTimeOT	,	0	},
+	{ "PRMA_PM3_LnPumpTimeOT"	, _K_A_IO	,	PRMA_PM3_LnPumpTimeOT	,	0	},
+
+	{ "PRMA_PM1_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM1_LnWaitTimeOP	,	0	},
+	{ "PRMA_PM2_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM2_LnWaitTimeOP	,	0	},
+	{ "PRMA_PM3_LnWaitTimeOP"	, _K_A_IO	,	PRMA_PM3_LnWaitTimeOP	,	0	},
+
+	{ "PRMA_PM1_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM1_LnWaitTimeCL	,	0	},
+	{ "PRMA_PM2_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM2_LnWaitTimeCL	,	0	},
+	{ "PRMA_PM3_LnWaitTimeCL"	, _K_A_IO	,	PRMA_PM3_LnWaitTimeCL	,	0	},
+
 	{ "PRMA_PM1_LnLKCount"		, _K_A_IO	,	PRMA_PM1_LnLKCount		,	0	},
 	{ "PRMA_PM2_LnLKCount"		, _K_A_IO	,	PRMA_PM2_LnLKCount		,	0	},
 	{ "PRMA_PM3_LnLKCount"		, _K_A_IO	,	PRMA_PM3_LnLKCount		,	0	},
-	
-	{ "PRMA_PM1_LnLKRateLimit"	, _K_A_IO	,	PRMA_PM1_LnLKRateLimit	,	0	},	
-	{ "PRMA_PM2_LnLKRateLimit"	, _K_A_IO	,	PRMA_PM2_LnLKRateLimit	,	0	},	
+
+	{ "PRMA_PM1_LnLKRateLimit"	, _K_A_IO	,	PRMA_PM1_LnLKRateLimit	,	0	},
+	{ "PRMA_PM2_LnLKRateLimit"	, _K_A_IO	,	PRMA_PM2_LnLKRateLimit	,	0	},
 	{ "PRMA_PM3_LnLKRateLimit"	, _K_A_IO	,	PRMA_PM3_LnLKRateLimit	,	0	},
-	//... 2016.05.13	
+	//... 2016.05.13
 	{ "PRMA_PM1_MFC_PurgeTmAM"	, _K_A_IO	,	PRMA_PM1_MFC_PurgeTmAM	,	0	},
 	{ "PRMA_PM2_MFC_PurgeTmAM"	, _K_A_IO	,	PRMA_PM2_MFC_PurgeTmAM	,	0	},
 	{ "PRMA_PM3_MFC_PurgeTmAM"	, _K_A_IO	,	PRMA_PM3_MFC_PurgeTmAM	,	0	},
@@ -266,96 +266,96 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PRMA_PM3_LnRoRLimitAM"	, _K_A_IO	,	PRMA_PM3_LnRoRLimitAM	,	0	},
 	//...
 	//... PM IO
-	{ "PM1.LKMacroType1DM"		, _K_D_IO	,	PM1_LK_MACRO1,			0	} ,	
-	{ "PM2.LKMacroType1DM"		, _K_D_IO	,	PM2_LK_MACRO1,			0	} ,	
-	{ "PM3.LKMacroType1DM"		, _K_D_IO	,	PM3_LK_MACRO1,			0	} ,	
-	{ "PM1.LKMacroType2DM"		, _K_D_IO	,	PM1_LK_MACRO2,			0	} ,	
-	{ "PM2.LKMacroType2DM"		, _K_D_IO	,	PM2_LK_MACRO2,			0	} ,	
-	{ "PM3.LKMacroType2DM"		, _K_D_IO	,	PM3_LK_MACRO2,			0	} ,	
+	{ "PM1.LKMacroType1DM"		, _K_D_IO	,	PM1_LK_MACRO1,			0	} ,
+	{ "PM2.LKMacroType1DM"		, _K_D_IO	,	PM2_LK_MACRO1,			0	} ,
+	{ "PM3.LKMacroType1DM"		, _K_D_IO	,	PM3_LK_MACRO1,			0	} ,
+	{ "PM1.LKMacroType2DM"		, _K_D_IO	,	PM1_LK_MACRO2,			0	} ,
+	{ "PM2.LKMacroType2DM"		, _K_D_IO	,	PM2_LK_MACRO2,			0	} ,
+	{ "PM3.LKMacroType2DM"		, _K_D_IO	,	PM3_LK_MACRO2,			0	} ,
 
-	{ "PM1.ALECHK_RCPDM"		, _K_D_IO	,	PM1_ALECHK_RCPDM,		0	} ,	
-	{ "PM2.ALECHK_RCPDM"		, _K_D_IO	,	PM2_ALECHK_RCPDM,		0	} ,	
-	{ "PM3.ALECHK_RCPDM"		, _K_D_IO	,	PM3_ALECHK_RCPDM,		0	} ,	
+	{ "PM1.ALECHK_RCPDM"		, _K_D_IO	,	PM1_ALECHK_RCPDM,		0	} ,
+	{ "PM2.ALECHK_RCPDM"		, _K_D_IO	,	PM2_ALECHK_RCPDM,		0	} ,
+	{ "PM3.ALECHK_RCPDM"		, _K_D_IO	,	PM3_ALECHK_RCPDM,		0	} ,
 
-	{ "PM1.ALECHK_DynCntDM"		, _K_D_IO	,	PM1_ALECHK_DynCntDM,	0	} ,			
-	{ "PM2.ALECHK_DynCntDM"		, _K_D_IO	,	PM2_ALECHK_DynCntDM,	0	} ,		
-	{ "PM3.ALECHK_DynCntDM"		, _K_D_IO	,	PM3_ALECHK_DynCntDM,	0	} ,		
-	
-	{ "PM1.Chuck_UpPos_AM"		, _K_A_IO	,	PM1_CHUCK_UPPOS_AM,		0	} ,			
-	{ "PM2.Chuck_UpPos_AM"		, _K_A_IO	,	PM2_CHUCK_UPPOS_AM,		0	} ,		
-	{ "PM3.Chuck_UpPos_AM"		, _K_A_IO	,	PM3_CHUCK_UPPOS_AM,		0	} ,		
-	
-	{ "PM1.Chuck_DnPos_AM"		, _K_A_IO	,	PM1_CHUCK_DNPOS_AM,		0	} ,	
-	{ "PM2.Chuck_DnPos_AM"		, _K_A_IO	,	PM2_CHUCK_DNPOS_AM,		0	} ,	
-	{ "PM3.Chuck_DnPos_AM"		, _K_A_IO	,	PM3_CHUCK_DNPOS_AM,		0	} ,	
-	
+	{ "PM1.ALECHK_DynCntDM"		, _K_D_IO	,	PM1_ALECHK_DynCntDM,	0	} ,
+	{ "PM2.ALECHK_DynCntDM"		, _K_D_IO	,	PM2_ALECHK_DynCntDM,	0	} ,
+	{ "PM3.ALECHK_DynCntDM"		, _K_D_IO	,	PM3_ALECHK_DynCntDM,	0	} ,
+
+	{ "PM1.Chuck_UpPos_AM"		, _K_A_IO	,	PM1_CHUCK_UPPOS_AM,		0	} ,
+	{ "PM2.Chuck_UpPos_AM"		, _K_A_IO	,	PM2_CHUCK_UPPOS_AM,		0	} ,
+	{ "PM3.Chuck_UpPos_AM"		, _K_A_IO	,	PM3_CHUCK_UPPOS_AM,		0	} ,
+
+	{ "PM1.Chuck_DnPos_AM"		, _K_A_IO	,	PM1_CHUCK_DNPOS_AM,		0	} ,
+	{ "PM2.Chuck_DnPos_AM"		, _K_A_IO	,	PM2_CHUCK_DNPOS_AM,		0	} ,
+	{ "PM3.Chuck_DnPos_AM"		, _K_A_IO	,	PM3_CHUCK_DNPOS_AM,		0	} ,
+
 	{ "PM1.M_AVlv_CycTgtCntAM"	, _K_A_IO	,	PM1_ALDVLV_CntAM,		0	} ,
 	{ "PM2.M_AVlv_CycTgtCntAM"	, _K_A_IO	,	PM2_ALDVLV_CntAM,		0	} ,
 	{ "PM3.M_AVlv_CycTgtCntAM"	, _K_A_IO	,	PM3_ALDVLV_CntAM,		0	} ,
-	
-	{ "PM1.ALECHK_NormDM"		, _K_D_IO	,	PM1_ALECHK_NormDM,		0	} ,	
-	{ "PM2.ALECHK_NormDM"		, _K_D_IO	,	PM2_ALECHK_NormDM,		0	} ,	
-	{ "PM3.ALECHK_NormDM"		, _K_D_IO	,	PM3_ALECHK_NormDM,		0	} ,	
 
-	{ "PM1.ALECHK_GASLnDM"		, _K_D_IO	,	PM1_ALECHK_GASLnDM,		0	} ,	
-	{ "PM2.ALECHK_GASLnDM"		, _K_D_IO	,	PM2_ALECHK_GASLnDM,		0	} ,	
-	{ "PM3.ALECHK_GASLnDM"		, _K_D_IO	,	PM3_ALECHK_GASLnDM,		0	} ,	
+	{ "PM1.ALECHK_NormDM"		, _K_D_IO	,	PM1_ALECHK_NormDM,		0	} ,
+	{ "PM2.ALECHK_NormDM"		, _K_D_IO	,	PM2_ALECHK_NormDM,		0	} ,
+	{ "PM3.ALECHK_NormDM"		, _K_D_IO	,	PM3_ALECHK_NormDM,		0	} ,
 
-	{ "PM1.ALECHK_MTRDM"		, _K_D_IO	,	PM1_ALECHK_MTRDM,		0	} ,		
-	{ "PM2.ALECHK_MTRDM"		, _K_D_IO	,	PM2_ALECHK_MTRDM,		0	} ,	
-	{ "PM3.ALECHK_MTRDM"		, _K_D_IO	,	PM3_ALECHK_MTRDM,		0	} ,	
+	{ "PM1.ALECHK_GASLnDM"		, _K_D_IO	,	PM1_ALECHK_GASLnDM,		0	} ,
+	{ "PM2.ALECHK_GASLnDM"		, _K_D_IO	,	PM2_ALECHK_GASLnDM,		0	} ,
+	{ "PM3.ALECHK_GASLnDM"		, _K_D_IO	,	PM3_ALECHK_GASLnDM,		0	} ,
 
-	{ "PM1.ALECHK_VLVDM"		, _K_D_IO	,	PM1_ALECHK_VLVDM,		0	} ,		
-	{ "PM2.ALECHK_VLVDM"		, _K_D_IO	,	PM2_ALECHK_VLVDM,		0	} ,	
+	{ "PM1.ALECHK_MTRDM"		, _K_D_IO	,	PM1_ALECHK_MTRDM,		0	} ,
+	{ "PM2.ALECHK_MTRDM"		, _K_D_IO	,	PM2_ALECHK_MTRDM,		0	} ,
+	{ "PM3.ALECHK_MTRDM"		, _K_D_IO	,	PM3_ALECHK_MTRDM,		0	} ,
+
+	{ "PM1.ALECHK_VLVDM"		, _K_D_IO	,	PM1_ALECHK_VLVDM,		0	} ,
+	{ "PM2.ALECHK_VLVDM"		, _K_D_IO	,	PM2_ALECHK_VLVDM,		0	} ,
 	{ "PM3.ALECHK_VLVDM"		, _K_D_IO	,	PM3_ALECHK_VLVDM,		0	} ,
 
 	{ "PM1.LeakChkBasePressAM"	, _K_A_IO	,	PM1_LeakChkBasePressAM	,	0	},
 	{ "PM2.LeakChkBasePressAM"  , _K_A_IO	,	PM2_LeakChkBasePressAM  ,	0	},
 	{ "PM3.LeakChkBasePressAM"  , _K_A_IO	,	PM3_LeakChkBasePressAM  ,	0	},
-	
+
 	{ "PM1.LeakChkPumpTimeOutAM", _K_A_IO	,	PM1_LeakChkPumpTimeOutAM,	0	},
 	{ "PM2.LeakChkPumpTimeOutAM", _K_A_IO	,	PM2_LeakChkPumpTimeOutAM,	0	},
 	{ "PM3.LeakChkPumpTimeOutAM", _K_A_IO	,	PM3_LeakChkPumpTimeOutAM,	0	},
-	
+
 	{ "PM1.BaseDelayTimeAM"	    , _K_A_IO	,	PM1_BaseDelayTimeAM	    ,	0	},
 	{ "PM2.BaseDelayTimeAM"	    , _K_A_IO	,	PM2_BaseDelayTimeAM	    ,	0	},
 	{ "PM3.BaseDelayTimeAM"	    , _K_A_IO	,	PM3_BaseDelayTimeAM	    ,	0	},
-	
+
 	{ "PM1.LeakChkDelayTimeAM"	, _K_A_IO	,	PM1_LeakChkDelayTimeAM	,	0	},
 	{ "PM2.LeakChkDelayTimeAM"	, _K_A_IO	,	PM2_LeakChkDelayTimeAM	,	0	},
 	{ "PM3.LeakChkDelayTimeAM"	, _K_A_IO	,	PM3_LeakChkDelayTimeAM	,	0	},
-	
+
 	{ "PM1.LeakChkCountSPAM"	, _K_A_IO	,	PM1_LeakChkCountAM	    ,	0	},
 	{ "PM2.LeakChkCountSPAM"	, _K_A_IO	,	PM2_LeakChkCountAM	    ,	0	},
 	{ "PM3.LeakChkCountSPAM"	, _K_A_IO	,	PM3_LeakChkCountAM	    ,	0	},
-	
-	{ "PM1.LeakChkLimitPressAM"	, _K_A_IO	,	PM1_LeakChkLimitPressAM ,	0	},	
-	{ "PM2.LeakChkLimitPressAM"	, _K_A_IO	,	PM2_LeakChkLimitPressAM	,	0	},	
-	{ "PM3.LeakChkLimitPressAM"	, _K_A_IO	,	PM3_LeakChkLimitPressAM	,	0	},		
-	
+
+	{ "PM1.LeakChkLimitPressAM"	, _K_A_IO	,	PM1_LeakChkLimitPressAM ,	0	},
+	{ "PM2.LeakChkLimitPressAM"	, _K_A_IO	,	PM2_LeakChkLimitPressAM	,	0	},
+	{ "PM3.LeakChkLimitPressAM"	, _K_A_IO	,	PM3_LeakChkLimitPressAM	,	0	},
+
 	{ "PM1.LnLkChkBasePressAM"	, _K_A_IO	,	PM1_LnLkChkBasePressAM	,	0	},
 	{ "PM2.LnLkChkBasePressAM"  , _K_A_IO	,	PM2_LnLkChkBasePressAM  ,	0	},
 	{ "PM3.LnLkChkBasePressAM"  , _K_A_IO	,	PM3_LnLkChkBasePressAM  ,	0	},
-	
+
 	{ "PM1.LnLkChkPumpTimeOutAM", _K_A_IO	,	PM1_LnLkChkPumpTimeOutAM,	0	},
 	{ "PM2.LnLkChkPumpTimeOutAM", _K_A_IO	,	PM2_LnLkChkPumpTimeOutAM,	0	},
 	{ "PM3.LnLkChkPumpTimeOutAM", _K_A_IO	,	PM3_LnLkChkPumpTimeOutAM,	0	},
-	
+
 	{ "PM1.LnBaseDelayTimeAM"	, _K_A_IO	,	PM1_LnBaseDelayTimeAM	,	0	},
 	{ "PM2.LnBaseDelayTimeAM"	, _K_A_IO	,	PM2_LnBaseDelayTimeAM	,	0	},
 	{ "PM3.LnBaseDelayTimeAM"	, _K_A_IO	,	PM3_LnBaseDelayTimeAM	,	0	},
-	
+
 	{ "PM1.LnLkChkDelayTimeAM"	, _K_A_IO	,	PM1_LnLkChkDelayTimeAM	,	0	},
 	{ "PM2.LnLkChkDelayTimeAM"	, _K_A_IO	,	PM2_LnLkChkDelayTimeAM	,	0	},
 	{ "PM3.LnLkChkDelayTimeAM"	, _K_A_IO	,	PM3_LnLkChkDelayTimeAM	,	0	},
-	
+
 	{ "PM1.LnLkChkCountSPAM"	, _K_A_IO	,	PM1_LnLkChkCountAM	    ,	0	},
 	{ "PM2.LnLkChkCountSPAM"	, _K_A_IO	,	PM2_LnLkChkCountAM	    ,	0	},
 	{ "PM3.LnLkChkCountSPAM"	, _K_A_IO	,	PM3_LnLkChkCountAM	    ,	0	},
-	
-	{ "PM1.LnLkChkLimitPressAM"	, _K_A_IO	,	PM1_LnLkChkLimitPressAM	,	0	},	
-	{ "PM2.LnLkChkLimitPressAM"	, _K_A_IO	,	PM2_LnLkChkLimitPressAM ,	0	},	
-	{ "PM3.LnLkChkLimitPressAM"	, _K_A_IO	,	PM3_LnLkChkLimitPressAM	,	0	},	
+
+	{ "PM1.LnLkChkLimitPressAM"	, _K_A_IO	,	PM1_LnLkChkLimitPressAM	,	0	},
+	{ "PM2.LnLkChkLimitPressAM"	, _K_A_IO	,	PM2_LnLkChkLimitPressAM ,	0	},
+	{ "PM3.LnLkChkLimitPressAM"	, _K_A_IO	,	PM3_LnLkChkLimitPressAM	,	0	},
 	//... 2016.05.13
 	{ "PM1.MFC_PurgeTmAM"		, _K_A_IO	,	PM1_MFC_PurgeTmAM		,	0	},
 	{ "PM2.MFC_PurgeTmAM"		, _K_A_IO	,	PM2_MFC_PurgeTmAM		,	0	},
@@ -375,7 +375,7 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PM2.CleanLineLK_DM"		, _K_D_IO	,	PM2_CleanLineLK_DM,		0	} ,
 	{ "PM3.CleanLineLK_DM"		, _K_D_IO	,	PM3_CleanLineLK_DM,		0	} ,
 
-	//... 2016.04.03 
+	//... 2016.04.03
 	{ "PRMA_PM1_DRYCThick"		, _K_A_IO	,	PRMA_PM1_DRYCThick,		0	} ,
 	{ "PRMA_PM2_DRYCThick"		, _K_A_IO	,	PRMA_PM2_DRYCThick,		0	} ,
 	{ "PRMA_PM3_DRYCThick"		, _K_A_IO	,	PRMA_PM3_DRYCThick,		0	} ,
@@ -391,6 +391,8 @@ IO_Name_String_Map IO_STR_Map_Table[] = {
 	{ "PM1.SysLeakChkDM"		, _K_D_IO	,	PM1_SysLeakChkDM,		0	} ,
 	{ "PM2.SysLeakChkDM"		, _K_D_IO	,	PM2_SysLeakChkDM,		0	} ,
 	{ "PM3.SysLeakChkDM"		, _K_D_IO	,	PM3_SysLeakChkDM,		0	} ,
+
+	{ "GEM.TM_INFO_SAVE"		, _K_D_IO	,	TM_INFO_SAVE,			0	} ,
 	""
 };
 
@@ -401,14 +403,14 @@ extern void _MLOG(const char *pFormat, ...)
 	va_list args;
 	va_start(args, pFormat);
 	vsprintf(_szString, pFormat, args);
-	va_end(args);	
+	va_end(args);
 	WRITE_FUNCTION_EVENT(CTC_EVENT_LOG_SVR, _szString);
 }
 
 void LogEvent(char *szModule, char *szRunStr, char *szStatus, char *szData)
 {
 	char szEventID[20];
-	
+
 	do {
 		if(STRCMP_L(szRunStr , "LeakCheck")) strcpy(szEventID, "AutoLeakCheck");
 		else
@@ -429,7 +431,7 @@ extern "C" void Screen_Nav_Info( int no )
 	if (no == -1) {
 		if (NULL != g_pLeakCheckCtrl)
 			delete g_pLeakCheckCtrl;
-		
+
 	}
 }
 
@@ -440,7 +442,7 @@ extern "C" BOOL Program_Init_Code()
 	if (NULL != g_pLeakCheckCtrl) {
 		return g_pLeakCheckCtrl->Initialize();
 	} else return FALSE;
-	
+
 	return TRUE;
 }
 
@@ -451,14 +453,14 @@ extern "C" void Program_Enter_Code()
 
 extern "C" void Event_Message_Received()
 {
-	
+
 }
 
 //-----------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 Module_Status Program_Main() {
 	Module_Status msRet = SYS_ABORTED;
-	
+
 	int nParLen = 0;
 	int nIOStatus;
 	char *pParam;
@@ -476,13 +478,53 @@ Module_Status Program_Main() {
 			break;
 		}
 
-		STR_SEPERATE(pParam , szCmd, szSubParam, 255 );	
-		if (STRCMP_L(szCmd, "ABORT")) {
+		STR_SEPERATE(pParam , szCmd, szSubParam, 255 );
+		if (STRCMP_L(szCmd, "ABORT"))
+		{
 			//Just Write to IO then Auto Leak Check Control Function will be Reset the IO
 			WRITE_DIGITAL(LeakCheckAbortSts , 1/*Abort*/ , &nIOStatus);
 			msRet = SYS_SUCCESS;
-		} else {
+		}
+		else if (STRCMP_L(szCmd, "clear"))
+		{
+			WRITE_DIGITAL(TM_INFO_SAVE, 0, &nIOStatus );
+
+			if (STRCMP_L(szSubParam, "Clean_1"))
+			{
+				WRITE_STRING(PM1_CLN_RECIPE_FILE, "", &nIOStatus);
+			}
+			else if (STRCMP_L(szSubParam, "Clean_2"))
+			{
+				WRITE_STRING(PM2_CLN_RECIPE_FILE, "", &nIOStatus);
+			}
+			else if (STRCMP_L(szSubParam, "Clean_3"))
+			{
+				WRITE_STRING(PM3_CLN_RECIPE_FILE, "", &nIOStatus);
+			}
+			else if (STRCMP_L(szSubParam, "Purge_1"))
+			{
+				WRITE_STRING(PM1_LC_RECIPE_FILE, "", &nIOStatus);
+			}
+			else if (STRCMP_L(szSubParam, "Purge_2"))
+			{
+				WRITE_STRING(PM2_LC_RECIPE_FILE, "", &nIOStatus);
+			}
+			else if (STRCMP_L(szSubParam, "Purge_3"))
+			{
+				WRITE_STRING(PM3_LC_RECIPE_FILE, "", &nIOStatus);
+			}
+			_sleep(100);
+			WRITE_DIGITAL(TM_INFO_SAVE, 1, &nIOStatus );
+			_sleep(100);
+			WRITE_DIGITAL(TM_INFO_SAVE, 0, &nIOStatus );
+			_sleep(100);
+			WRITE_DIGITAL(TM_INFO_SAVE, 1, &nIOStatus );
+			_sleep(100);
+			WRITE_DIGITAL(TM_INFO_SAVE, 0, &nIOStatus );
+			_sleep(100);
+			WRITE_DIGITAL(TM_INFO_SAVE, 1, &nIOStatus );
 		
+			msRet = SYS_SUCCESS;
 		}
 	} while(0);
 
