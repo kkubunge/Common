@@ -78,6 +78,10 @@ SCREEN_RECIPE_HISTORY	99	FUNCTION/Function_Module_CTC/OBJ_Gui_Recipe_History/OBJ
 
 #SCREEN_AWCSCAN		99	FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Obj_Gui_AWCScan	RUN	"FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Background/Background"	"f:\datalog\_LOG\AWCSCAN|TM|3"
 
+#SCREEN_AWCSCAN		99	FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Obj_Gui_AWCScan	RUN	"FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Background/Background"	"F:\DataLog\_Log|TM_AWS_|3"
+
+SCREEN_AWCSCAN		99	FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Obj_Gui_AWCScan	RUN	"FUNCTION/Function_Module_CTC/OBJ_Gui_AWCScanLog/Background/Background"	"F:\DataLog\_Log|TM_AWS_|3"
+
 SCREEN_AUTOPM_PM1	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/CTC/Screen_AutoPM.cfg"
 SCREEN_AUTOPM_PM2	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/CTC/Screen_AutoPM.cfg"
 SCREEN_AUTOPM_PM3	98	Engine/Exec/GUI_Standard2		RUN		""	"GUI/CTC/Screen_AutoPM.cfg"
