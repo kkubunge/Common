@@ -10,6 +10,7 @@ enum { BUTTON_RELOAD_FILE , BUTTON_FILE_LIST , BUTTON_DATA ,
 		BUTTON_READ , BUTTON_DELETE }; // 2006.05.29
 
 #define MAX_BUTTON_COUNT	8
+#define LIST_HEADER_SIZE	11
 //------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
 //
