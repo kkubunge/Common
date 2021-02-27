@@ -7317,7 +7317,20 @@ BOOL CProcessSequence::ReadPmcConfig()
 	FILE *fp;
 	char szRead[256];
 	char szItem[256];
+	char szVlvList[256];
 	int nTitle = 0;
+	int nIOStatus;
+
+	if (READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+	{
+		strcpy(szVlvList, "ALD Valve List 7EA");
+	}
+	else
+	{
+		strcpy(szVlvList, "ALD Valve List");
+	}
+
+	// printf("==>>>> ReadPmcConfig [%s] [%d] \n", szVlvList, READ_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus));
 
 	do {
 		fp = fopen(PMC_CONFIG_FILE, "rt");
@@ -7339,7 +7352,7 @@ BOOL CProcessSequence::ReadPmcConfig()
 				//... 2015.05.30 Add CTC Download Recipe Valve Verification by Valve Interlock
 				else if(strcmp("Double Open Interlock", szItem) == 0)			nTitle = 5;
 				//... 2017.12.13 Get ALD Valve Information
-				else if(strcmp("ALD Valve List", szItem) == 0)					nTitle = 6;
+				else if (strcmp(szVlvList, szItem) == 0)						nTitle = 6;
 				else nTitle = 0;
 
 				if(nTitle > 0) do

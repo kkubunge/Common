@@ -145,7 +145,7 @@ BOOL CALDVlvMon::Initialize()
 			// 2020.06.08 ALD Valve Change
 			// V100, V101, V102, V108, V109, V110 Not Use
 			/*   V100      V101      V102      V108      V109      V110  */
-			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9) continue;
+			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 8 || i == 9) continue;
 		}
 
 		//... Read Last Count
@@ -345,7 +345,7 @@ void CALDVlvMon::SUMVlvCount()
 			// 2020.06.08 ALD Valve Change
 			// V100, V101, V102, V108, V109, V110 Not Use
 			/*   V100      V101      V102      V108      V109      V110  */
-			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 7 || i == 9)
+			if (i == 2 || i == 3 || i == 4 || i == 7 || i == 8 || i == 9)
 				continue;
 		}
 

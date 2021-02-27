@@ -156,16 +156,16 @@ AutoPC_ParmSaveDM	OffOn	Off
 
 $$$ Analog
 
-ChuckUpPos1     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckDnPos1     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckUpPos2     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckDnPos2     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckUpPos3     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckDnPos3     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckUpPos4     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckDnPos4     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckUpPos5     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
-ChuckDnPos5     	mm - -- -- --  2  4  89   1  - -- -- --  2  4  89
+ChuckUpPos1     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckDnPos1     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckUpPos2     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckDnPos2     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckUpPos3     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckDnPos3     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckUpPos4     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckDnPos4     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckUpPos5     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
+ChuckDnPos5     	mm - -- -- --  2  8  89   1  - -- -- --  2  8  89
 
 
 #... 2016.02.10 Slit Valve Cycle Function
