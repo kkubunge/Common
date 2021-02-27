@@ -21,7 +21,7 @@ PRO_PMStepWaitDM	OffOnEnum		Off
 #--------------------------------------------------------------------------------------------
 
 $$$ Enum
-CTCControl   Idle  Running  Pausing  Paused  Aborting  Disable
+CTCControl   Idle  Running  Pausing  Paused  Aborting  Disable  Waiting  Wait-HandOff
 #IdleRcpStsEnum	Stop	Running
 
 PostRunEnum	PostRunOff	PostRunResv	PostRunStart
@@ -68,6 +68,9 @@ $$$ Digital
 MAIN_CONTROL		CTCControl
 ActiveRCPType	ActiveRCPEnum	MEM	-	-	-	-	1	MEM	-	-	-	-
 SW_GbIntlckDM	NmIntEnum	Normal
+
+# 2020.12.26
+MANUAL_TR_CONTROL	CTCControl
 
 # 2005.04.18 by cskim
 PRO_DRYAlarmDM	NmArmEnum	Normal

@@ -80,7 +80,7 @@ static enum {
 	BM1_DPStsDI,
 	BM1_DPWarnStsDI,
 	BM1_DPAlarmStsDI,
-	BM1_CGPumpPrsAI, 
+	BM1_CGPumpPrsAI,
 	BM1_CGChmPrsAI,
 	BM1_RoughVvXO,
 	BM1_VentVvXO,
@@ -95,7 +95,7 @@ static enum {
 	BM2_DPStsDI,
 	BM2_DPWarnStsDI,
 	BM2_DPAlarmStsDI,
-	BM2_CGPumpPrsAI, 
+	BM2_CGPumpPrsAI,
 	BM2_CGChmPrsAI,
 	BM2_RoughVvXO,
 	BM2_VentVvXO,
@@ -110,15 +110,15 @@ static enum {
 	TM_DPStsDI,
 	TM_DPWarnStsDI,
 	TM_DPAlarmStsDI,
-	TM_CGPumpPrsAI, 
+	TM_CGPumpPrsAI,
 	TM_CGChmPrsAI,
 	TM_RoughVvXO,
 	TM_VentVvXO,
 	TM_ATMVACSensorXI,
 	TM_OverPresVvDO,
-	
-	TM_UPC_Set			,
-	TM_UPC_Flow			,
+
+	TM_UPC_Set,
+	TM_UPC_Flow,
 
 	LPMA_FOUP_PresentDI,
 	LPMB_FOUP_PresentDI,
@@ -134,108 +134,138 @@ static enum {
 	PM2_ChmPrsAI,
 	PM3_ChmPrsAI,
 
+	CTC_MAIN_CONTROL,
+	CTC_MAIN_CONTROL2,
+	CTC_MAIN_CONTROL3,
+	CM1_CLAMP_STATUS,
+	CM2_CLAMP_STATUS,
+	CM3_CLAMP_STATUS,
+	LPMA_ShuttleInOutXI,
+	LPMB_ShuttleInOutXI,
+	LPMC_ShuttleInOutXI,
+	LPMA_DoorUpDownXI,
+	LPMB_DoorUpDownXI,
+	LPMC_DoorUpDownXI,
+
 } IO_INDEX_ENUM;
 //--------------------------------------------------------------------
 // Dynamic IO List Definition
-static IO_LIST	g_pIOList[] =
+static IO_LIST g_pIOList[] =
 {
-	{ "TM.BM1.SlotVvLXI"		, _K_D_IO	,		0	} ,
-	{ "TM.BM1.SlotVvRXI"		, _K_D_IO	,		0	} ,
-	{ "TM.BM2.SlotVvLXI"		, _K_D_IO	,		0	} ,
-	{ "TM.BM2.SlotVvRXI"		, _K_D_IO	,		0	} ,
+	{"TM.BM1.SlotVvLXI", _K_D_IO, 0},
+	{"TM.BM1.SlotVvRXI", _K_D_IO, 0},
+	{"TM.BM2.SlotVvLXI", _K_D_IO, 0},
+	{"TM.BM2.SlotVvRXI", _K_D_IO, 0},
 
-	{ "TM.PM1.SlotVv1XI"		, _K_D_IO	,		0	} ,
-	{ "TM.PM1.SlotVv2XI"		, _K_D_IO	,		0	} ,
-	{ "TM.PM2.SlotVv1XI"		, _K_D_IO	,		0	} ,
-	{ "TM.PM2.SlotVv2XI"		, _K_D_IO	,		0	} ,
-	{ "TM.PM3.SlotVv1XI"		, _K_D_IO	,		0	} ,
-	{ "TM.PM3.SlotVv2XI"		, _K_D_IO	,		0	} ,
+	{"TM.PM1.SlotVv1XI", _K_D_IO, 0},
+	{"TM.PM1.SlotVv2XI", _K_D_IO, 0},
+	{"TM.PM2.SlotVv1XI", _K_D_IO, 0},
+	{"TM.PM2.SlotVv2XI", _K_D_IO, 0},
+	{"TM.PM3.SlotVv1XI", _K_D_IO, 0},
+	{"TM.PM3.SlotVv2XI", _K_D_IO, 0},
 
-	{ "TM.BM1.SlotVvLXO"		, _K_D_IO	,		0	} ,
-	{ "TM.BM1.SlotVvRXO"		, _K_D_IO	,		0	} ,
-	{ "TM.BM2.SlotVvLXO"		, _K_D_IO	,		0	} ,
-	{ "TM.BM2.SlotVvRXO"		, _K_D_IO	,		0	} ,
+	{"TM.BM1.SlotVvLXO", _K_D_IO, 0},
+	{"TM.BM1.SlotVvRXO", _K_D_IO, 0},
+	{"TM.BM2.SlotVvLXO", _K_D_IO, 0},
+	{"TM.BM2.SlotVvRXO", _K_D_IO, 0},
 
-	{ "TM.PM1.SlotVv1XO"		, _K_D_IO	,		0	} ,
-	{ "TM.PM1.SlotVv2XO"		, _K_D_IO	,		0	} ,
-	{ "TM.PM2.SlotVv1XO"		, _K_D_IO	,		0	} ,
-	{ "TM.PM2.SlotVv2XO"		, _K_D_IO	,		0	} ,
-	{ "TM.PM3.SlotVv1XO"		, _K_D_IO	,		0	} ,
-	{ "TM.PM3.SlotVv2XO"		, _K_D_IO	,		0	} ,
+	{"TM.PM1.SlotVv1XO", _K_D_IO, 0},
+	{"TM.PM1.SlotVv2XO", _K_D_IO, 0},
+	{"TM.PM2.SlotVv1XO", _K_D_IO, 0},
+	{"TM.PM2.SlotVv2XO", _K_D_IO, 0},
+	{"TM.PM3.SlotVv1XO", _K_D_IO, 0},
+	{"TM.PM3.SlotVv2XO", _K_D_IO, 0},
 
-	{ "BM1.DoorLXI"				, _K_D_IO	,		0	} ,
-	{ "BM1.DoorRXI"				, _K_D_IO	,		0	} ,
-	{ "BM1.DoorLXO"				, _K_D_IO	,		0	} ,
-	{ "BM1.DoorRXO"				, _K_D_IO	,		0	} ,
+	{"BM1.DoorLXI", _K_D_IO, 0},
+	{"BM1.DoorRXI", _K_D_IO, 0},
+	{"BM1.DoorLXO", _K_D_IO, 0},
+	{"BM1.DoorRXO", _K_D_IO, 0},
 
-	{ "BM2.DoorLXI"				, _K_D_IO	,		0	} ,
-	{ "BM2.DoorRXI"				, _K_D_IO	,		0	} ,
-	{ "BM2.DoorLXO"				, _K_D_IO	,		0	} ,
-	{ "BM2.DoorRXO"				, _K_D_IO	,		0	} ,
+	{"BM2.DoorLXI", _K_D_IO, 0},
+	{"BM2.DoorRXI", _K_D_IO, 0},
+	{"BM2.DoorLXO", _K_D_IO, 0},
+	{"BM2.DoorRXO", _K_D_IO, 0},
 
-	{ "PM1.TMIsoVlvClosedDI"	, _K_D_IO	,		0	},
-	{ "PM1.TMIsoVlv2ClosedDI"	, _K_D_IO	,		0	},
-	{ "PM2.TMIsoVlvClosedDI"	, _K_D_IO	,		0	},
-	{ "PM2.TMIsoVlv2ClosedDI"	, _K_D_IO	,		0	},
-	{ "PM3.TMIsoVlvClosedDI"	, _K_D_IO	,		0	},
-	{ "PM3.TMIsoVlv2ClosedDI"	, _K_D_IO	,		0	},
+	{"PM1.TMIsoVlvClosedDI", _K_D_IO, 0},
+	{"PM1.TMIsoVlv2ClosedDI", _K_D_IO, 0},
+	{"PM2.TMIsoVlvClosedDI", _K_D_IO, 0},
+	{"PM2.TMIsoVlv2ClosedDI", _K_D_IO, 0},
+	{"PM3.TMIsoVlvClosedDI", _K_D_IO, 0},
+	{"PM3.TMIsoVlv2ClosedDI", _K_D_IO, 0},
 
-	{ "BM1.DPStsDI",			_K_D_IO,		0	},
-	{ "BM1.DPWarnStsDI",		_K_D_IO,		0	},
-	{ "BM1.DPAlarmStsDI",		_K_D_IO,		0	},
-	{ "BM1.CGPumpPrsAI",		_K_A_IO,		0	},
-	{ "BM1.CGChmPrsAI",			_K_A_IO,		0	},
-	{ "BM1.RoughVvXO",			_K_D_IO,		0	},
-	{ "BM1.VentVvXO",			_K_D_IO,		0	},
-	{ "BM1.ATMVACSensorXI",		_K_D_IO,		0	},
-	{ "BM1.OverPresVvDO",		_K_D_IO,		0	},
+	{"BM1.DPStsDI", _K_D_IO, 0},
+	{"BM1.DPWarnStsDI", _K_D_IO, 0},
+	{"BM1.DPAlarmStsDI", _K_D_IO, 0},
+	{"BM1.CGPumpPrsAI", _K_A_IO, 0},
+	{"BM1.CGChmPrsAI", _K_A_IO, 0},
+	{"BM1.RoughVvXO", _K_D_IO, 0},
+	{"BM1.VentVvXO", _K_D_IO, 0},
+	{"BM1.ATMVACSensorXI", _K_D_IO, 0},
+	{"BM1.OverPresVvDO", _K_D_IO, 0},
 
-	{ "BM1.PinUpDownLXO",		_K_D_IO,		0	},
-	{ "BM1.PinUpDownLXI",		_K_D_IO,		0	},
-	{ "BM1.PinUpDownRXO",		_K_D_IO,		0	},
-	{ "BM1.PinUpDownRXI",		_K_D_IO,		0	},
+	{"BM1.PinUpDownLXO", _K_D_IO, 0},
+	{"BM1.PinUpDownLXI", _K_D_IO, 0},
+	{"BM1.PinUpDownRXO", _K_D_IO, 0},
+	{"BM1.PinUpDownRXI", _K_D_IO, 0},
 
-	{ "BM2.DPStsDI",			_K_D_IO,		0	},
-	{ "BM2.DPWarnStsDI",		_K_D_IO,		0	},
-	{ "BM2.DPAlarmStsDI",		_K_D_IO,		0	},
-	{ "BM2.CGPumpPrsAI",		_K_A_IO,		0	},
-	{ "BM2.CGChmPrsAI",			_K_A_IO,		0	},
-	{ "BM2.RoughVvXO",			_K_D_IO,		0	},
-	{ "BM2.VentVvXO",			_K_D_IO,		0	},
-	{ "BM2.ATMVACSensorXI",		_K_D_IO,		0	},
-	{ "BM2.OverPresVvDO",		_K_D_IO,		0	},
+	{"BM2.DPStsDI", _K_D_IO, 0},
+	{"BM2.DPWarnStsDI", _K_D_IO, 0},
+	{"BM2.DPAlarmStsDI", _K_D_IO, 0},
+	{"BM2.CGPumpPrsAI", _K_A_IO, 0},
+	{"BM2.CGChmPrsAI", _K_A_IO, 0},
+	{"BM2.RoughVvXO", _K_D_IO, 0},
+	{"BM2.VentVvXO", _K_D_IO, 0},
+	{"BM2.ATMVACSensorXI", _K_D_IO, 0},
+	{"BM2.OverPresVvDO", _K_D_IO, 0},
 
-	{ "BM2.PinUpDownLXO",		_K_D_IO,		0	},
-	{ "BM2.PinUpDownLXI",		_K_D_IO,		0	},
-	{ "BM2.PinUpDownRXO",		_K_D_IO,		0	},
-	{ "BM2.PinUpDownRXI",		_K_D_IO,		0	},
+	{"BM2.PinUpDownLXO", _K_D_IO, 0},
+	{"BM2.PinUpDownLXI", _K_D_IO, 0},
+	{"BM2.PinUpDownRXO", _K_D_IO, 0},
+	{"BM2.PinUpDownRXI", _K_D_IO, 0},
 
-	{ "TM.DPStsDI",				_K_D_IO,		0	},
-	{ "TM.DPWarnStsDI",			_K_D_IO,		0	},
-	{ "TM.DPAlarmStsDI",		_K_D_IO,		0	},
-	{ "TM.CGPumpPrsAI",			_K_A_IO,		0	},
-	{ "TM.CGChmPrsAI",			_K_A_IO,		0	},
-	{ "TM.RoughVvXO",			_K_D_IO,		0	},
-	{ "TM.VentVvXO",			_K_D_IO,		0	},
-	{ "TM.ATMVACSensorXI",		_K_D_IO,		0	},
-	{ "TM.OverPresVvDO",		_K_D_IO,		0	},
-	
-	{ "TM.TM_UPC_SET"				, _K_A_IO,	0	} ,
-	{ "TM.TM_UPC_Flow"				, _K_A_IO,	0	} ,
+	{"TM.DPStsDI", _K_D_IO, 0},
+	{"TM.DPWarnStsDI", _K_D_IO, 0},
+	{"TM.DPAlarmStsDI", _K_D_IO, 0},
+	{"TM.CGPumpPrsAI", _K_A_IO, 0},
+	{"TM.CGChmPrsAI", _K_A_IO, 0},
+	{"TM.RoughVvXO", _K_D_IO, 0},
+	{"TM.VentVvXO", _K_D_IO, 0},
+	{"TM.ATMVACSensorXI", _K_D_IO, 0},
+	{"TM.OverPresVvDO", _K_D_IO, 0},
 
-	{ "LPMA.FOUP_PresentDI",		_K_D_IO,		0	},
-	{ "LPMB.FOUP_PresentDI",		_K_D_IO,		0	},
-	{ "LPMC.FOUP_PresentDI",		_K_D_IO,		0	},
-	{ "LPMD.FOUP_PresentDI",		_K_D_IO,		0	},
+	{"TM.TM_UPC_SET", _K_A_IO, 0},
+	{"TM.TM_UPC_Flow", _K_A_IO, 0},
 
-	{ "LPMA.F_ProperlyPlaceDI",		_K_D_IO,		0	},
-	{ "LPMB.F_ProperlyPlaceDI",		_K_D_IO,		0	},
-	{ "LPMC.F_ProperlyPlaceDI",		_K_D_IO,		0	},
-	{ "LPMD.F_ProperlyPlaceDI",		_K_D_IO,		0	},
+	{"LPMA.FOUP_PresentDI", _K_D_IO, 0},
+	{"LPMB.FOUP_PresentDI", _K_D_IO, 0},
+	{"LPMC.FOUP_PresentDI", _K_D_IO, 0},
+	{"LPMD.FOUP_PresentDI", _K_D_IO, 0},
 
-	{ "PM1.ChmPrsAI",			_K_A_IO,		0	},
-	{ "PM2.ChmPrsAI",			_K_A_IO,		0	},
-	{ "PM3.ChmPrsAI",			_K_A_IO,		0	},
+	{"LPMA.F_ProperlyPlaceDI", _K_D_IO, 0},
+	{"LPMB.F_ProperlyPlaceDI", _K_D_IO, 0},
+	{"LPMC.F_ProperlyPlaceDI", _K_D_IO, 0},
+	{"LPMD.F_ProperlyPlaceDI", _K_D_IO, 0},
+
+	{"PM1.ChmPrsAI", _K_A_IO, 0},
+	{"PM2.ChmPrsAI", _K_A_IO, 0},
+	{"PM3.ChmPrsAI", _K_A_IO, 0},
+
+	// CM Simulation
+	{"CTC.MAIN_CONTROL", _K_D_IO, 0},
+	{"CTC.MAIN_CONTROL2", _K_D_IO, 0},
+	{"CTC.MAIN_CONTROL3", _K_D_IO, 0},
+
+	{"LPMA.ClampUnclampXI", _K_D_IO, 0},
+	{"LPMB.ClampUnclampXI", _K_D_IO, 0},
+	{"LPMC.ClampUnclampXI", _K_D_IO, 0},
+
+	{"LPMA.ShuttleInOutXI", _K_D_IO, 0},
+	{"LPMB.ShuttleInOutXI", _K_D_IO, 0},
+	{"LPMC.ShuttleInOutXI", _K_D_IO, 0},
+
+	{"LPMA.DoorUpDownXI", _K_D_IO, 0},
+	{"LPMB.DoorUpDownXI", _K_D_IO, 0},
+	{"LPMC.DoorUpDownXI", _K_D_IO, 0},
 
 	""
 };
@@ -247,10 +277,10 @@ static IO_LIST	g_pIOList[] =
 //--------------------------------------------------------------------
 enum {
 	TFNO_SlotValve,
-	TFNO_IsoValve, 
-	TFNO_TMVac, 
-	TFNO_BMPin, 
-	TFNO_AlarmClear, 
+	TFNO_IsoValve,
+	TFNO_TMVac,
+	TFNO_BMPin,
+	TFNO_AlarmClear,
 	TFNO_CMFoupSensor,
 } THdREAD_NO_ENUM;
 
@@ -393,7 +423,25 @@ void CTMSimulator::ParseInitIOCfg(char *szRead)
 //2014.03.28
 void CTMSimulator::CMFoupSensorMonitor(int nThreadNo)
 {
-	enum { EN_OFF, EN_ON };
+	enum
+	{
+		EN_OFF,
+		EN_ON
+	};
+	enum
+	{
+		eUnknownDoor,
+		eUp,
+		eDown,
+		eErrorDoor
+	};
+	enum
+	{
+		eUnknownShutt,
+		eIn,
+		eOut,
+		eErrorhutt
+	};
 
 	int i;
 	int anSensor[3] = { EN_OFF, EN_OFF, EN_OFF };
@@ -411,6 +459,14 @@ void CTMSimulator::CMFoupSensorMonitor(int nThreadNo)
 				dWRITE_DIGITAL(LPMA_FOUP_PresentDI+i, nSensor, &bIOStatus);
 				anSensor[i] = nSensor;
 				if(! WAIT_SEC(1)) break;
+			}
+
+			// CTC_MAIN_CONTROL : IDLE, RUNNING, PAUSING, PAUSED, ABORTING, DISABLE, WAITING, WAIT_HAND_OFF
+			// CM1_CLAMP_STATUS : 0 Unknown, 1 Clamp, 2 Unclamp, 3 Error
+			if (0 == dREAD_DIGITAL(CTC_MAIN_CONTROL + i, &bIOStatus) && 1 == dREAD_DIGITAL(CM1_CLAMP_STATUS + i, &bIOStatus))
+			{
+				dWRITE_DIGITAL(LPMA_ShuttleInOutXI + i, eIn, &bIOStatus);
+				dWRITE_DIGITAL(LPMA_DoorUpDownXI + i, eDown, &bIOStatus);
 			}
 		}
 	} while(1);
@@ -602,7 +658,7 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 		nOverPrsValve	= dREAD_DIGITAL(BM2_OverPresVvDO,	&nIOStatus);
 		nSlotValveL		= dREAD_DIGITAL(TM_BM2_SlotVvLXI,	&nIOStatus);
 		nSlotValveR		= dREAD_DIGITAL(TM_BM2_SlotVvRXI,	&nIOStatus);
-		
+
 		if(eROUGHVLV_CLOSE != nPumpValve)
 		{	//... Case Pumping (Target 15 sec)
 			if     (dbChmPrs > 100)		dbChmPrs -= 123.121;
@@ -622,17 +678,17 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 
 			if(dbChmPrs > 761)			dbChmPrs = 761;
 		}
-		
+
 		//... Case Slot Valve Opened for TM Swap in VAC
 		if(eSLITVLV_OPEN == nSlotValveL || eSLITVLV_OPEN == nSlotValveR)
 		{	//... TM Pressure
 			if(eROUGHVLV_CLOSE == nPumpValve && eVLV_CLOSE == nOverPrsValve)
 				dbChmPrs = dREAD_ANALOG(TM_CGChmPrsAI, &nIOStatus);
 		}
-		
+
 		//... Set Pressure
 		dWRITE_ANALOG(BM2_CGChmPrsAI, dbChmPrs, &nIOStatus);
-		
+
 		if     (dbChmPrs < 100)		dWRITE_DIGITAL(BM2_ATMVACSensorXI, 2, &nIOStatus);
 		else if(dbChmPrs > 600)		dWRITE_DIGITAL(BM2_ATMVACSensorXI, 1, &nIOStatus);
 		else						dWRITE_DIGITAL(BM2_ATMVACSensorXI, 0, &nIOStatus);
@@ -645,11 +701,11 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 		nOverPrsValve	= dREAD_DIGITAL(TM_OverPresVvDO,	&nIOStatus);
 
 		if(eROUGHVLV_CLOSE != nPumpValve)
-		{	//... Case Pumping 
+		{	//... Case Pumping
 			if     (dbChmPrs > 100)		dbChmPrs -= 46.121;
 			else if(dbChmPrs > 10)		dbChmPrs -= 4.421;
 			else						dbChmPrs -= 0.341;
-			
+
 			if(dbChmPrs < 0.003)		dbChmPrs = 0.002;	//... Fixed Base Pressure
 		}
 		else if(eROUGHVLV_CLOSE != nVentValve)
@@ -657,10 +713,10 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 			if     (dbChmPrs > 100)		dbChmPrs += 46.135;
 			else if(dbChmPrs > 10)		dbChmPrs += 4.431;
 			else						dbChmPrs += 0.337;
-			
+
 			if(dbChmPrs > 761)			dbChmPrs = 761;
 		}
-		
+
 		//... Case Slot Valve Opened for PM Swap in VAC
 		for (i = 0; i < MAX_PROCESS_MODULE; i++)
 		{
@@ -677,7 +733,7 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 				break;
 			}
 		}
-		
+
 		//... Case Over Pressure
 		if(eVLV_OPEN == nOverPrsValve)
 		{
@@ -687,7 +743,7 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 				nUPCFlow = nUPCSet;
 				dWRITE_ANALOG(TM_UPC_Flow, nUPCFlow, &nIOStatus);
 			}
-			
+
 			//... Case Over Pressure Opened
 			if(dbChmPrs < (nUPCFlow * 0.001))		dbChmPrs = nUPCFlow * 0.001;
 		}
@@ -702,7 +758,7 @@ void CTMSimulator::TmVacuumSimMonitor(int nThreadNo)
 
 		//... Set Pressure
 		dWRITE_ANALOG(TM_CGChmPrsAI, dbChmPrs, &nIOStatus);
-		
+
 		if     (dbChmPrs < 100)		dWRITE_DIGITAL(TM_ATMVACSensorXI, 2, &nIOStatus);
 		else if(dbChmPrs > 600)		dWRITE_DIGITAL(TM_ATMVACSensorXI, 1, &nIOStatus);
 		else						dWRITE_DIGITAL(TM_ATMVACSensorXI, 0, &nIOStatus);
@@ -789,7 +845,7 @@ void CTMSimulator::IsoValveSyncSimMonitor(int nThreadNo)
 {
 	int nIOStatus;
 	int nValue;
-	
+
 	int nPM1_IsoVlv[MAX_ISO_VALVE];
 	int nPM2_IsoVlv[MAX_ISO_VALVE];
 	int nPM3_IsoVlv[MAX_ISO_VALVE];
@@ -830,7 +886,7 @@ void CTMSimulator::IsoValveSyncSimMonitor(int nThreadNo)
 				nPM2_IsoVlv[i] = nValue;
 			}
 		}
-	
+
 		//////////////////////////////////////////////////////////////////////////
 		// PM3
 		if(m_bPM3IsoVlvSync)

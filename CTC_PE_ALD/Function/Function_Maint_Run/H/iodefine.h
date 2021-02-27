@@ -503,7 +503,12 @@ typedef enum {
 		LPMC_ShuttleInOutXI	,	
 		LPMA_DoorUpDownXI	,	
 		LPMB_DoorUpDownXI	,	
-		LPMC_DoorUpDownXI	,	
+		LPMC_DoorUpDownXI	,
+		
+		//2020.12.26
+		PM1_MANUAL_TR_CONTROL,
+		PM2_MANUAL_TR_CONTROL,
+		PM3_MANUAL_TR_CONTROL,
 		//...
 } IOPointIndex;
 
