@@ -31,123 +31,124 @@ extern void _LOG(const char *pFormat, ...);
 //--------------------------------------------------------------------
 // Dynamic IO Enum List Definition
 static enum {
-	SlowRoughVvDO_BM1	,
-	FastRoughVvDO_BM1	,
-	SlowVentVvDO_BM1	,
-	FastVentVvDO_BM1	,
-	BM1_CGChmPrsAI		,
-	BM1_DoorLXO			,
-	BM1_DoorLXI			,
-	BM1_DoorRXO			,
-	BM1_DoorRXI			,
-	BM1_VacuumStatusDM	,
-	BM1_ATMVACSensorXI	,
+	SlowRoughVvDO_BM1,
+	FastRoughVvDO_BM1,
+	SlowVentVvDO_BM1,
+	FastVentVvDO_BM1,
+	BM1_CGChmPrsAI,
+	BM1_DoorLXO,
+	BM1_DoorLXI,
+	BM1_DoorRXO,
+	BM1_DoorRXI,
+	BM1_VacuumStatusDM,
+	BM1_ATMVACSensorXI,
 
 	BM1_PinUpDownLXO,
 	BM1_PinUpDownLXI,
 	BM1_PinUpDownRXO,
 	BM1_PinUpDownRXI,
 
-	SlowRoughVvDO_BM2	,
-	FastRoughVvDO_BM2	,
-	SlowVentVvDO_BM2	,
-	FastVentVvDO_BM2	,
-	BM2_CGChmPrsAI		,
-	BM2_DoorLXO			,
-	BM2_DoorLXI			,
-	BM2_DoorRXO			,
-	BM2_DoorRXI			,
-	BM2_VacuumStatusDM  ,
-	BM2_ATMVACSensorXI  ,
+	SlowRoughVvDO_BM2,
+	FastRoughVvDO_BM2,
+	SlowVentVvDO_BM2,
+	FastVentVvDO_BM2,
+	BM2_CGChmPrsAI,
+	BM2_DoorLXO,
+	BM2_DoorLXI,
+	BM2_DoorRXO,
+	BM2_DoorRXI,
+	BM2_VacuumStatusDM,
+	BM2_ATMVACSensorXI,
 
 	BM2_PinUpDownLXO,
 	BM2_PinUpDownLXI,
 	BM2_PinUpDownRXO,
 	BM2_PinUpDownRXI,
 
-	BM1_SlotValveLXO    ,
-	BM1_SlotValveRXO    ,
-	BM2_SlotValveLXO    ,
-	BM2_SlotValveRXO    ,
-	PM1_SlotValve1XO	,
-	PM1_SlotValve2XO	,
-	PM2_SlotValve1XO	,
-	PM2_SlotValve2XO	,
-	PM3_SlotValve1XO	,
-	PM3_SlotValve2XO	,
+	BM1_SlotValveLXO,
+	BM1_SlotValveRXO,
+	BM2_SlotValveLXO,
+	BM2_SlotValveRXO,
+	PM1_SlotValve1XO,
+	PM1_SlotValve2XO,
+	PM2_SlotValve1XO,
+	PM2_SlotValve2XO,
+	PM3_SlotValve1XO,
+	PM3_SlotValve2XO,
 
-	BM1_SlotValveLXI	,
-	BM1_SlotValveRXI	,
-	BM2_SlotValveLXI	,
-	BM2_SlotValveRXI	,
-	PM1_SlotValve1XI	,
-	PM1_SlotValve2XI	,
-	PM2_SlotValve1XI	,
-	PM2_SlotValve2XI	,
-	PM3_SlotValve1XI	,
-	PM3_SlotValve2XI	,
+	BM1_SlotValveLXI,
+	BM1_SlotValveRXI,
+	BM2_SlotValveLXI,
+	BM2_SlotValveRXI,
+	PM1_SlotValve1XI,
+	PM1_SlotValve2XI,
+	PM2_SlotValve1XI,
+	PM2_SlotValve2XI,
+	PM3_SlotValve1XI,
+	PM3_SlotValve2XI,
+
 } IO_INDEX_ENUM;
 //--------------------------------------------------------------------
 // Dynamic IO List Definition
-static IO_LIST	g_pIOList[] =
-{
-	{ "BM1.SlowRoughVvDO"			, _K_D_IO,	0	} ,
-	{ "BM1.FastRoughVvDO"			, _K_D_IO,	0	} ,
-	{ "BM1.SlowVentVvDO"			, _K_D_IO,	0	} ,
-	{ "BM1.FastVentVvDO"			, _K_D_IO,	0	} ,
-	{ "BM1.CGChmPrsAI"				, _K_A_IO,	0	} ,
-	{ "BM1.DoorLXO"					, _K_D_IO,	0	} ,
-	{ "BM1.DoorLXI"					, _K_D_IO,	0	} ,
-	{ "BM1.DoorRXO"					, _K_D_IO,	0	} ,
-	{ "BM1.DoorRXI"					, _K_D_IO,	0	} ,
-	{ "BM1.VacuumStatusDM"			, _K_D_IO,	0	} ,
-	{ "BM1.ATMVACSensorXI"			, _K_D_IO,	0	} ,
+static IO_LIST g_pIOList[] =
+	{
+		{"BM1.SlowRoughVvDO", _K_D_IO, 0},
+		{"BM1.FastRoughVvDO", _K_D_IO, 0},
+		{"BM1.SlowVentVvDO", _K_D_IO, 0},
+		{"BM1.FastVentVvDO", _K_D_IO, 0},
+		{"BM1.CGChmPrsAI", _K_A_IO, 0},
+		{"BM1.DoorLXO", _K_D_IO, 0},
+		{"BM1.DoorLXI", _K_D_IO, 0},
+		{"BM1.DoorRXO", _K_D_IO, 0},
+		{"BM1.DoorRXI", _K_D_IO, 0},
+		{"BM1.VacuumStatusDM", _K_D_IO, 0},
+		{"BM1.ATMVACSensorXI", _K_D_IO, 0},
 
-	{ "BM1.PinUpDownLXO"			, _K_D_IO,	0	} ,
-	{ "BM1.PinUpDownLXI"			, _K_D_IO,	0	} ,
-	{ "BM1.PinUpDownRXO"			, _K_D_IO,	0	} ,
-	{ "BM1.PinUpDownRXI"			, _K_D_IO,	0	} ,
+		{"BM1.PinUpDownLXO", _K_D_IO, 0},
+		{"BM1.PinUpDownLXI", _K_D_IO, 0},
+		{"BM1.PinUpDownRXO", _K_D_IO, 0},
+		{"BM1.PinUpDownRXI", _K_D_IO, 0},
 
-	{ "BM2.SlowRoughVvDO"			, _K_D_IO,	0	} ,
-	{ "BM2.FastRoughVvDO"			, _K_D_IO,	0	} ,
-	{ "BM2.SlowVentVvDO"			, _K_D_IO,	0	} ,
-	{ "BM2.FastVentVvDO"			, _K_D_IO,	0	} ,
-	{ "BM2.CGChmPrsAI"				, _K_A_IO,	0	} ,
-	{ "BM2.DoorLXO"					, _K_D_IO,	0	} ,
-	{ "BM2.DoorLXI"					, _K_D_IO,	0	} ,
-	{ "BM2.DoorRXO"					, _K_D_IO,	0	} ,
-	{ "BM2.DoorRXI"					, _K_D_IO,	0	} ,
-	{ "BM2.VacuumStatusDM"			, _K_D_IO,	0	} ,
-	{ "BM2.ATMVACSensorXI"			, _K_D_IO,	0	} ,
+		{"BM2.SlowRoughVvDO", _K_D_IO, 0},
+		{"BM2.FastRoughVvDO", _K_D_IO, 0},
+		{"BM2.SlowVentVvDO", _K_D_IO, 0},
+		{"BM2.FastVentVvDO", _K_D_IO, 0},
+		{"BM2.CGChmPrsAI", _K_A_IO, 0},
+		{"BM2.DoorLXO", _K_D_IO, 0},
+		{"BM2.DoorLXI", _K_D_IO, 0},
+		{"BM2.DoorRXO", _K_D_IO, 0},
+		{"BM2.DoorRXI", _K_D_IO, 0},
+		{"BM2.VacuumStatusDM", _K_D_IO, 0},
+		{"BM2.ATMVACSensorXI", _K_D_IO, 0},
 
-	{ "BM2.PinUpDownLXO"			, _K_D_IO,	0	} ,
-	{ "BM2.PinUpDownLXI"			, _K_D_IO,	0	} ,
-	{ "BM2.PinUpDownRXO"			, _K_D_IO,	0	} ,
-	{ "BM2.PinUpDownRXI"			, _K_D_IO,	0	} ,
+		{"BM2.PinUpDownLXO", _K_D_IO, 0},
+		{"BM2.PinUpDownLXI", _K_D_IO, 0},
+		{"BM2.PinUpDownRXO", _K_D_IO, 0},
+		{"BM2.PinUpDownRXI", _K_D_IO, 0},
 
-	{ "TM.BM1.SlotVvLXO"			, _K_D_IO,	0	} ,
-	{ "TM.BM1.SlotVvRXO"			, _K_D_IO,	0	} ,
-	{ "TM.BM2.SlotVvLXO"			, _K_D_IO,	0	} ,
-	{ "TM.BM2.SlotVvRXO"			, _K_D_IO,	0	} ,
-	{ "TM.PM1.SlotVv1XO"			, _K_D_IO,	0	} ,
-	{ "TM.PM1.SlotVv2XO"			, _K_D_IO,	0	} ,
-	{ "TM.PM2.SlotVv1XO"			, _K_D_IO,	0	} ,
-	{ "TM.PM2.SlotVv2XO"			, _K_D_IO,	0	} ,
-	{ "TM.PM3.SlotVv1XO"			, _K_D_IO,	0	} ,
-	{ "TM.PM3.SlotVv2XO"			, _K_D_IO,	0	} ,
+		{"TM.BM1.SlotVvLXO", _K_D_IO, 0},
+		{"TM.BM1.SlotVvRXO", _K_D_IO, 0},
+		{"TM.BM2.SlotVvLXO", _K_D_IO, 0},
+		{"TM.BM2.SlotVvRXO", _K_D_IO, 0},
+		{"TM.PM1.SlotVv1XO", _K_D_IO, 0},
+		{"TM.PM1.SlotVv2XO", _K_D_IO, 0},
+		{"TM.PM2.SlotVv1XO", _K_D_IO, 0},
+		{"TM.PM2.SlotVv2XO", _K_D_IO, 0},
+		{"TM.PM3.SlotVv1XO", _K_D_IO, 0},
+		{"TM.PM3.SlotVv2XO", _K_D_IO, 0},
 
-	{ "TM.BM1.SlotVvLXI"			, _K_D_IO,	0	} ,
-	{ "TM.BM1.SlotVvRXI"			, _K_D_IO,	0	} ,
-	{ "TM.BM2.SlotVvLXI"			, _K_D_IO,	0	} ,
-	{ "TM.BM2.SlotVvRXI"			, _K_D_IO,	0	} ,
-	{ "TM.PM1.SlotVv1XI"			, _K_D_IO,	0	} ,
-	{ "TM.PM1.SlotVv2XI"			, _K_D_IO,	0	} ,
-	{ "TM.PM2.SlotVv1XI"			, _K_D_IO,	0	} ,
-	{ "TM.PM2.SlotVv2XI"			, _K_D_IO,	0	} ,
-	{ "TM.PM3.SlotVv1XI"			, _K_D_IO,	0	} ,
-	{ "TM.PM3.SlotVv2XI"			, _K_D_IO,	0	} ,
-	""
-};
+		{"TM.BM1.SlotVvLXI", _K_D_IO, 0},
+		{"TM.BM1.SlotVvRXI", _K_D_IO, 0},
+		{"TM.BM2.SlotVvLXI", _K_D_IO, 0},
+		{"TM.BM2.SlotVvRXI", _K_D_IO, 0},
+		{"TM.PM1.SlotVv1XI", _K_D_IO, 0},
+		{"TM.PM1.SlotVv2XI", _K_D_IO, 0},
+		{"TM.PM2.SlotVv1XI", _K_D_IO, 0},
+		{"TM.PM2.SlotVv2XI", _K_D_IO, 0},
+		{"TM.PM3.SlotVv1XI", _K_D_IO, 0},
+		{"TM.PM3.SlotVv2XI", _K_D_IO, 0},
+
+		""};
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
@@ -529,7 +530,7 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 				{
 					GetTimeTable("VAC_ROBOT ROTATE BM_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2") 
+				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2")
 					 || STRCMP(m_OldDest,"B_BM1") || STRCMP(m_OldDest,"B_BM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE SAME_MOD", &dbWaitTime);
@@ -549,12 +550,12 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 				{
 					GetTimeTable("VAC_ROBOT ROTATE PM1_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2") 
+				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2")
 					 || STRCMP(m_OldDest,"B_BM1") || STRCMP(m_OldDest,"B_BM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE BM_PM1", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_PM1") || STRCMP(m_OldDest,"B_PM1")) 
+				else if(STRCMP(m_OldDest,"A_PM1") || STRCMP(m_OldDest,"B_PM1"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE SAME_MOD", &dbWaitTime);
 				}
@@ -573,12 +574,12 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 				{
 					GetTimeTable("VAC_ROBOT ROTATE PM2_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2") 
+				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2")
 					 || STRCMP(m_OldDest,"B_BM1") || STRCMP(m_OldDest,"B_BM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE BM_PM2", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_PM2") || STRCMP(m_OldDest,"B_PM2")) 
+				else if(STRCMP(m_OldDest,"A_PM2") || STRCMP(m_OldDest,"B_PM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE SAME_MOD", &dbWaitTime);
 				}
@@ -597,12 +598,12 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 				{
 					GetTimeTable("VAC_ROBOT ROTATE PM3_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2") 
+				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2")
 					 || STRCMP(m_OldDest,"B_BM1") || STRCMP(m_OldDest,"B_BM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE BM_PM3", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_PM3") || STRCMP(m_OldDest,"B_PM3")) 
+				else if(STRCMP(m_OldDest,"A_PM3") || STRCMP(m_OldDest,"B_PM3"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE SAME_MOD", &dbWaitTime);
 				}
@@ -621,12 +622,12 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 				{
 					GetTimeTable("VAC_ROBOT ROTATE PM3_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2") 
+				else if(STRCMP(m_OldDest,"A_BM1") || STRCMP(m_OldDest,"A_BM2")
 					 || STRCMP(m_OldDest,"B_BM1") || STRCMP(m_OldDest,"B_BM2"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE BM_PM4", &dbWaitTime);
 				}
-				else if(STRCMP(m_OldDest,"A_PM4") || STRCMP(m_OldDest,"B_PM4")) 
+				else if(STRCMP(m_OldDest,"A_PM4") || STRCMP(m_OldDest,"B_PM4"))
 				{
 					GetTimeTable("VAC_ROBOT ROTATE SAME_MOD", &dbWaitTime);
 				}
@@ -636,7 +637,7 @@ BOOL CTMCtrlSimulator::ControlVacRobot(char *szCmd)
 			_LOG("************* VTM ROBOT Wait Time %1.1f sec", dbWaitTime);
 		}
 		else if(! GetTimeTable(szCmd, &dbWaitTime)) dbWaitTime = 5.0;
-		
+
 		if(! WAIT_SECONDS(dbWaitTime)) break;
 		bRet = TRUE;
 	} while(0);
@@ -720,7 +721,7 @@ BOOL CTMCtrlSimulator::ControlBM(char *szCmd)
 
 			sprintf(szTemp, "%s DOOR CLOSE", szModule);
 			if(! ControlBMDoor(szTemp)) break;
-			
+
 			dWRITE_DIGITAL(nVacuumStatusDM, 3, &bIOStatus);		// Go To Vacuum
 			sprintf(szTemp, "%s PUMP", szModule);
 			if(! GetTimeTable(szCmd, &dbWaitTime)) break;
@@ -750,7 +751,7 @@ BOOL CTMCtrlSimulator::ControlBM(char *szCmd)
 				bRet = TRUE;
 				return bRet;
 			}
-			
+
 			sprintf(szTemp, "%s DOOR CLOSE", szModule);
 			if(! ControlBMDoor(szTemp)) break;
 
@@ -785,12 +786,12 @@ BOOL CTMCtrlSimulator::ControlBM(char *szCmd)
 		}
 		else if(tp.BeEqual("A_UP") || tp.BeEqual("UP")) {
 			dWRITE_DIGITAL(nLiftPinLXO, 1, &bIOStatus);
-			dWRITE_DIGITAL(nLiftPinRXO, 1, &bIOStatus);	
+			dWRITE_DIGITAL(nLiftPinRXO, 1, &bIOStatus);
 			if(! WAIT_SECONDS(2)) break;
 		}
 		else if(tp.BeEqual("A_DOWN") || tp.BeEqual("DOWN") || tp.BeEqual("CHK_WFR_BEFORE_DOWN")) {
 			dWRITE_DIGITAL(nLiftPinLXO, 2, &bIOStatus);
-			dWRITE_DIGITAL(nLiftPinRXO, 2, &bIOStatus);		
+			dWRITE_DIGITAL(nLiftPinRXO, 2, &bIOStatus);
 			if(! WAIT_SECONDS(2)) break;
 		}
 		else
@@ -880,33 +881,33 @@ BOOL CTMCtrlSimulator::ControlIsoGate(char *szCmd)
 		if(tp.BeEqual("OPEN")) nCmd = GATE_OPEN;
 		else if(tp.BeEqual("CLOSE")) nCmd = GATE_CLOSE;
 		tp.GetWord();
-		if(tp.BeEqual("BM1")) { 
+		if(tp.BeEqual("BM1")) {
 			nSlotVvXO  = BM1_SlotValveLXO;
-			nSlotVvXI  = BM1_SlotValveLXI; 
+			nSlotVvXI  = BM1_SlotValveLXI;
 			nSlotVv2XO = BM1_SlotValveRXO;
-			nSlotVv2XI = BM1_SlotValveRXI; 
+			nSlotVv2XI = BM1_SlotValveRXI;
 		}
 		else if(tp.BeEqual("BM2")) {
 			nSlotVvXO  = BM2_SlotValveLXO;
-			nSlotVvXI  = BM2_SlotValveLXI; 
+			nSlotVvXI  = BM2_SlotValveLXI;
 			nSlotVv2XO = BM2_SlotValveRXO;
-			nSlotVv2XI = BM2_SlotValveRXI; 
-		}	
-		else if(tp.BeEqual("PM1")) { 
+			nSlotVv2XI = BM2_SlotValveRXI;
+		}
+		else if(tp.BeEqual("PM1")) {
 			nSlotVvXO  = PM1_SlotValve1XO;
-			nSlotVvXI  = PM1_SlotValve1XI; 
+			nSlotVvXI  = PM1_SlotValve1XI;
 			nSlotVv2XO = PM1_SlotValve2XO;
 			nSlotVv2XI = PM1_SlotValve2XI;
-		} else if(tp.BeEqual("PM2")) { 
-			nSlotVvXO  = PM2_SlotValve1XO; 
+		} else if(tp.BeEqual("PM2")) {
+			nSlotVvXO  = PM2_SlotValve1XO;
 			nSlotVvXI  = PM2_SlotValve1XI;
-			nSlotVv2XO = PM2_SlotValve2XO; 
+			nSlotVv2XO = PM2_SlotValve2XO;
 			nSlotVv2XI = PM2_SlotValve2XI;
-		} else if(tp.BeEqual("PM3")) { 
-			nSlotVvXO  = PM3_SlotValve1XO; 
-			nSlotVvXI  = PM3_SlotValve1XI; 
-			nSlotVv2XO = PM3_SlotValve2XO; 
-			nSlotVv2XI = PM3_SlotValve2XI; 
+		} else if(tp.BeEqual("PM3")) {
+			nSlotVvXO  = PM3_SlotValve1XO;
+			nSlotVvXI  = PM3_SlotValve1XI;
+			nSlotVv2XO = PM3_SlotValve2XO;
+			nSlotVv2XI = PM3_SlotValve2XI;
 		}
 		else break;
 

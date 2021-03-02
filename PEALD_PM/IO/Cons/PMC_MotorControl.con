@@ -21,14 +21,14 @@ PRMA_ZMT_OffsIgHigh	mm	-	-	-	-	2	0.00	100.00	1	-	-	-	-	2	0.00	100.00	-	-	-	-
 PRMA_ZMT_NormSpeed	Pulse	-	-	-	-	0	1	16383	1	-	-	-	-	0	1	16383	-	-	-	-	5000
 
 # Display IO
-ZMT_SetPosAM		mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
-ZMT_SetPos2AM		mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
-ZMT_MaintSetPosAM	mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
-ZMT_ReadPosAM		mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
-ZMT_ReadPos2AM		mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
+ZMT_SetPosAM		mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
+ZMT_SetPos2AM		mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
+ZMT_MaintSetPosAM	mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
+ZMT_ReadPosAM		mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
+ZMT_ReadPos2AM		mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
 
 # Verification IO
-M_MT_CycMvPosAM		mm	-	-	-	-	2	4	89	1	-	-	-	-	2	4	89	-	-	-	-
+M_MT_CycMvPosAM		mm	-	-	-	-	2	8	89	1	-	-	-	-	2	8	89	-	-	-	-
 M_MT_CycMvTgtCntAM	-	-	-	-	-	0	1	10000	1	-	-	-	-	0	1	10000	-	-	-	-
 M_MT_CycMvCurCntAM	-	-	-	-	-	0	0	99999	1	-	-	-	-	0	0	99999	-	-	-	-
 

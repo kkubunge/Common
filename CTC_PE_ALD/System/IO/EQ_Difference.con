@@ -2,9 +2,9 @@
 $$$ String
 	EQ_NAME
 	MARSTEMP		""
-	IPS_VERSION			"V1.1.3_Build_10"
-	PM1_IPS_VERSION		"V1.1.3_Build_10"
-	PM2_IPS_VERSION		"V1.1.3_Build_10"
-	PM3_IPS_VERSION		"V1.1.3_Build_10"
+	IPS_VERSION			"V1.1.3_Build_12"
+	PM1_IPS_VERSION		"V1.1.3_Build_12"
+	PM2_IPS_VERSION		"V1.1.3_Build_12"
+	PM3_IPS_VERSION		"V1.1.3_Build_12"
 	Ver_Build_Date		"2020.01.31"
 #--------------------------------------------------------------------------------------------------
