@@ -159,12 +159,12 @@ BOOL Program_Init_Code() {
 		g_pPMMainSimator->Initialize();
 
 		if(READ_DIGITAL(SimModeDM, &nIOStatus) == 2)	break;
-		
+
 		//.....
 		g_pPLCSimator->Initialize();
 
 	} while(0);
-	
+
 	return	TRUE;
 }
 

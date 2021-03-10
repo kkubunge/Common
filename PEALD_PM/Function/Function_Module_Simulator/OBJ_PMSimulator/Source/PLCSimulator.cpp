@@ -49,6 +49,8 @@ enum { PLC_VRCP_STOP, PLC_VRCP_RUN, PLC_VRCP_FAILED, PLC_VRCP_PAUSED };
 enum { VTS_10MS, VTS_100MS };
 
 enum {ATM_0, Vacuum_1, GoATM_2, GoVacuum_3,Abort_4};
+// ALD Valve Option
+enum {QTY13, QTY07};
 
 //--------------------------------------------------------------------
 // #include "DynamicIO.h"
@@ -111,11 +113,11 @@ static enum {
 	VRCP_GoNextDO,
 
 	VRCP_RunningDI,
-	VRCP_TgStpAI, 
-	VRCP_StpCntAI, 
-	VRCP_TgCycAI, 
-	VRCP_LTgStpAI, 
-	VRCP_CycCntAI, 
+	VRCP_TgStpAI,
+	VRCP_StpCntAI,
+	VRCP_TgCycAI,
+	VRCP_LTgStpAI,
+	VRCP_CycCntAI,
 	VRCP_LStpCntAI,
 	VRCP_PauseDI,
 	VRCP_DnLdErr1DI,
@@ -144,101 +146,105 @@ static enum {
 	StgHtr1RelayDI,
 	PLCTeachModeDI,
 
+	ALD_VLV_QTY_DM,
+
 } IO_INDEX_ENUM;
 //--------------------------------------------------------------------
 // Dynamic IO List Definition
 static IO_LIST g_pIOList[] =
-{
-	{ "FastRoughVlvDO",	_K_D_IO	,	0},
+	{
+		{"FastRoughVlvDO", _K_D_IO, 0},
 
-	{ "RFSetPointAO",	_K_A_IO	,	0 },
-	{ "RFPwOnDO",		_K_D_IO	,	0},
-	{ "RFSetPoint2AO",	_K_A_IO	,	0},
-	{ "RFPwOn2DO",		_K_D_IO	,	0},
-	{ "RPGPwOnDO",		_K_D_IO	,	0},
-	{ "RFLoadPowAI",	_K_A_IO	,	0},
-	{ "RFLoadPow2AI",	_K_A_IO	,	0},
+		{"RFSetPointAO", _K_A_IO, 0},
+		{"RFPwOnDO", _K_D_IO, 0},
+		{"RFSetPoint2AO", _K_A_IO, 0},
+		{"RFPwOn2DO", _K_D_IO, 0},
+		{"RPGPwOnDO", _K_D_IO, 0},
+		{"RFLoadPowAI", _K_A_IO, 0},
+		{"RFLoadPow2AI", _K_A_IO, 0},
 
-	{ "MFC01StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC02StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC03StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC04StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC05StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC06StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC07StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC08StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC09StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC10StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC11StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC12StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC13StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC14StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC15StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC16StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC17StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC18StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC19StPtAO"	, _K_A_IO	,	0 },
-	{ "MFC20StPtAO"	, _K_A_IO	,	0 },
+		{"MFC01StPtAO", _K_A_IO, 0},
+		{"MFC02StPtAO", _K_A_IO, 0},
+		{"MFC03StPtAO", _K_A_IO, 0},
+		{"MFC04StPtAO", _K_A_IO, 0},
+		{"MFC05StPtAO", _K_A_IO, 0},
+		{"MFC06StPtAO", _K_A_IO, 0},
+		{"MFC07StPtAO", _K_A_IO, 0},
+		{"MFC08StPtAO", _K_A_IO, 0},
+		{"MFC09StPtAO", _K_A_IO, 0},
+		{"MFC10StPtAO", _K_A_IO, 0},
+		{"MFC11StPtAO", _K_A_IO, 0},
+		{"MFC12StPtAO", _K_A_IO, 0},
+		{"MFC13StPtAO", _K_A_IO, 0},
+		{"MFC14StPtAO", _K_A_IO, 0},
+		{"MFC15StPtAO", _K_A_IO, 0},
+		{"MFC16StPtAO", _K_A_IO, 0},
+		{"MFC17StPtAO", _K_A_IO, 0},
+		{"MFC18StPtAO", _K_A_IO, 0},
+		{"MFC19StPtAO", _K_A_IO, 0},
+		{"MFC20StPtAO", _K_A_IO, 0},
 
-	{ "MFC01PgDO"	, _K_D_IO	,	0 },
-	{ "MFC02PgDO"	, _K_D_IO	,	0 },
-	{ "MFC03PgDO"	, _K_D_IO	,	0 },
-	{ "MFC04PgDO"	, _K_D_IO	,	0 },
-	{ "MFC05PgDO"	, _K_D_IO	,	0 },
-	{ "MFC06PgDO"	, _K_D_IO	,	0 },
-	{ "MFC07PgDO"	, _K_D_IO	,	0 },
-	{ "MFC08PgDO"	, _K_D_IO	,	0 },
-	{ "MFC09PgDO"	, _K_D_IO	,	0 },
-	{ "MFC10PgDO"	, _K_D_IO	,	0 },
-	{ "MFC11PgDO"	, _K_D_IO	,	0 },
-	{ "MFC12PgDO"	, _K_D_IO	,	0 },
-	{ "MFC13PgDO"	, _K_D_IO	,	0 },
-	{ "MFC14PgDO"	, _K_D_IO	,	0 },
-	{ "MFC15PgDO"	, _K_D_IO	,	0 },
-	{ "MFC16PgDO"	, _K_D_IO	,	0 },
-	{ "MFC17PgDO"	, _K_D_IO	,	0 },
-	{ "MFC18PgDO"	, _K_D_IO	,	0 },
-	{ "MFC19PgDO"	, _K_D_IO	,	0 },
-	{ "MFC20PgDO"	, _K_D_IO	,	0 },
+		{"MFC01PgDO", _K_D_IO, 0},
+		{"MFC02PgDO", _K_D_IO, 0},
+		{"MFC03PgDO", _K_D_IO, 0},
+		{"MFC04PgDO", _K_D_IO, 0},
+		{"MFC05PgDO", _K_D_IO, 0},
+		{"MFC06PgDO", _K_D_IO, 0},
+		{"MFC07PgDO", _K_D_IO, 0},
+		{"MFC08PgDO", _K_D_IO, 0},
+		{"MFC09PgDO", _K_D_IO, 0},
+		{"MFC10PgDO", _K_D_IO, 0},
+		{"MFC11PgDO", _K_D_IO, 0},
+		{"MFC12PgDO", _K_D_IO, 0},
+		{"MFC13PgDO", _K_D_IO, 0},
+		{"MFC14PgDO", _K_D_IO, 0},
+		{"MFC15PgDO", _K_D_IO, 0},
+		{"MFC16PgDO", _K_D_IO, 0},
+		{"MFC17PgDO", _K_D_IO, 0},
+		{"MFC18PgDO", _K_D_IO, 0},
+		{"MFC19PgDO", _K_D_IO, 0},
+		{"MFC20PgDO", _K_D_IO, 0},
 
-	{ "VRCP_StaStpDO"	, _K_D_IO, 0} ,
-	{ "VRCP_GoNextDO"	, _K_D_IO, 0} ,
-	{ "VRCP_RunningDI"	, _K_D_IO, 0} ,
-	{ "VRCP_TgStpAI",	_K_A_IO,   0},
-	{ "VRCP_StpCntAI",	_K_A_IO,   0},
-	{ "VRCP_TgCycAI",	_K_A_IO,   0},
-	{ "VRCP_LTgStpAI",	_K_A_IO,   0},
-	{ "VRCP_CycCntAI",	_K_A_IO,   0},
-	{ "VRCP_LStpCntAI",	_K_A_IO,   0},
-	{ "VRCP_PauseDI",	_K_D_IO,   0},
-	{ "VRCP_DnLdErr1DI", _K_D_IO,  0},
-	{ "VRCP_DnLdErr2DI", _K_D_IO,  0},
+		{"VRCP_StaStpDO", _K_D_IO, 0},
+		{"VRCP_GoNextDO", _K_D_IO, 0},
+		{"VRCP_RunningDI", _K_D_IO, 0},
+		{"VRCP_TgStpAI", _K_A_IO, 0},
+		{"VRCP_StpCntAI", _K_A_IO, 0},
+		{"VRCP_TgCycAI", _K_A_IO, 0},
+		{"VRCP_LTgStpAI", _K_A_IO, 0},
+		{"VRCP_CycCntAI", _K_A_IO, 0},
+		{"VRCP_LStpCntAI", _K_A_IO, 0},
+		{"VRCP_PauseDI", _K_D_IO, 0},
+		{"VRCP_DnLdErr1DI", _K_D_IO, 0},
+		{"VRCP_DnLdErr2DI", _K_D_IO, 0},
 
-	{ "PLC_CurStepAI",	_K_A_IO,   0},
-	{ "PLC_CurCycAI",	_K_A_IO,   0},
-	{ "PLC_RCPRunTMAI",	_K_A_IO,   0} ,
-	{ "PLC_GbIntlckDI", _K_D_IO,  0},
-	{ "PLC_RstIntLckDO", _K_D_IO,  0},
+		{"PLC_CurStepAI", _K_A_IO, 0},
+		{"PLC_CurCycAI", _K_A_IO, 0},
+		{"PLC_RCPRunTMAI", _K_A_IO, 0},
+		{"PLC_GbIntlckDI", _K_D_IO, 0},
+		{"PLC_RstIntLckDO", _K_D_IO, 0},
 
-	{ "RPGGateVlvPosDI",	_K_D_IO	, 0},
-	{ "RPGGateVlv2PosDI",	_K_D_IO	, 0},
-	{ "V103ValveDO",		_K_D_IO	, 0},
-	{ "V111ValveDO",		_K_D_IO	, 0},
+		{"RPGGateVlvPosDI", _K_D_IO, 0},
+		{"RPGGateVlv2PosDI", _K_D_IO, 0},
+		{"V103ValveDO", _K_D_IO, 0},
+		{"V111ValveDO", _K_D_IO, 0},
 
-	{ "HTE_SetTempAO"	, _K_A_IO	,	0 } ,
-	{ "HTE_ReadTempAI"	, _K_A_IO	,	0 } ,
-	{ "HTE_SrtStpDO"	, _K_D_IO	,	0 } ,
+		{"HTE_SetTempAO", _K_A_IO, 0},
+		{"HTE_ReadTempAI", _K_A_IO, 0},
+		{"HTE_SrtStpDO", _K_D_IO, 0},
 
-	//... 2015.04.08 Add RF Forward/Reflect Count Up
-	{ "RF1LoadCntAIO"	, _K_A_IO	,	0 },
-	{ "RF2LoadCntAIO"	, _K_A_IO	,	0 },
-	{ "RF1ReflCntAI"	, _K_A_IO	,	0 },
-	{ "RF2ReflCntAI"	, _K_A_IO	,	0 },
+		//... 2015.04.08 Add RF Forward/Reflect Count Up
+		{"RF1LoadCntAIO", _K_A_IO, 0},
+		{"RF2LoadCntAIO", _K_A_IO, 0},
+		{"RF1ReflCntAI", _K_A_IO, 0},
+		{"RF2ReflCntAI", _K_A_IO, 0},
 
-	{ "StgHtr1RelayDI"	, _K_D_IO	,	0 },
-	{ "PLCTeachModeDI"	, _K_D_IO	,	0 },
-	""
-};
+		{"StgHtr1RelayDI", _K_D_IO, 0},
+		{"PLCTeachModeDI", _K_D_IO, 0},
+
+		// ALD Valve Option
+		{"ALD_VLV_QTY_DM", _K_D_IO, 0},
+		""};
 //--------------------------------------------------------------------
 
 //////////////////////////////////////////////////////////////////////
@@ -279,9 +285,9 @@ BOOL CPLCSimulator::Initialize()
 	for(i=0; i<MAX_MFC; i++) { m_pnMfcScale[i] = 0; m_pnMfcPhyMax[i] = 0; }
 	m_VR_Header[0][VR_HDR_BASE+2] = 0x01;
 	m_VR_Header[1][VR_HDR_BASE+2] = 0x01;
-	ReadSimCfg();
 
 	InitIOList(g_pIOList);
+	ReadSimCfg();
 	InitValveIO();
 	CreateThread_B();
 	return TRUE;
@@ -296,7 +302,18 @@ BOOL CPLCSimulator::ReadSimCfg()
 	FILE *fp;
 	char szRead[256];
 	char szItem[256];
+	char szVlvRcp[20];
 	int nTitle = 0;
+	int nIOStatus = 0;
+
+	if (dREAD_DIGITAL(ALD_VLV_QTY_DM, &nIOStatus) == QTY07)
+	{
+		strcpy(szVlvRcp, "Valve List 7EA");
+	}
+	else
+	{
+		strcpy(szVlvRcp, "Valve List");
+	}
 
 	do {
 		fp = fopen(SIM_CFG_FILE, "rt");
@@ -310,7 +327,7 @@ BOOL CPLCSimulator::ReadSimCfg()
 				tp.GetString(szItem, ']');
 
 				if(strcmp("MFC", szItem) == 0)				nTitle = 1;
-				else if(strcmp("Valve List", szItem) == 0)	nTitle = 2;
+				else if(strcmp(szVlvRcp, szItem) == 0)		nTitle = 2;
 				else if(strcmp("Valve Recipe Configration", szItem) == 0) nTitle = 3;
 				else if(strcmp("RF", szItem) == 0)			nTitle = 4;		// 2006.03.06
 				else nTitle = 0;
@@ -365,7 +382,7 @@ void CPLCSimulator::ParseMfcCfg(char *szParam)
 		if(! tp.GetWord(szItem)) break;
 		if(strcmp(szItem, "Scale") == 0 || strcmp(szItem, "MfcConfig") == 0)
 		{
-			int nMfcN, nMfcIdx; 
+			int nMfcN, nMfcIdx;
 			tp.GetInt(& nMfcN);
 			nMfcIdx = nMfcN - 1;
 			tp.GetInt(& m_pnMfcScale[nMfcIdx]);
@@ -383,9 +400,14 @@ void CPLCSimulator::ParseValveListCfg(char *szParam)
 {
 	CTextParser tp(szParam);
 	int nBit;
+	char szLog[200];
+
 	do {
 		if(! tp.GetInt(&nBit)) break;
 		if(nBit>=0 && nBit<MAX_VALVE_IO) tp.GetWord(m_ValveList[nBit].szIOName);
+		sprintf(szLog, "ParseValveListCfg => Valve ID[%d] Name[%s]",
+				nBit, m_ValveList[nBit].szIOName);
+		_LOG(szLog);
 	} while(0);
 }
 
@@ -581,7 +603,7 @@ BOOL CPLCSimulator::ExcuteVRCPLine(unsigned char *pData)
 			dbDelayTime,
 			pData[0], pData[1], pData[2], pData[3],
 			pData[4], pData[5], pData[6], pData[7]);
-	
+
 		for(j=0; j<MAX_VALVE_BYTE; j++)
 		{
 			for(i=0; i<8; i++)
@@ -765,7 +787,7 @@ Module_Status CPLCSimulator::RunValveRecipe()
 	if(msRet != SYS_SUCCESS) {
 		sprintf(szLog, "-----> Aborted Valve Recipe in PLCSimulator");
 		_LOG(szLog); printf("%s\n", szLog);
-		
+
 	}
 	else
 	{
@@ -788,7 +810,7 @@ BOOL CPLCSimulator::WaitPLCTm(double dbTime)		// 2006.07.31
 	int i = 0, nIOStatus;
 
 	dWRITE_ANALOG(PLC_RCPRunTMAI, 0, &nIOStatus);
-	
+
 	do {
 		Sleep(30);
 		if(m_nThreadSts != THRD_STS_RUN)		{ bRet = FALSE; break; }
@@ -796,7 +818,7 @@ BOOL CPLCSimulator::WaitPLCTm(double dbTime)		// 2006.07.31
 		dbPrgTm /= 1000;
 
 		dWRITE_ANALOG(PLC_RCPRunTMAI, dbPrgTm, &nIOStatus);
-		
+
 		if(m_nPLC_VrcpSts != PLC_VRCP_RUN)		{ bRet = FALSE; break; }
 
 		if(((++i) % 15) == 0)
@@ -851,7 +873,7 @@ void CPLCSimulator::DoMonitor()
 		else WaitSec(0.1);
 
 		// Exchange Page
-//		m_nRunPage ^= 0x01; 
+//		m_nRunPage ^= 0x01;
 		if(m_nRunPage != 4)
 		{
 			m_nRunPage++;
@@ -902,7 +924,7 @@ void CPLCSimulator::DoMonitor()
 		}
 
 	} // end while
-	
+
 //	CloseAllValve();
 
 	// VRCP_RunningDI => 0:Stop 1:Running
@@ -932,7 +954,7 @@ void CPLCSimulator::DoMonitor_B()
 	int nSetTemp;
 	while(1)
 	{
-		WaitSec_B(0.3);	
+		WaitSec_B(0.3);
 		if(0 == dREAD_DIGITAL(StgHtr1RelayDI, &nIOStatus))
 		{
 			dWRITE_DIGITAL(PLCTeachModeDI,1, &nIOStatus);
@@ -969,7 +991,7 @@ void CPLCSimulator::DoMonitor_B()
 		}
 
         if(1 == dREAD_DIGITAL(HTE_StaStpDIO,&nIOStatus)){
-			nSetTemp = dREAD_DIGITAL(HTE_SetTempAIO,&nIOStatus);	
+			nSetTemp = dREAD_DIGITAL(HTE_SetTempAIO,&nIOStatus);
 			dWRITE_DIGITAL(HTE_ReadTempAI,nSetTemp, &nIOStatus);
 		}
 	}
